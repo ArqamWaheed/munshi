@@ -1,0 +1,11 @@
+.env
+.venv/
+__pycache__/
+data/hotels.csv
+data/cache/
+data/bookings.jsonl
+munshi.db
+results/briefs/
+
+# private hackathon planning docs (not for the public repo)
+planning/
