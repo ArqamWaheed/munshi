@@ -9,3 +9,4 @@ results/briefs/
 
 # private hackathon planning docs (not for the public repo)
 planning/
+.pytest_cache/

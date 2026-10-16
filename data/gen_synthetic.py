@@ -31,6 +31,7 @@ Return a JSON object {{"messages": [ ... {n} strings ... ]}}. Seeds for style:\n
 
 def seeds() -> list[str]:
     text = (HERE / "seed_templates.md").read_text(encoding="utf-8")
+    text = text.split("## Typos")[0]  # the edge-case notes below that heading are not messages
     return [re.sub(r"\s*\(.*?\)\s*$", "", ln[2:]).strip() for ln in text.splitlines() if ln.startswith("- ")]
 
 

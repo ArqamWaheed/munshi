@@ -18,10 +18,15 @@ room_type ("any"|"single"|"double"|"twin"|"triple"|"family"|"suite"), budget_pkr
 language ("roman_urdu"|"english"|"mixed"|"urdu_script"), needs_clarification (bool),
 clarification_question (short question in the guest's language, or null).
 Rules: resolve relative dates against TODAY: aaj=today, kal=tomorrow, parso=day after tomorrow,
-"is weekend"/"this weekend"=the coming Saturday, "agle hafte"=next Monday unless a day is named.
-"2 log"/"2 bande"=2 guests. "family room" => room_type "family". If rooms is not stated: rooms=1 unless
-guests > 4, then ceil(guests/3). If only check_out is given, nights = check_out - check_in.
-Budget: "8 hazar"/"8k"/"8000" => 8000; a total budget is divided by nights.
+"is weekend"/"this weekend"=the coming Saturday, "agle hafte"/"next week"=next Monday unless a day is named.
+A weekday name (jumma/Friday, hafta/Saturday, itwaar/Sunday, peer/Monday ...) = its next date AFTER today.
+A bare day number ("25 tareekh", "the 28th") = that day this month, or next month if already past.
+"2 log"/"2 bande"=2 guests; "couple"/"mian biwi"=2; adults and kids both count as guests.
+"family room" => room_type "family"; "double bed" => "double". If rooms is not stated: rooms=1 unless
+guests > 4, then ceil(guests/3). "X din"/"X days" = X nights. A range ("jumma se itwaar", "Sunday to Tuesday",
+check_in to check_out) sets check_in and nights = difference. nights=null if no stay length is given, except
+"aaj raat"/"kal raat ke liye"/"tonight" alone = 1 night.
+Budget: "8 hazar"/"8k"/"8000" => 8000; "1 lakh" => 100000; a total budget is divided by nights.
 needs_clarification=true when check_in OR guests cannot be determined; then ask for the missing item."""
 
 # Short prompt the fine-tuned model is trained and served with (fewer prompt tokens = cheaper).

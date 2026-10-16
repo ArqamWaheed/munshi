@@ -75,6 +75,12 @@ python -m munshi.temporal.start_inquiry deposit --id hold-xxxxxxxx --amount 5000
 Demo tricks: `DEMO_SPEED=60` makes a 2 h hold expire in 2 min. Set `MUNSHI_INJECT_FAILURE_RATE=0.5` to force
 visible first-attempt retries. Kill the worker (Ctrl+C) during a hold, wait, then restart it: the workflow resumes.
 
+## Tests (offline, no keys)
+```bash
+python -m pytest -q    # rules, redaction, eval-set integrity, and RoomHoldWorkflow on a local Temporal
+                       # dev server with mocked model calls (needs the `temporal` CLI on PATH)
+```
+
 ## Privacy
 - Raw WhatsApp text goes only to your own fine-tuned model on Tinker, after `parser.redact()` strips export
   headers (sender names), phone numbers and emails.

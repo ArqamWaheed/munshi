@@ -6,7 +6,7 @@ TabPFN calls: 10 fits + 10 predicts = 20 API calls (well inside 60/min). Writes 
 and results/risk_eval.md. Honest caveat for the post: Portuguese hotels 2015-17, not Pakistani data.
 
   python -m eval.eval_risk --rows 300 --seeds 10
-  python -m eval.eval_risk --models logreg hgb      # offline sanity run without a TabPFN token
+  python -m eval.eval_risk --models logreg hgb --name risk_baselines   # offline run without a TabPFN token
 """
 from __future__ import annotations
 
@@ -32,6 +32,7 @@ def main() -> None:
     ap.add_argument("--seeds", type=int, default=10)
     ap.add_argument("--test-rows", type=int, default=2000)
     ap.add_argument("--models", nargs="+", default=["tabpfn", "logreg", "hgb"], choices=list(MAKERS))
+    ap.add_argument("--name", default="risk_eval", help="output file stem under results/")
     a = ap.parse_args()
     df = features_from_bookings(pd.read_csv(cfg.BOOKINGS_CSV))
     test = df.sample(n=a.test_rows, random_state=12345)
@@ -60,14 +61,14 @@ def main() -> None:
     out.mkdir(exist_ok=True)
     meta = {"train_rows": a.rows, "seeds": a.seeds, "test_rows": a.test_rows, "features": FEATURES,
             "test_base_rate": float(test[TARGET].mean()), "tabpfn_version": cfg.TABPFN_VERSION}
-    (out / "risk_eval.json").write_text(json.dumps({"meta": meta, "results": summary}, indent=2))
+    (out / f"{a.name}.json").write_text(json.dumps({"meta": meta, "results": summary}, indent=2))
     md = [f"Train rows: {a.rows} x {a.seeds} seeds; fixed test set {a.test_rows} rows "
           f"(cancel rate {meta['test_base_rate']:.1%}).", "",
           "| Model | ROC-AUC mean | std | min | max | seeds won | s per fit+predict |", "|---|---:|---:|---:|---:|---:|---:|"]
     for m, s in sorted(summary.items(), key=lambda kv: -kv[1]["auc_mean"]):
         md.append(f"| {m} | {s['auc_mean']:.4f} | {s['auc_std']:.4f} | {s['auc_min']:.4f} | {s['auc_max']:.4f} | "
                   f"{s['wins']}/{a.seeds} | {s['fit_predict_s_mean']:.2f} |")
-    (out / "risk_eval.md").write_text("\n".join(md) + "\n")
+    (out / f"{a.name}.md").write_text("\n".join(md) + "\n")
     print("\n".join(md))
 
 
