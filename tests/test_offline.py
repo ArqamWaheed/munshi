@@ -8,10 +8,11 @@ from pathlib import Path
 import pytest
 
 from data.gen_synthetic import seeds
-from munshi import policy
-from munshi.llm import extract_json
+from munshi import config as cfg
+from munshi import policy, risk
+from munshi.llm import NotConfigured, call_gemma, call_tinker, extract_json
 from munshi.parser import messages_for, next_weekday, normalise, redact
-from munshi.schema import PARSED_FIELDS, HoldPolicy, Inquiry
+from munshi.schema import PARSED_FIELDS, DepositInfo, HoldPolicy, Inquiry
 
 ROOT = Path(__file__).resolve().parent.parent
 EVAL = [json.loads(ln) for ln in (ROOT / "data" / "eval.jsonl").read_text(encoding="utf-8").splitlines() if ln]
@@ -40,6 +41,23 @@ def test_quote_rounds_advance_up_to_500():
     q = policy.make_quote(inq, None, 0.3, POL)  # 16,000 x 30% = 4,800 -> 5,000
     assert (q.total_pkr, q.advance_pkr, q.hold_hours, q.risk_band) == (16000, 5000, 6, "medium")
 
+
+def test_deposits_accumulate_with_references():
+    total = policy.add_deposit(None, DepositInfo(amount_pkr=2000, reference="JC-1"))
+    total = policy.add_deposit(total, DepositInfo(amount_pkr=1500))
+    total = policy.add_deposit(total, DepositInfo(amount_pkr=500, reference="HBL-9"))
+    assert total == DepositInfo(amount_pkr=4000, reference="JC-1, HBL-9")
+
+
+def test_missing_keys_fail_fast(monkeypatch):
+    """NotConfigured is non-retryable in the activities, so a missing key falls back at once instead of retrying."""
+    monkeypatch.setattr(cfg, "GEMINI_API_KEY", "")
+    monkeypatch.setattr(cfg, "TABPFN_TOKEN", "")
+    monkeypatch.setattr(cfg, "TINKER_MODEL_PATH", "tinker://x/sampler_weights/y")
+    monkeypatch.setattr(cfg, "TINKER_API_KEY", "")
+    for call in (lambda: call_gemma([]), lambda: call_tinker([]), risk.make_tabpfn):
+        with pytest.raises(NotConfigured):
+            call()
 
 def test_template_reply_languages():
     inq = Inquiry(check_in=date(2026, 10, 17), nights=1, guests=2, rooms=1, language="english")

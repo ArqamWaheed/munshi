@@ -11,6 +11,7 @@ from datetime import date, timedelta
 import pandas as pd
 
 from munshi import config as cfg
+from munshi.llm import NotConfigured
 from munshi.schema import GuestContext, Inquiry
 
 NUM = ["lead_time", "nights", "weekend_nights", "guests", "arrival_dow", "arrival_month",
@@ -64,6 +65,9 @@ def load_history(n_rows: int = cfg.RISK_TRAIN_ROWS, seed: int = 0) -> pd.DataFra
 
 def make_tabpfn():
     from tabpfn_client import TabPFNClassifier  # reads TABPFN_TOKEN from the environment
+
+    if not cfg.TABPFN_TOKEN:
+        raise NotConfigured("TABPFN_TOKEN is empty (.env)")
 
     return TabPFNClassifier.create_default_for_version(cfg.TABPFN_VERSION)
 

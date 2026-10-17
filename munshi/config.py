@@ -40,6 +40,7 @@ TINKER_PRICES = {  # USD per 1M tokens: (prefill, sample, train); tinker models.
 }
 
 # --- TabPFN (hosted API via tabpfn-client; reads TABPFN_TOKEN itself) ---
+TABPFN_TOKEN = os.getenv("TABPFN_TOKEN", "")  # only checked here so a missing token fails fast
 TABPFN_VERSION = os.getenv("TABPFN_VERSION", "v3.5")  # v3.5 == TabPFN-3.5-Plus on the API
 BOOKINGS_CSV = ROOT / "data" / "hotels.csv"
 REGISTER_CSV = os.getenv("REGISTER_CSV", "")  # optional: first user's own register, same columns as hotels.csv

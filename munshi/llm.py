@@ -30,6 +30,10 @@ class ProviderError(Exception):
     """Transient upstream failure (5xx, timeout, connection)."""
 
 
+class NotConfigured(Exception):
+    """Missing or rejected key / model path: retrying cannot help, so the workflow falls back at once."""
+
+
 @dataclass
 class LLMResult:
     text: str
@@ -94,6 +98,8 @@ def _retry_after(err: openai.APIStatusError, default: float = 20.0) -> float:
 def _translate(provider: str, err: Exception) -> Exception:
     if isinstance(err, openai.RateLimitError):
         return RateLimited(provider, _retry_after(err))
+    if isinstance(err, (openai.AuthenticationError, openai.PermissionDeniedError)):
+        return NotConfigured(f"{provider}: {err}")
     if isinstance(err, (openai.APITimeoutError, openai.APIConnectionError, openai.InternalServerError)):
         return ProviderError(f"{provider}: {err}")
     return err
@@ -106,6 +112,8 @@ def _usage(resp) -> tuple[int, int]:
 
 def call_gemma(messages: list[dict], *, json_mode: bool = False, max_tokens: int = 512,
                temperature: float = 0.2) -> LLMResult:
+    if not cfg.GEMINI_API_KEY:
+        raise NotConfigured("GEMINI_API_KEY is empty (.env)")
     _gemma_gate.wait()
     kwargs: dict = {"model": cfg.GEMMA_MODEL, "messages": messages,
                     "max_tokens": max_tokens, "temperature": temperature}
@@ -140,7 +148,9 @@ def call_gemma(messages: list[dict], *, json_mode: bool = False, max_tokens: int
 def call_tinker(messages: list[dict], *, max_tokens: int = 256, model_path: str | None = None) -> LLMResult:
     model = model_path or cfg.TINKER_MODEL_PATH
     if not model:
-        raise RuntimeError("TINKER_MODEL_PATH is empty: train first (train/tinker_sft.py) and paste the path")
+        raise NotConfigured("TINKER_MODEL_PATH is empty: train first (train/tinker_sft.py) and paste the path")
+    if not cfg.TINKER_API_KEY:
+        raise NotConfigured("TINKER_API_KEY is empty (.env)")
     prefill_p, sample_p, _ = cfg.TINKER_PRICES[cfg.TINKER_BASE_MODEL]
     label = "munshi-parser-" + cfg.TINKER_BASE_MODEL.split("/")[-1].lower() + "-lora"  # groups well in Sentry
     with chat_span(label, "tinker") as span:
