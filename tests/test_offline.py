@@ -11,7 +11,7 @@ from data.gen_synthetic import seeds
 from munshi import config as cfg
 from munshi import policy, risk
 from munshi.llm import NotConfigured, call_gemma, call_tinker, extract_json
-from munshi.parser import messages_for, next_weekday, normalise, redact
+from munshi.parser import apply_text_rules, messages_for, next_weekday, normalise, redact
 from munshi.reply import check_draft, numbers_in
 from munshi.schema import PARSED_FIELDS, DepositInfo, HoldPolicy, Inquiry, Quote
 
@@ -159,3 +159,22 @@ def test_check_draft(text, problem):
 def test_confirmation_needs_no_prices_but_may_not_invent_any():
     assert check_draft("Advance mil gaya, booking confirm hai. Shukriya!", DRAFT_INQ, DRAFT_QUOTE, "confirmed") == []
     assert check_draft("Rs 2,000 mil gaye, booking confirm.", DRAFT_INQ, DRAFT_QUOTE, "confirmed") != []
+
+
+@pytest.mark.parametrize("row", EVAL, ids=lambda r: r["id"])
+def test_eval_label_is_a_fixed_point_of_the_text_rules(row):
+    today = date.fromisoformat(row["today"])
+    inq = normalise(row["label"], today)
+    assert apply_text_rules(inq.model_copy(), row["message"]) == inq
+
+
+@pytest.mark.parametrize("msg,guests,rooms,room_type,want", [
+    ("Murree mein 4 log hain kal ke liye", 4, 2, "any", (1, "any", "roman_urdu")),     # 4 guests -> 1 room
+    ("4 log, 2 rooms chahiye kal", 4, 2, "any", (2, "any", "roman_urdu")),            # stated count wins
+    ("family of 6, parso, 2 raat", 6, 2, "family", (2, "any", "roman_urdu")),          # not a family room
+    ("suite chahiye family ke liye, 4 log", 4, 1, "family", (1, "suite", "roman_urdu")),
+    ("\u06a9\u0644 \u062f\u0648 \u0644\u0648\u06af", 2, 1, "any", (1, "any", "urdu_script")),
+])
+def test_text_rules(msg, guests, rooms, room_type, want):
+    inq = apply_text_rules(Inquiry(guests=guests, rooms=rooms, room_type=room_type), msg)
+    assert (inq.rooms, inq.room_type, inq.language) == want

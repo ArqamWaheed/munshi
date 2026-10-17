@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import math
 import re
 from datetime import date, timedelta
 
@@ -71,6 +72,28 @@ def normalise(raw: dict, today: date) -> Inquiry:
     return inq
 
 
+# Rulebook conventions that need the message text, so they live here and not in normalise(). The Gemma
+# teacher broke them in ~20% of training rows (4 guests -> 2 rooms; "family of 6" -> family room). They change
+# none of the 80 hand labels in data/eval.jsonl (tests/test_offline.py checks this).
+_NUM = r"(\d+|ek|aik|do|teen|char|chaar|paanch|one|two|three|four|five|a|an)"
+_ROOMS_STATED = re.compile(rf"\b{_NUM}\s+(?:\w+\s+){{0,2}}(rooms?|kamr[aey]+|suites?)\b|(ایک|دو|تین|چار)\s+کمر", re.I)
+_FAMILY_ROOM = re.compile(r"family\s*(room|suite)|فیملی\s*روم", re.I)
+_URDU_SCRIPT = re.compile(r"[\u0600-\u06FF]")
+
+
+def apply_text_rules(inq: Inquiry, message: str) -> Inquiry:
+    """Code decides: language from the script, rooms from the head count unless a room count is written,
+    and "family" only when the guest wrote "family room"."""
+    text = redact(message)
+    if _URDU_SCRIPT.search(text):
+        inq.language = "urdu_script"
+    if inq.guests and not _ROOMS_STATED.search(text):
+        inq.rooms = 1 if inq.guests <= 4 else math.ceil(inq.guests / 3)
+    if inq.room_type == "family" and not _FAMILY_ROOM.search(text):
+        inq.room_type = "suite" if re.search(r"suite", text, re.I) else "any"
+    return inq
+
+
 class BadModelOutput(Exception):
     """Unparseable/invalid JSON: deterministic at temperature 0, so not worth retrying."""
 
@@ -87,7 +110,7 @@ def parse_message(message: str, today: date, provider: str = "tinker") -> tuple[
         raw = extract_json(res.text)
         if missing := [f for f in PARSED_FIELDS if f not in raw]:  # its own schema, not ours: not "valid"
             raise ValueError(f"missing keys {missing}")
-        return normalise(raw, today), res
+        return apply_text_rules(normalise(raw, today), message), res
     except (ValueError, ValidationError, json.JSONDecodeError) as e:
         raise BadModelOutput(f"{provider}: {e}") from e
 
