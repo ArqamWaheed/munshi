@@ -5,7 +5,11 @@ paraphrases that keep the same booking facts, plus new variants. Keep the typos:
 Label conventions (the full list is SPEC_PROMPT in munshi/parser.py; data/eval.jsonl follows the same rules):
 kal = tomorrow, parso = day after tomorrow, "is weekend" = coming Saturday, "agle hafte" = next Monday,
 weekday names = next date after today, "X din" = X nights, nights = null when no stay length is given,
-budget is per night, rooms default 1 (or ceil(guests/3) if guests > 4).
+budget is per night, rooms default 1 (or ceil(guests/3) if guests > 4); "a"/"ek" + room states one room.
+language (eval convention, not in SPEC_PROMPT): roman_urdu when the only English is hotel loanwords
+(room and room types, budget, booking, advance, rate, check in/out, available); mixed once English phrases
+appear ("2 adults", "we are", "per night", "need"). Because the teacher never saw this rule, eval_parser
+also reports booking-field exact match (every parsed field except language).
 Seeds must not copy rows of data/eval.jsonl (the eval set has to stay unseen).
 
 ## Roman Urdu
