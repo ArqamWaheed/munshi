@@ -61,8 +61,11 @@ def normalise(raw: dict, today: date) -> Inquiry:
     inq = Inquiry.model_validate(raw)
     if inq.check_in and inq.check_in < today:  # "kal" resolved backwards etc.
         inq.check_in = None
-    if inq.check_in is None or inq.guests is None:
-        inq.needs_clarification = True
+    # The flag is a rule, not a judgement: ask only when the date or the head count is missing. The Gemma
+    # teacher also asked when only the number of nights was missing (136 of the first 650 training rows).
+    inq.needs_clarification = inq.check_in is None or inq.guests is None
+    if not inq.needs_clarification:
+        inq.clarification_question = None
     if inq.guests and not inq.rooms:
         inq.rooms = 1 if inq.guests <= 4 else -(-inq.guests // 3)
     return inq

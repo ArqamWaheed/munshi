@@ -100,6 +100,10 @@ def test_normalise_rules():
     assert normalise({"check_in": "2026-10-10", "guests": 2}, today).needs_clarification  # past date dropped
     assert normalise({"check_in": "2026-10-17", "guests": 7}, today).rooms == 3
     assert normalise({"check_in": "2026-10-17", "guests": 4}, today).rooms == 1
+    # nights unknown is not a reason to ask: the quote assumes 1 night and the guest can correct it
+    asked = normalise({"check_in": "2026-10-17", "guests": 2, "needs_clarification": True,
+                       "clarification_question": "Kitni raatein?"}, today)
+    assert not asked.needs_clarification and asked.clarification_question is None
 
 
 def test_seeds_exclude_edge_case_notes():
