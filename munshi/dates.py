@@ -28,6 +28,7 @@ _NOWADAYS = re.compile(r"\baa?j\s*kal\b|آج\s*کل", re.I)  # "aaj kal" = "thes
 # "next friday", "agle peer": this coming one or the one after? The rulebook doesn't say, so the model decides.
 _NEXT_DAY = re.compile(r"\b(next|agle|agly|agla)\s+(peer|pir|monday|mangal|tuesday|budh|wednesday|jumeraat|"
                        r"jumerat|thursday|jumm?a+h?|friday|saturday|hafte ko|itwaa?r|sunday)\b", re.I)
+_CHECK_OUT = re.compile(r"check[\s-]*out|nikal", re.I)  # "kal check in, parso check out"
 _RANGE_WORD = re.compile(r"\b(se|to|till|until|tak|and)\b|\bcheck[\s-]*out\b|[-–]|سے|تک", re.I)
 _DAY_RANGE_MON = re.compile(rf"\b(\d{{1,2}})\s*(?:st|nd|rd|th)?\s*(?:se|to|till|-|–)\s*(\d{{1,2}})\s*(?:st|nd|rd|th)?\s*"
                             rf"(?:tak\s*)?{_MON}\b", re.I)
@@ -106,6 +107,11 @@ def _ambiguous(text: str, today: date) -> bool:
     return first is not None and first[1] == today.weekday()
 
 
+def names_no_date(text: str, today: date) -> bool:
+    """True when the only date-like words are "aaj kal" ("these days"), so the message names no date at all."""
+    return bool(_NOWADAYS.search(text)) and not mentions(text, today) and not _NEXT_WEEK.search(text)
+
+
 def resolve(text: str, today: date) -> tuple[date | None, int | None]:
     """(check_in, nights) when the message is unambiguous, else None for that part."""
     if _ambiguous(text, today):
@@ -124,6 +130,6 @@ def resolve(text: str, today: date) -> tuple[date | None, int | None]:
         (p1, d1), (p2, d2) = found[0], found[-1]
         between = text.lower()[min(p1, p2):max(p1, p2) + 12]
         nights = (dates[1] - dates[0]).days
-        if _RANGE_WORD.search(between) and 1 <= nights <= 30:
+        if (_RANGE_WORD.search(between) or _CHECK_OUT.search(text)) and 1 <= nights <= 30:
             return dates[0], nights
     return None, None

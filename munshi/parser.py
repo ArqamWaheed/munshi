@@ -8,7 +8,7 @@ from datetime import date, timedelta
 
 from pydantic import ValidationError
 
-from munshi.dates import resolve
+from munshi.dates import names_no_date, resolve
 from munshi.llm import LLMResult, call_gemma, call_tinker, call_tinker_base, extract_json
 from munshi.schema import PARSED_FIELDS, Inquiry
 
@@ -76,10 +76,31 @@ def normalise(raw: dict, today: date) -> Inquiry:
 # Rulebook conventions that need the message text, so they live here and not in normalise(). The Gemma
 # teacher broke them in ~20% of training rows (4 guests -> 2 rooms; "family of 6" -> family room). They change
 # none of the 80 hand labels in data/eval.jsonl (tests/test_offline.py checks this).
-_NUM = r"(\d+|ek|aik|do|teen|char|chaar|paanch|one|two|three|four|five|a|an)"
-_ROOMS_STATED = re.compile(rf"\b{_NUM}\s+(?:\w+\s+){{0,2}}(rooms?|kamr[aey]+|suites?)\b|(ایک|دو|تین|چار)\s+کمر", re.I)
+_NUMBER_WORDS = {"ek": 1, "aik": 1, "one": 1, "a": 1, "an": 1, "do": 2, "two": 2, "teen": 3, "three": 3,
+                 "char": 4, "chaar": 4, "four": 4, "paanch": 5, "panch": 5, "five": 5, "chhe": 6, "chay": 6, "che": 6,
+                 "six": 6, "saat": 7, "seven": 7, "aath": 8, "eight": 8, "nau": 9, "nine": 9, "das": 10, "ten": 10,
+                 "ایک": 1, "دو": 2, "تین": 3, "چار": 4, "پانچ": 5, "چھ": 6, "سات": 7, "آٹھ": 8, "نو": 9, "دس": 10}
+_NUM = r"(\d+|ek|aik|do|teen|char|chaar|paanch|panch|chhe|chay|che|saat|aath|nau|das|one|two|three|four|five|six|" \
+       r"seven|eight|nine|ten|a|an)"
+_UNUM = r"(\d+|ایک|دو|تین|چار|پانچ|چھ|سات|آٹھ|نو|دس)"
+# up to two words between the number and "room", but never a digit or a people word ("2 log 1 room" is 1 room)
+_MID = r"(?:(?!(?:log|bande|people|persons|adults|guests|ko|tak|se|to|tareekh|tarikh|jan|feb|mar|apr|may|jun|jul|" \
+       r"aug|sep|oct|nov|dec)\b)[a-z]+\s+){0,2}"  # "19 ko room" and "27 tak suite" are dates, not room counts
+_ROOM_COUNT = re.compile(rf"\b{_NUM}\s+{_MID}(rooms?|kamr[aey]+|suites?)\b|{_UNUM}\s+کمر", re.I)
+_ROOMS_STATED = _ROOM_COUNT
+_GUEST_COUNT = re.compile(rf"\b(\d+|ek|aik|do|teen|char|chaar|paanch|panch|chhe|chay|che|saat|aath|nau|das|one|two|three|"
+                          rf"four|five|six|seven|eight|nine|ten)\s*(log|logon|logo|lg|bande|banday|bnde|afraad|afrad|"
+                          rf"persons?|people|ppl|adults?|guests?|dost|friends)\b|{_UNUM}\s*(لوگ|افراد)", re.I)
+_KIDS = re.compile(r"bach|kid|child|infant|baby|بچ", re.I)
+
+
 _FAMILY_ROOM = re.compile(r"family\s*(room|suite)|فیملی\s*روم", re.I)
-_URDU_SCRIPT = re.compile(r"[\u0600-\u06FF]")
+_URDU_SCRIPT = re.compile(r"[؀-ۿ]")
+
+
+def _count(token: str) -> int:
+    t = token.lower()
+    return int(t) if t.isdigit() else _NUMBER_WORDS[t]
 
 
 def apply_text_rules(inq: Inquiry, message: str) -> Inquiry:
@@ -88,8 +109,17 @@ def apply_text_rules(inq: Inquiry, message: str) -> Inquiry:
     text = redact(message)
     if _URDU_SCRIPT.search(text):
         inq.language = "urdu_script"
-    if not _ROOMS_STATED.search(text):  # no room count written: rooms follow the head count, unknown if it is
+    # a head count written once, with no children mentioned ("chhe log" is 6, whatever the model read)
+    guests = {_count(m.group(1) or m.group(3)) for m in _GUEST_COUNT.finditer(text)}
+    if len(guests) == 1 and not _KIDS.search(text):
+        inq.guests = guests.pop()
+    rooms = {n for m in _ROOM_COUNT.finditer(text) if (n := _count(m.group(1) or m.group(3))) <= 20}
+    if len(rooms) == 1:  # a room count written once ("do kamray", "a double room") is the answer
+        inq.rooms = rooms.pop()
+    elif not rooms:  # no room count written: rooms follow the head count, unknown if it is
         inq.rooms = (1 if inq.guests <= 4 else math.ceil(inq.guests / 3)) if inq.guests else None
+    # Budget stays as the model read it: "8 hazar mein 2 din" is a total and "budget 6 hazar" a nightly rate,
+    # and a rule that undid divisions got the first one wrong on the training data.
     if inq.room_type == "family" and not _FAMILY_ROOM.search(text):
         inq.room_type = "suite" if re.search(r"suite", text, re.I) else "any"
     return inq
@@ -102,6 +132,8 @@ def apply_rules(raw: dict, message: str, today: date) -> Inquiry:
     check_in, nights = resolve(redact(message), today)
     if check_in:
         raw["check_in"] = check_in.isoformat()
+    elif names_no_date(redact(message), today):  # "kiraya kitna hai aaj kal?": "these days" is not a date
+        raw["check_in"] = None
     if nights:
         raw["nights"] = nights
     return apply_text_rules(normalise(raw, today), message)
