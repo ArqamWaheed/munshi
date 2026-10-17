@@ -182,6 +182,41 @@ def call_tinker(messages: list[dict], *, max_tokens: int = 256, model_path: str 
     return LLMResult(text, model, "tinker", latency, tin, tout, cost, cost)
 
 
+@lru_cache(maxsize=1)
+def tinker_base_sampler():
+    import tinker
+
+    return tinker.ServiceClient().create_sampling_client(base_model=cfg.TINKER_BASE_MODEL)
+
+
+def call_tinker_base(messages: list[dict], *, max_tokens: int = 256) -> LLMResult:
+    """The UNTUNED base model (eval baselines only), sampled exactly like the fine-tune: same chat template,
+    thinking off, temperature 0, same stop token. Uses Tinker's native sampler (the OpenAI endpoint needs a
+    tinker:// path). Tokens are counted with the same tokenizer; price = the base model's Tinker list price."""
+    import tinker
+
+    prefill_p, sample_p, _ = cfg.TINKER_PRICES[cfg.TINKER_BASE_MODEL]
+    label = cfg.TINKER_BASE_MODEL.split("/")[-1].lower() + "-base"
+    with chat_span(label, "tinker") as span:
+        tok = qwen_tokenizer()
+        prompt = tok.encode(render_prompt(messages), add_special_tokens=False)
+        t0 = time.perf_counter()
+        try:
+            res = tinker_base_sampler().sample(
+                prompt=tinker.ModelInput.from_ints(prompt), num_samples=1,
+                sampling_params=tinker.SamplingParams(max_tokens=max_tokens, temperature=0.0, stop=["<|im_end|>"])
+            ).result()
+        except Exception as e:  # noqa: BLE001
+            span.set_status("internal_error")
+            raise ProviderError(f"tinker-base: {e}") from e
+        latency = time.perf_counter() - t0
+        out = res.sequences[0].tokens
+        text = tok.decode(out, skip_special_tokens=True)
+        cost = (len(prompt) * prefill_p + len(out) * sample_p) / 1e6
+        record_usage(span, input_tokens=len(prompt), output_tokens=len(out), cost_usd=cost)
+    return LLMResult(text, label, "tinker", latency, len(prompt), len(out), cost, cost)
+
+
 _JSON_RE = re.compile(r"\{.*\}", re.S)
 
 

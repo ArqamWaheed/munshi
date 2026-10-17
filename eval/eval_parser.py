@@ -9,6 +9,11 @@ Metrics (all computed here, nothing hard-coded):
   * p50 / p90 latency (wall clock per request, from this machine in Pakistan)
   * cost per 1,000 messages: actual (Gemma free tier = $0) and at list price (Gemma: OpenRouter paid
     price; Tinker: prefill+sample price x measured tokens)
+Models: tinker (the fine-tune) against three baselines: gemma (Gemma 4 + the long SPEC_PROMPT, i.e. the
+teacher), base (untuned Qwen3.5-4B + the same short prompt the fine-tune uses: isolates the training) and
+base_spec (untuned Qwen3.5-4B + SPEC_PROMPT: "couldn't you just prompt it?"). A reply missing any schema key
+counts as invalid. Statistics: 95% bootstrap CIs (10,000 resamples of rows, seed 0) and exact two-sided
+McNemar tests on the same rows, tinker vs each baseline.
 Writes results/parser_eval.json and results/parser_eval.md. Uses data/eval.jsonl (copy the format
 of data/eval_template.jsonl; 60-100 hand-labelled, real where possible, NEVER from train.jsonl).
 Gemma is rate-limited to ~14 RPM, so 100 messages take ~7-8 min.
@@ -19,10 +24,13 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import statistics
 import time
 from datetime import date
 from pathlib import Path
+
+import numpy as np
 
 from munshi.llm import ProviderError, RateLimited
 from munshi.parser import parse_message
@@ -88,6 +96,57 @@ def summarise(rows: list[dict]) -> dict:
             "model": ok[0]["model"] if ok else None}
 
 
+def booking_ok(r: dict) -> bool:
+    return all(r["fields"][f] for f in BOOKING_FIELDS)
+
+
+def exact_ok(r: dict) -> bool:
+    return all(r["fields"].values())
+
+
+def bootstrap_ci(xs: list[bool], n_boot: int = 10_000, seed: int = 0) -> tuple[float, float]:
+    a = np.asarray(xs, dtype=float)
+    means = a[np.random.default_rng(seed).integers(0, len(a), (n_boot, len(a)))].mean(axis=1)
+    return float(np.percentile(means, 2.5)), float(np.percentile(means, 97.5))
+
+
+def mcnemar(a: list[bool], b: list[bool]) -> dict:
+    """Exact two-sided McNemar on paired outcomes: only rows where exactly one model is right count."""
+    only_a = sum(x and not y for x, y in zip(a, b))
+    only_b = sum(y and not x for x, y in zip(a, b))
+    n = only_a + only_b
+    p = min(1.0, 2 * sum(math.comb(n, k) for k in range(min(only_a, only_b) + 1)) / 2 ** n) if n else 1.0
+    return {"only_first": only_a, "only_second": only_b, "p": p}
+
+
+def stats(results: dict) -> dict:
+    out = {"ci": {}, "vs_tinker": {}}
+    for name, r in results.items():
+        out["ci"][name] = {k: bootstrap_ci([f(x) for x in r["rows"]]) for k, f in
+                           (("booking_exact", booking_ok), ("exact_match", exact_ok))}
+    if "tinker" in results:
+        t = results["tinker"]["rows"]
+        for name, r in results.items():
+            if name != "tinker":
+                out["vs_tinker"][name] = {k: mcnemar([f(x) for x in t], [f(x) for x in r["rows"]])
+                                          for k, f in (("booking_exact", booking_ok), ("exact_match", exact_ok))}
+    return out
+
+
+def stats_table(results: dict, st: dict) -> str:
+    rows = ["", "Booking exact match with 95% bootstrap CI:", "", "| Model | Booking exact | 95% CI |", "|---|---:|---|"]
+    for name, r in results.items():
+        lo, hi = st["ci"][name]["booking_exact"]
+        rows.append(f"| {name} | {fmt(r['overall']['booking_exact'], 1)} | {lo:.1%} to {hi:.1%} |")
+    if st["vs_tinker"]:
+        rows += ["", "Paired exact McNemar, fine-tune vs each baseline (same rows):", "",
+                 "| Comparison | Metric | Only fine-tune right | Only baseline right | p |", "|---|---|---:|---:|---:|"]
+        for name, by in st["vs_tinker"].items():
+            for metric, m in by.items():
+                rows.append(f"| tinker vs {name} | {metric} | {m['only_first']} | {m['only_second']} | {m['p']:.3g} |")
+    return "\n".join(rows) + "\n"
+
+
 def fmt(x, p=False):
     return "n/a" if x is None else (f"{x:.1%}" if p else f"{x:.4g}")
 
@@ -110,7 +169,8 @@ def table(results: dict) -> str:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--eval", default=str(ROOT / "data" / "eval.jsonl"))
-    ap.add_argument("--models", nargs="+", default=["gemma", "tinker"], choices=["gemma", "tinker"])
+    ap.add_argument("--models", nargs="+", default=["gemma", "base", "base_spec", "tinker"],
+                    choices=["gemma", "base", "base_spec", "tinker"])
     ap.add_argument("--limit", type=int)
     a = ap.parse_args()
     init_sentry("eval")
@@ -118,9 +178,10 @@ def main() -> None:
     results = {m: run_model(m, rows) for m in a.models}
     out = ROOT / "results"
     out.mkdir(exist_ok=True)
-    (out / "parser_eval.json").write_text(json.dumps({"eval_file": a.eval, "n": len(rows), "results": results},
-                                                     indent=2, default=str))
-    md = table(results)
+    st = stats(results)
+    (out / "parser_eval.json").write_text(json.dumps({"eval_file": a.eval, "n": len(rows), "results": results,
+                                                      "stats": st}, indent=2, default=str))
+    md = table(results) + stats_table(results, st)
     (out / "parser_eval.md").write_text(md)
     print(md)
 

@@ -7,8 +7,8 @@ from datetime import date, timedelta
 
 from pydantic import ValidationError
 
-from munshi.llm import LLMResult, call_gemma, call_tinker, extract_json
-from munshi.schema import Inquiry
+from munshi.llm import LLMResult, call_gemma, call_tinker, call_tinker_base, extract_json
+from munshi.schema import PARSED_FIELDS, Inquiry
 
 # Long spec for the zero-shot Gemma baseline and the teacher (the fine-tune learns it from data).
 SPEC_PROMPT = """You extract hotel booking requests from WhatsApp messages written in Roman Urdu, English or a mix.
@@ -47,8 +47,13 @@ def user_turn(message: str, today: date) -> str:
     return f"TODAY: {today.isoformat()} ({today.strftime('%A')})\nMESSAGE: {redact(message)}"
 
 
+# Providers: "tinker" = the fine-tune (production). Eval baselines: "gemma" = Gemma 4 + SPEC_PROMPT (the
+# teacher), "base" = untuned Qwen3.5-4B + SHORT_PROMPT, "base_spec" = untuned Qwen3.5-4B + SPEC_PROMPT.
+LONG_PROMPT_PROVIDERS = {"gemma", "base_spec"}
+
+
 def messages_for(provider: str, message: str, today: date) -> list[dict]:
-    system = SPEC_PROMPT if provider == "gemma" else SHORT_PROMPT
+    system = SPEC_PROMPT if provider in LONG_PROMPT_PROVIDERS else SHORT_PROMPT
     return [{"role": "system", "content": system}, {"role": "user", "content": user_turn(message, today)}]
 
 
@@ -69,10 +74,17 @@ class BadModelOutput(Exception):
 
 def parse_message(message: str, today: date, provider: str = "tinker") -> tuple[Inquiry, LLMResult]:
     msgs = messages_for(provider, message, today)
-    res = call_gemma(msgs, json_mode=True, max_tokens=300, temperature=0.0) if provider == "gemma" \
-        else call_tinker(msgs, max_tokens=200)
+    if provider == "gemma":
+        res = call_gemma(msgs, json_mode=True, max_tokens=300, temperature=0.0)
+    elif provider in ("base", "base_spec"):
+        res = call_tinker_base(msgs, max_tokens=300)
+    else:
+        res = call_tinker(msgs, max_tokens=200)
     try:
-        return normalise(extract_json(res.text), today), res
+        raw = extract_json(res.text)
+        if missing := [f for f in PARSED_FIELDS if f not in raw]:  # its own schema, not ours: not "valid"
+            raise ValueError(f"missing keys {missing}")
+        return normalise(raw, today), res
     except (ValueError, ValidationError, json.JSONDecodeError) as e:
         raise BadModelOutput(f"{provider}: {e}") from e
 
