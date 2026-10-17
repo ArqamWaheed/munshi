@@ -34,7 +34,8 @@ import numpy as np
 
 from munshi import config as cfg
 from munshi.llm import ProviderError, RateLimited
-from munshi.parser import parse_message
+from munshi.llm import extract_json
+from munshi.parser import apply_rules, parse_message
 from munshi.schema import PARSED_FIELDS, Inquiry
 from munshi.tracing import init_sentry
 
@@ -75,6 +76,30 @@ def run_model(provider: str, rows: list[dict]) -> dict:
         per_row.append(rec)
         print(provider, rec["id"], "OK" if rec["ok"] else "FAIL", sum(rec["fields"].values()), "/", len(PARSED_FIELDS))
     return {"rows": per_row, **summarise(per_row)}
+
+
+def rescore(results: dict, rows: list[dict]) -> dict:
+    """Re-apply the CURRENT code rules to each model's stored raw output (no model calls; latency and cost are
+    kept from the run that produced them). Rows without a stored raw output are kept as they were."""
+    by_id = {r.get("id"): r for r in rows}
+    for name, res in results.items():
+        for rec in res["rows"]:
+            if not rec.get("raw"):
+                continue
+            r = by_id[rec["id"]]
+            today, gold = date.fromisoformat(r["today"]), Inquiry.model_validate(r["label"])
+            gold = Inquiry.model_validate(r["label"])
+            try:
+                raw = extract_json(rec["raw"])
+                if any(f not in raw for f in PARSED_FIELDS):
+                    raise ValueError("missing keys")
+                pred = apply_rules(raw, r["message"], today)
+            except Exception:  # noqa: BLE001
+                pred = None
+            rec["pred"] = pred.model_dump(mode="json") if pred else None
+            rec["fields"] = {f: (pred is not None and getattr(pred, f) == getattr(gold, f)) for f in PARSED_FIELDS}
+        results[name] = {"rows": res["rows"], **summarise(res["rows"])}
+    return results
 
 
 def summarise(rows: list[dict]) -> dict:
@@ -171,18 +196,21 @@ def table(results: dict) -> str:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--eval", default=str(ROOT / "data" / "eval.jsonl"))
-    ap.add_argument("--models", nargs="+", default=["gemma", "base", "base_spec", "tinker"],
+    ap.add_argument("--models", nargs="*", default=["gemma", "base", "base_spec", "tinker"],
                     choices=["gemma", "base", "base_spec", "tinker"])
     ap.add_argument("--limit", type=int)
     ap.add_argument("--tinker-path", help="evaluate this tinker:// sampler path instead of TINKER_MODEL_PATH")
     ap.add_argument("--out", default="parser_eval", help="output file stem under results/")
     ap.add_argument("--reuse", help="results JSON from an earlier run: its models are kept, not re-run")
+    ap.add_argument("--rescore", action="store_true", help="re-apply the current rules to reused raw outputs")
     a = ap.parse_args()
     init_sentry("eval")
     if a.tinker_path:
         cfg.TINKER_MODEL_PATH = a.tinker_path
     rows = [json.loads(ln) for ln in Path(a.eval).read_text(encoding="utf-8").splitlines() if ln.strip()][: a.limit]
     results = json.loads(Path(a.reuse).read_text())["results"] if a.reuse else {}
+    if a.rescore:
+        results = rescore(results, rows)
     for m in a.models:
         results[m] = run_model(m, rows)
     out = ROOT / "results"
