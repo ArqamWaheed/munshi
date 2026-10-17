@@ -6,8 +6,32 @@ from parsed fields only → a **Temporal** `RoomHoldWorkflow` holds the room for
 waits for a `deposit_received` signal, then confirms or releases. A Temporal Schedule writes the owner's morning
 brief. **Sentry** traces every model and tool call.
 
-Skeleton status: imports, the Temporal workflows (with mocked model calls), the LR/HGB risk baselines and the
-UI page were run locally on 2026-10-16. Everything that needs an API key is marked `TODO` and has **not** run yet.
+Rule of the codebase: **models read and write, code decides.** Dates, counts, the advance, the hold time and every
+number in a reply are computed or checked in plain Python (`munshi/dates.py`, `parser.apply_rules`, `policy.py`,
+`reply.check_draft`). Demo (57 s, no narration): [docs/demo.mp4](docs/demo.mp4). Brand kit: [DESIGN.md](DESIGN.md).
+
+## Results (every number is a file in `results/` or `evidence/`)
+
+Parser, booking fields exactly right (all fields but `language`):
+
+| Parser | Run 1, no rules | + dates in code | + counts in code | Fresh 30, rules frozen, run once |
+|---|---:|---:|---:|---:|
+| **Qwen3.5-4B + Munshi LoRA**, 68-token prompt | 75.0% | 86.2% | **95.0%** | **30 / 30** |
+| Gemma 4 + 532-token rulebook (the teacher) | 87.5% | n/a | 98.8% | 29 / 30 |
+| Qwen3.5-4B untuned + rulebook | 68.8% | 81.2% | 87.5% | 27 / 30 |
+
+The counting rules were found on the 80-message set, so run 3 is tuned; `data/eval_fresh.jsonl` was committed
+before any model saw it. Fine-tune vs Gemma: 0/3 discordant on the 80 (p = 0.25), 1/0 on the fresh 30 (p = 1),
+a tie. Files: `parser_eval.json` (run 1), `parser_eval_r2_tinker_side.json`, `parser_eval_r3.json`, `parser_eval_fresh.json`.
+
+- **Risk (TabPFN-3.5, 300 training bookings, 2,000 held out):** AUC 0.830 vs 0.806 / 0.789 for the baselines, ahead
+  on 10 of 10 seeds; the high band predicts 82% cancels and 81% cancel. Tiered advances keep 37.7% of cancelled
+  value vs 30.0% flat while asking 26.9% of guests who came. `risk_eval.md`, `risk_policy.md`.
+- **Replies:** 70 Gemma quotes, 70 passed `check_draft()` with no invented or missing number. `reply_eval.md`.
+- **Durability:** worker and Temporal server SIGKILLed mid-hold; the hold timer fired 0.1 s after the server came
+  back and no activity ran twice. Chaos run: 5 / 5 holds completed, 11 of 25 activities retried. `temporal_drills.md`.
+- **Cost:** each training run billed $0.29 on Tinker (387,659 tokens); the whole project, evals and storage included,
+  $0.66.
 
 ## 1. Python env (about 0.9 GB, no torch)
 Python 3.11 or newer is required (tinker needs >=3.11).
