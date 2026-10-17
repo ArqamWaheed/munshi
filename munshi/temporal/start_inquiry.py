@@ -3,6 +3,7 @@
   python -m munshi.temporal.start_inquiry start --message "kal 2 log 1 room, rate?" --demo-speed 60
   python -m munshi.temporal.start_inquiry start --file whatsapp_export.txt
   python -m munshi.temporal.start_inquiry deposit --id hold-ab12cd --amount 5000 --ref JC-123
+  python -m munshi.temporal.start_inquiry reply --id hold-ab12cd --text "kal se 2 raat"
   python -m munshi.temporal.start_inquiry status --id hold-ab12cd
 """
 from __future__ import annotations
@@ -10,14 +11,15 @@ from __future__ import annotations
 import argparse
 import asyncio
 import uuid
+from datetime import timedelta
 
 import sentry_sdk
 
 from munshi import config as cfg
-from munshi.schema import DepositInfo, GuestContext, HoldInput, HoldPolicy, HoldStatus
+from munshi.schema import Brief, BriefInput, DepositInfo, GuestContext, GuestReply, HoldInput, HoldPolicy, HoldStatus
 from munshi.temporal.activities import dumps, pkt_today
 from munshi.temporal.worker import connect
-from munshi.temporal.workflows import RoomHoldWorkflow
+from munshi.temporal.workflows import NightlyBriefWorkflow, RoomHoldWorkflow
 from munshi.tracing import current_trace_headers, init_sentry
 
 
@@ -39,9 +41,43 @@ async def send_deposit(client, wf_id: str, amount: int, ref: str | None = None) 
                                                    DepositInfo(amount_pkr=amount, reference=ref))
 
 
+async def send_reply(client, wf_id: str, text: str) -> None:
+    await client.get_workflow_handle(wf_id).signal(RoomHoldWorkflow.guest_reply, GuestReply(text=text))
+
+
 async def get_status(client, wf_id: str) -> HoldStatus:
     # typed handle so the pydantic converter returns HoldStatus, not a dict
-    return await client.get_workflow_handle_for(RoomHoldWorkflow.run, wf_id).query(RoomHoldWorkflow.get_status)
+    return await client.get_workflow_handle_for(RoomHoldWorkflow.run, wf_id).query(
+        RoomHoldWorkflow.get_status, rpc_timeout=timedelta(seconds=5))
+
+
+async def list_holds(client, limit: int = 20) -> list[dict]:
+    """Most recent holds, newest first, each with its live status (queries need the worker to be up)."""
+    execs = []
+    async for wf in client.list_workflows("WorkflowType='RoomHoldWorkflow'", limit=limit):
+        execs.append(wf)
+
+    async def row(wf) -> dict:
+        out = {"workflow_id": wf.id, "started": wf.start_time.isoformat(), "temporal_status": wf.status.name}
+        try:
+            st = await get_status(client, wf.id)
+            out |= {"stage": st.stage, "outcome": st.outcome,
+                    "check_in": str(st.parsed.check_in) if st.parsed and st.parsed.check_in else None,
+                    "total_pkr": st.quote.total_pkr if st.quote else None}
+        except Exception:  # noqa: BLE001 (worker down / still starting): list it without the details
+            pass
+        return out
+
+    rows = await asyncio.gather(*(row(wf) for wf in execs))
+    return sorted(rows, key=lambda r: r["started"], reverse=True)
+
+
+async def run_brief(client) -> Brief:
+    """Run the nightly brief now (same workflow the 06:15 Schedule starts) and wait for it."""
+    return await client.execute_workflow(
+        NightlyBriefWorkflow.run, BriefInput(policy=HoldPolicy(base_rate_pkr=cfg.BASE_RATE_PKR),
+                                             hotel_name=cfg.HOTEL_NAME),
+        id=f"brief-{uuid.uuid4().hex[:8]}", task_queue=cfg.TASK_QUEUE, execution_timeout=timedelta(minutes=10))
 
 
 async def main() -> None:
@@ -56,8 +92,12 @@ async def main() -> None:
     d.add_argument("--id", required=True)
     d.add_argument("--amount", type=int, required=True)
     d.add_argument("--ref")
+    r = sub.add_parser("reply")
+    r.add_argument("--id", required=True)
+    r.add_argument("--text", required=True)
     q = sub.add_parser("status")
     q.add_argument("--id", required=True)
+    sub.add_parser("list")
     a = ap.parse_args()
     client = await connect()
     if a.cmd == "start":
@@ -66,6 +106,11 @@ async def main() -> None:
     elif a.cmd == "deposit":
         await send_deposit(client, a.id, a.amount, a.ref)
         print("signal sent")
+    elif a.cmd == "reply":
+        await send_reply(client, a.id, a.text)
+        print("signal sent")
+    elif a.cmd == "list":
+        print(dumps(await list_holds(client)))
     else:
         print(dumps((await get_status(client, a.id)).model_dump(mode="json")))
     sentry_sdk.flush()
