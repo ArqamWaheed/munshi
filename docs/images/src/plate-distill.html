@@ -1,0 +1,21 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="brand.css"><style>
+h1{font-size:80px;white-space:nowrap}
+.sub{font-size:28px;margin-top:14px}
+table{position:absolute;left:88px;right:88px;top:300px;width:1424px;border-collapse:collapse}
+th{font-weight:600;font-size:24px;color:var(--muted);text-align:right;padding:0 22px 20px;line-height:1.25;vertical-align:bottom}
+th.code{color:var(--signal)}
+th:first-child,td:first-child{text-align:left}
+td{padding:24px 22px;border-top:2px solid var(--line);font-size:28px}
+td b{display:block;font-weight:700} td span{font-size:20px}
+td.n{text-align:right;font-family:"JetBrains Mono",monospace;font-size:38px}
+tr.ft td{background:var(--night2)}
+td.hi{background:var(--red)!important;font-weight:700}
+</style></head><body><div class="page">
+<h1 class="disp">The student lost. Then code did the counting.</h1>
+<div class="sub muted">Booking fields exactly right. 80 hand-labelled messages, then 30 written after the rules froze.</div>
+<table>
+<tr><th>Parser</th><th>Run 1<br>no rules</th><th class="code">Run 2<br>+ dates in code</th><th class="code">Run 3<br>+ counts in code</th><th class="code">Fresh 30<br>rules frozen, run once</th></tr>
+<tr class="ft"><td><b>Qwen3.5-4B + Munshi LoRA</b><span class="muted">68-token prompt</span></td><td class="n">75.0%</td><td class="n">86.2%</td><td class="n hi">95.0%</td><td class="n hi">30 / 30</td></tr><tr class=""><td><b>Gemma 4, the teacher</b><span class="muted">532-token rulebook</span></td><td class="n">87.5%</td><td class="n">n/a</td><td class="n">98.8%</td><td class="n">29 / 30</td></tr><tr class=""><td><b>Qwen3.5-4B, untuned</b><span class="muted">532-token rulebook</span></td><td class="n">68.8%</td><td class="n">81.2%</td><td class="n">87.5%</td><td class="n">27 / 30</td></tr>
+</table>
+<div class="foot">Models read. Code decides.</div>
+</div></body></html>
