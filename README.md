@@ -4,26 +4,10 @@ One inquiry: WhatsApp text → **fine-tuned Qwen3.5-4B on Tinker** parses it to 
 P(cancel/no-show) → **SerpApi Google Hotels** fetches nearby nightly rates (PKR, cached) → **Gemma 4** drafts the reply
 from parsed fields only → a **Temporal** `RoomHoldWorkflow` holds the room for a time that depends on the risk score,
 waits for a `deposit_received` signal, then confirms or releases. A Temporal Schedule writes the owner's morning
-brief. **Sentry** traces every model and tool call. **Entire** captures the coding-agent sessions that built it.
+brief. **Sentry** traces every model and tool call.
 
 Skeleton status: imports, the Temporal workflows (with mocked model calls), the LR/HGB risk baselines and the
 UI page were run locally on 2026-10-16. Everything that needs an API key is marked `TODO` and has **not** run yet.
-
-## 0. Before writing any code: Entire
-Entire records only sessions that happen after it is enabled.
-```powershell
-# Windows (PowerShell 5.1+)
-irm https://entire.io/install.ps1 | iex      # restart the terminal afterwards
-```
-```bash
-# Linux / WSL
-curl -fsSL https://entire.io/install.sh | bash
-```
-```bash
-git init munshi && cd munshi          # copy this skeleton in, then:
-entire enable -y --agent claude-code  # or codex / cursor / copilot-cli / opencode ...
-entire login                          # needed for entire.io and `entire search`
-```
 
 ## 1. Python env (about 0.9 GB, no torch)
 Python 3.11 or newer is required (tinker needs >=3.11).
