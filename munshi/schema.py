@@ -46,6 +46,8 @@ class HoldPolicy(BaseModel):
     hours_low: float = 12.0
     hours_mid: float = 6.0
     hours_high: float = 2.0
+    hours_clarify: float = 24.0  # how long to wait for the guest to answer a clarification question
+    max_clarify_rounds: int = 2
     advance_low: float = 0.20
     advance_mid: float = 0.30
     advance_high: float = 0.50
@@ -127,8 +129,12 @@ class DraftOutput(Attempted):
 
 
 class DepositInfo(BaseModel):
-    amount_pkr: int = 0
+    amount_pkr: int = Field(default=0, ge=0)
     reference: str | None = None
+
+
+class GuestReply(BaseModel):
+    text: str
 
 
 class HoldInput(Traced):
@@ -151,7 +157,11 @@ class HoldStatus(BaseModel):
     quote: Quote | None = None
     draft: str | None = None
     hold_expires_at: datetime | None = None
-    deposit: DepositInfo | None = None
+    guest_message: str = ""  # local owner view only (Temporal history has it anyway); never sent to Gemma
+    questions: list[str] = Field(default_factory=list)  # clarification questions asked, in order
+    guest_replies: list[str] = Field(default_factory=list)
+    reply_expires_at: datetime | None = None  # while waiting for the guest to answer a clarification
+    deposit: DepositInfo | None = None  # running total of all deposit signals; confirms once >= advance
     followup: str | None = None
     attempts: dict[str, int] = Field(default_factory=dict)
 
@@ -180,6 +190,7 @@ class RescoreInput(Traced):
     bookings: list[Booking]
     today: date
     policy: HoldPolicy = Field(default_factory=HoldPolicy)
+    prefer: Literal["tabpfn", "logreg"] = "tabpfn"
 
 
 class BriefInput(BaseModel):
