@@ -21,7 +21,7 @@ import time
 from datetime import date
 from pathlib import Path
 
-from munshi.llm import RateLimited
+from munshi.llm import ProviderError, RateLimited
 from munshi.parser import parse_message
 from munshi.schema import PARSED_FIELDS, Inquiry
 from munshi.tracing import init_sentry
@@ -49,11 +49,13 @@ def run_model(provider: str, rows: list[dict]) -> dict:
                 break
             except RateLimited as e:
                 time.sleep(e.retry_after_s)
+            except ProviderError:  # upstream 5xx/timeout is not the model's answer: retry, don't score it wrong
+                time.sleep(5)
             except Exception as e:  # noqa: BLE001  (invalid output counts as wrong)
                 pred, rec = None, {"ok": False, "error": str(e)[:200]}
                 break
         else:
-            pred, rec = None, {"ok": False, "error": "rate limited 5x"}
+            pred, rec = None, {"ok": False, "error": "rate limited / upstream error 5x"}
         rec["id"], rec["ru"] = r.get("id"), gold.language in RU
         rec["fields"] = {f: (pred is not None and getattr(pred, f) == getattr(gold, f)) for f in PARSED_FIELDS}
         per_row.append(rec)
