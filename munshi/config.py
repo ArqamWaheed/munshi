@@ -60,7 +60,7 @@ HOTEL_NAME = os.getenv("HOTEL_NAME", "Hotel Demo Murree")
 BASE_RATE_PKR = int(os.getenv("BASE_RATE_PKR", "8000"))
 FLOOR_RATE_PKR = int(os.getenv("FLOOR_RATE_PKR", "5000"))
 DEMO_SPEED = _f("DEMO_SPEED", 1.0)  # 60 => a 2 h hold expires in 2 min
-BOOKINGS_LOG = ROOT / "data" / "bookings.jsonl"
+BOOKINGS_LOG = Path(os.getenv("MUNSHI_BOOKINGS_LOG", ROOT / "data" / "bookings.jsonl"))  # drills use their own
 BRIEFS_DIR = ROOT / "results" / "briefs"
 
 # --- Temporal (local dev server) ---

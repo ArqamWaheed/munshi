@@ -29,6 +29,8 @@ from pathlib import Path
 
 PORT, UI_PORT = 7243, 8243
 os.environ["TEMPORAL_ADDRESS"] = f"localhost:{PORT}"  # before munshi.config is imported
+# Drill bookings must not land in the hotel's real register (they did, in the first runs).
+os.environ["MUNSHI_BOOKINGS_LOG"] = str(Path(__file__).resolve().parent.parent / "results" / "drills" / "bookings.jsonl")
 
 from temporalio.api.enums.v1 import EventType  # noqa: E402
 
