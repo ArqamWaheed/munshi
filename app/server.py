@@ -219,6 +219,7 @@ function actions(s){  // rebuilt only when what they act on changes, so typing i
  const text=s.followup||(s.quote?s.draft:s.questions.at(-1)),key=[s.stage,s.outcome,text].join('|');
  if(view.actions.dataset.key===key)return;view.actions.dataset.key=key;const act=[];
  if(text)act.push(copyBtn(text));
+ if(s.quote&&!s.followup)act.push(el('span','muted','Munshi cannot see your room inventory: check the room is free before sending.'));
  if(s.stage==='awaiting guest reply'){const inp=el('input');inp.placeholder="Guest's answer, e.g. 'kal se 2 raat'";inp.style.flex='1';
   const b=el('button',null,'Send guest reply');b.onclick=async()=>{if(!inp.value)return;b.disabled=true;
    try{await api('/api/inquiries/'+id+'/reply',{text:inp.value});poll()}catch(e){b.disabled=false;view.depErr.textContent=e.message}};
