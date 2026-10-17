@@ -3,6 +3,9 @@
 Metrics (all computed here, nothing hard-coded):
   * field accuracy per field + exact-match rate, overall and on the Roman-Urdu slice
     (label.language in {roman_urdu, mixed}); invalid JSON counts as all-fields-wrong
+  * booking exact match: every parsed field except `language`. The roman_urdu/mixed boundary is an eval
+    convention the teacher's SPEC_PROMPT never stated (data/seed_templates.md), and it only picks the
+    reply style. Decided before any parser results existed; full exact match is still reported.
   * p50 / p90 latency (wall clock per request, from this machine in Pakistan)
   * cost per 1,000 messages: actual (Gemma free tier = $0) and at list price (Gemma: OpenRouter paid
     price; Tinker: prefill+sample price x measured tokens)
@@ -28,6 +31,7 @@ from munshi.tracing import init_sentry
 
 ROOT = Path(__file__).resolve().parent.parent
 RU = {"roman_urdu", "mixed"}
+BOOKING_FIELDS = tuple(f for f in PARSED_FIELDS if f != "language")
 
 
 def pct(xs: list[float], q: float) -> float | None:
@@ -69,6 +73,7 @@ def summarise(rows: list[dict]) -> dict:
             return None
         return {"n": len(sub),
                 "exact_match": sum(all(r["fields"].values()) for r in sub) / len(sub),
+                "booking_exact": sum(all(r["fields"][f] for f in BOOKING_FIELDS) for r in sub) / len(sub),
                 "field_acc_mean": statistics.mean(sum(r["fields"].values()) / len(PARSED_FIELDS) for r in sub),
                 "per_field": {f: sum(r["fields"][f] for r in sub) / len(sub) for f in PARSED_FIELDS},
                 "valid_json": sum(r["ok"] for r in sub) / len(sub)}
@@ -88,12 +93,12 @@ def fmt(x, p=False):
 
 
 def table(results: dict) -> str:
-    rows = ["| Model | N | Exact match | Mean field acc | Roman-Urdu exact | Valid JSON | p50 s | p90 s | $/1k actual | $/1k list |",
-            "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|"]
+    rows = ["| Model | N | Booking exact | Exact match | Mean field acc | Roman-Urdu booking exact | Valid JSON | p50 s | "
+            "p90 s | $/1k actual | $/1k list |", "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|"]
     for name, r in results.items():
         o, ru = r["overall"], r["roman_urdu"] or {}
-        rows.append(f"| {name} ({r['model']}) | {o['n']} | {fmt(o['exact_match'], 1)} | {fmt(o['field_acc_mean'], 1)} | "
-                    f"{fmt(ru.get('exact_match'), 1)} | {fmt(o['valid_json'], 1)} | {fmt(r['latency_p50_s'])} | "
+        rows.append(f"| {name} ({r['model']}) | {o['n']} | {fmt(o['booking_exact'], 1)} | {fmt(o['exact_match'], 1)} | "
+                    f"{fmt(o['field_acc_mean'], 1)} | {fmt(ru.get('booking_exact'), 1)} | {fmt(o['valid_json'], 1)} | {fmt(r['latency_p50_s'])} | "
                     f"{fmt(r['latency_p90_s'])} | {fmt(r['cost_per_1k_usd'])} | {fmt(r['list_cost_per_1k_usd'])} |")
     rows += ["", "Per-field accuracy:", "", "| Field | " + " | ".join(results) + " |",
              "|---|" + "---:|" * len(results)]
