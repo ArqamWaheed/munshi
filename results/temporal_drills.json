@@ -1,0 +1,215 @@
+{
+  "provider": "tinker",
+  "run_at": "2026-10-17T16:37:53.604310+00:00",
+  "worker_kill": {
+    "workflow_id": "hold-af1fc9a6",
+    "outcome": "confirmed",
+    "rows": [
+      [
+        -0.3,
+        "[drill] Temporal server accepting client connections"
+      ],
+      [
+        -0.3,
+        "[drill] worker #1 started (pid 88680)"
+      ],
+      [
+        0.0,
+        "workflow started"
+      ],
+      [
+        0.1,
+        "[drill] hold hold-af1fc9a6 started"
+      ],
+      [
+        9.7,
+        "scheduled parse_inquiry"
+      ],
+      [
+        19.0,
+        "completed parse_inquiry"
+      ],
+      [
+        19.0,
+        "scheduled score_risk"
+      ],
+      [
+        19.0,
+        "scheduled fetch_comps"
+      ],
+      [
+        19.0,
+        "completed fetch_comps"
+      ],
+      [
+        21.0,
+        "completed score_risk"
+      ],
+      [
+        21.3,
+        "scheduled draft_reply"
+      ],
+      [
+        24.1,
+        "completed draft_reply"
+      ],
+      [
+        24.1,
+        "durable timer started (720 s)"
+      ],
+      [
+        24.4,
+        "[drill] worker #1 SIGKILLed"
+      ],
+      [
+        32.4,
+        "signal deposit_received recorded"
+      ],
+      [
+        32.4,
+        "[drill] deposit Rs 3,500 signalled while no worker is running"
+      ],
+      [
+        40.5,
+        "[drill] worker #2 started (pid 88796)"
+      ],
+      [
+        55.2,
+        "scheduled record_booking"
+      ],
+      [
+        55.2,
+        "completed record_booking"
+      ],
+      [
+        55.3,
+        "scheduled draft_reply"
+      ],
+      [
+        57.7,
+        "completed draft_reply"
+      ],
+      [
+        57.7,
+        "workflow COMPLETED"
+      ]
+    ],
+    "activities_scheduled": 6,
+    "activities_completed": 6,
+    "completed_twice": 0,
+    "retried": {}
+  },
+  "full_stack": {
+    "workflow_id": "hold-9277e22e",
+    "outcome": "released",
+    "timer_late_s": 15.1,
+    "rows": [
+      [
+        -0.0,
+        "[drill] worker #3 started (pid 88867)"
+      ],
+      [
+        0.0,
+        "workflow started"
+      ],
+      [
+        0.0,
+        "[drill] hold hold-9277e22e started"
+      ],
+      [
+        14.5,
+        "scheduled parse_inquiry"
+      ],
+      [
+        23.4,
+        "completed parse_inquiry"
+      ],
+      [
+        23.4,
+        "scheduled score_risk"
+      ],
+      [
+        23.4,
+        "scheduled fetch_comps"
+      ],
+      [
+        23.4,
+        "completed fetch_comps"
+      ],
+      [
+        30.9,
+        "completed score_risk"
+      ],
+      [
+        31.0,
+        "scheduled draft_reply"
+      ],
+      [
+        40.3,
+        "completed draft_reply (attempt 2)"
+      ],
+      [
+        40.3,
+        "durable timer started (72 s)"
+      ],
+      [
+        40.6,
+        "[drill] worker #3 SIGKILLed"
+      ],
+      [
+        40.7,
+        "[drill] Temporal server SIGKILLed"
+      ],
+      [
+        127.3,
+        "[drill] hold deadline passed 15 s ago with everything down"
+      ],
+      [
+        127.3,
+        "[drill] Temporal server process started (pid 89432)"
+      ],
+      [
+        127.4,
+        "durable timer FIRED"
+      ],
+      [
+        127.6,
+        "[drill] Temporal server accepting client connections"
+      ],
+      [
+        127.6,
+        "[drill] worker #4 started (pid 89451)"
+      ],
+      [
+        135.0,
+        "scheduled draft_reply"
+      ],
+      [
+        137.8,
+        "completed draft_reply"
+      ],
+      [
+        137.8,
+        "workflow COMPLETED"
+      ]
+    ],
+    "activities_scheduled": 5,
+    "activities_completed": 5,
+    "completed_twice": 0,
+    "retried": {}
+  },
+  "chaos": {
+    "n": 5,
+    "completed": 5,
+    "outcomes": [
+      "released",
+      "released",
+      "released",
+      "released",
+      "released"
+    ],
+    "activities": 25,
+    "retried_activities": 11,
+    "template_fallbacks": 0
+  }
+}
