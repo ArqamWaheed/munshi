@@ -2,56 +2,50 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
 <style>
 
-@font-face{font-family:"Cormorant Garamond";src:url(assets/fonts/cormorant-garamond-latin-400-normal.woff2) format("woff2");font-weight:400}
-@font-face{font-family:"Cormorant Garamond";src:url(assets/fonts/cormorant-garamond-latin-700-normal.woff2) format("woff2");font-weight:700}
-@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400}
-@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-600-normal.woff2) format("woff2");font-weight:600}
-@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-700-normal.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"Big Shoulders Display";src:url(assets/fonts/big-shoulders-display-latin-600-normal.woff2) format("woff2");font-weight:600}
+@font-face{font-family:"Big Shoulders Display";src:url(assets/fonts/big-shoulders-display-latin-800-normal.woff2) format("woff2");font-weight:800}
+@font-face{font-family:"Schibsted Grotesk";src:url(assets/fonts/schibsted-grotesk-latin-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"Schibsted Grotesk";src:url(assets/fonts/schibsted-grotesk-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic}
+@font-face{font-family:"Schibsted Grotesk";src:url(assets/fonts/schibsted-grotesk-latin-600-normal.woff2) format("woff2");font-weight:600}
+@font-face{font-family:"Schibsted Grotesk";src:url(assets/fonts/schibsted-grotesk-latin-700-normal.woff2) format("woff2");font-weight:700}
 @font-face{font-family:"JetBrains Mono";src:url(assets/fonts/JetBrainsMono-400.woff2) format("woff2");font-weight:400}
 @font-face{font-family:"JetBrains Mono";src:url(assets/fonts/JetBrainsMono-700.woff2) format("woff2");font-weight:700}
-@font-face{font-family:"Caveat";src:url(assets/fonts/caveat-latin-700-normal.woff2) format("woff2");font-weight:700}
 
-#root{position:absolute;inset:0;overflow:hidden;font-family:"Inter",sans-serif;color:#0D5C52}
-.f08-we-killed-the-server-bg{position:absolute;inset:0;background:#F4EDE0}
-.f08-we-killed-the-server-lines{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0 51px,rgba(13,92,82,.07) 51px 52px)}
-.f08-we-killed-the-server-margin{position:absolute;top:0;bottom:0;left:112px;width:2px;background:rgba(162,59,42,.35)}
-.f08-we-killed-the-server-bloom{position:absolute;left:55%;top:50%;width:1400px;height:1400px;margin-left:calc(1400px / -2);margin-top:calc(1400px / -2);
-  border-radius:50%;background:radial-gradient(circle,rgba(227,162,26,.42) 0%,rgba(244,217,159,.34) 34%,rgba(240,202,124,.12) 58%,transparent 72%)}
+#root{position:absolute;inset:0;overflow:hidden;font-family:"Schibsted Grotesk",sans-serif;color:#EDEFF3}
+.f08-we-killed-the-server-bg{position:absolute;inset:0;background:#11162A}
 .f08-we-killed-the-server-abs{position:absolute}
-.f08-we-killed-the-server-serif{font-family:"Cormorant Garamond",serif;font-weight:400;letter-spacing:-.01em}
+.f08-we-killed-the-server-disp{font-family:"Big Shoulders Display",sans-serif;font-weight:800;letter-spacing:-.005em;line-height:1}
 .f08-we-killed-the-server-mono{font-family:"JetBrains Mono",monospace}
-.f08-we-killed-the-server-hand{font-family:"Caveat",cursive;font-weight:700;color:#A23B2A}
-.f08-we-killed-the-server-kicker{font-family:"JetBrains Mono",monospace;font-size:22px;letter-spacing:.22em;text-transform:uppercase;opacity:.8}
+.f08-we-killed-the-server-note{font-style:italic;font-weight:400;color:#F06A5F}
+.f08-we-killed-the-server-cap{font-size:30px;font-weight:600;color:#9AA2C2}
 
-.f08-we-killed-the-server-h{left:0;right:0;top:330px;text-align:center;font-size:130px}
-.f08-we-killed-the-server-dark{position:absolute;inset:0;background:#1D1B18}
-.f08-we-killed-the-server-kill{left:0;right:0;top:470px;text-align:center;font-size:40px;color:#E06A55;letter-spacing:.08em}
-.f08-we-killed-the-server-card{left:160px;top:250px;width:1600px;border:2px solid #0D5C52;border-radius:16px;overflow:hidden;background:#111}
+.f08-we-killed-the-server-h{left:0;right:0;top:330px;text-align:center;font-size:160px}
+.f08-we-killed-the-server-alarm{position:absolute;inset:0;background:#C4302F}
+.f08-we-killed-the-server-kill{left:0;right:0;top:520px;text-align:center;font-size:40px;letter-spacing:.06em}
+.f08-we-killed-the-server-card{left:160px;top:250px;width:1600px;border:2px solid #2E3760;border-radius:12px;overflow:hidden;background:#1B2240}
 .f08-we-killed-the-server-card img{display:block;width:100%}
-.f08-we-killed-the-server-k2{left:160px;top:180px}
-.f08-we-killed-the-server-head{left:160px;top:96px;font-size:66px}
-.f08-we-killed-the-server-play{left:0;top:236px;width:4px;height:320px;background:#E3A21A;box-shadow:0 0 0 2px rgba(227,162,26,.25)}
-.f08-we-killed-the-server-dot{left:-11px;top:-14px;width:26px;height:26px;border-radius:50%;background:#E3A21A}
+.f08-we-killed-the-server-k2{left:160px;top:184px}
+.f08-we-killed-the-server-head{left:160px;top:80px;font-size:100px}
+.f08-we-killed-the-server-play{left:0;top:236px;width:4px;height:320px;background:#C4302F}
+.f08-we-killed-the-server-dot{left:-11px;top:-14px;width:26px;height:26px;border-radius:50%;background:#C4302F}
 .f08-we-killed-the-server-dead{left:640px;top:600px;font-size:48px}
-.f08-we-killed-the-server-c{left:160px;font-size:36px;display:flex;gap:18px;align-items:center}
-.f08-we-killed-the-server-c i{display:inline-block;width:16px;height:16px;border-radius:50%;background:#E3A21A}
+.f08-we-killed-the-server-c{left:160px;font-size:36px;display:flex;gap:22px;align-items:center}
+.f08-we-killed-the-server-c i{display:inline-block;width:22px;height:6px;background:#C4302F}
 
 </style>
-<div data-hf-id="hf-b5rq" id="root" data-composition-id="08-we-killed-the-server" data-width="1920" data-height="1080">
-  <div data-hf-id="hf-082z" class="clip f08-we-killed-the-server-bg" id="f08-we-killed-the-server-bg" data-start="0" data-duration="7" data-track-index="0">
-    <div data-hf-id="hf-n849" class="f08-we-killed-the-server-lines"></div><div data-hf-id="hf-udn6" class="f08-we-killed-the-server-margin"></div><div data-hf-id="hf-3p9y" class="f08-we-killed-the-server-bloom" id="f08-we-killed-the-server-bloom"></div>
-  </div>
+<div id="root" data-composition-id="08-we-killed-the-server" data-width="1920" data-height="1080">
+  <div class="clip f08-we-killed-the-server-bg" id="f08-we-killed-the-server-bg" data-start="0" data-duration="7" data-track-index="0"></div>
 
-  <div data-hf-id="hf-tleg" class="f08-we-killed-the-server-abs f08-we-killed-the-server-kicker f08-we-killed-the-server-k2" id="f08-we-killed-the-server-k2">temporal web ui · the real run</div>
-  <div data-hf-id="hf-7wpj" class="f08-we-killed-the-server-abs f08-we-killed-the-server-serif f08-we-killed-the-server-head" id="f08-we-killed-the-server-head">The timer survived.</div>
-  <div data-hf-id="hf-n48q" class="f08-we-killed-the-server-abs f08-we-killed-the-server-card" id="f08-we-killed-the-server-card"><img data-hf-id="hf-s30d" src="assets/temporal-drill.png" alt=""></div>
-  <div data-hf-id="hf-knlu" class="f08-we-killed-the-server-abs f08-we-killed-the-server-play" id="f08-we-killed-the-server-play"><div data-hf-id="hf-6t31" class="f08-we-killed-the-server-abs f08-we-killed-the-server-dot"></div></div>
-  <div data-hf-id="hf-i5dj" class="f08-we-killed-the-server-abs f08-we-killed-the-server-hand f08-we-killed-the-server-dead" id="f08-we-killed-the-server-dead">worker + server dead here. timer still running.</div>
-  <div data-hf-id="hf-q13t" class="f08-we-killed-the-server-abs f08-we-killed-the-server-mono f08-we-killed-the-server-c" id="f08-we-killed-the-server-c0" style="top:700px"><i data-hf-id="hf-wt6k"></i>timer fired 0.1 s after the server came back</div>
-  <div data-hf-id="hf-fsq7" class="f08-we-killed-the-server-abs f08-we-killed-the-server-mono f08-we-killed-the-server-c" id="f08-we-killed-the-server-c1" style="top:770px"><i data-hf-id="hf-zeb8"></i>0 steps ran twice</div>
-  <div data-hf-id="hf-n41a" class="f08-we-killed-the-server-abs f08-we-killed-the-server-dark" id="f08-we-killed-the-server-dark"></div>
-  <div data-hf-id="hf-2nbw" class="f08-we-killed-the-server-abs f08-we-killed-the-server-serif f08-we-killed-the-server-h" id="f08-we-killed-the-server-h">We killed the server mid-hold.</div>
-  <div data-hf-id="hf-8akx" class="f08-we-killed-the-server-abs f08-we-killed-the-server-mono f08-we-killed-the-server-kill" id="f08-we-killed-the-server-kill">SIGKILL worker · SIGKILL temporal server</div>
+  <div class="f08-we-killed-the-server-abs f08-we-killed-the-server-disp f08-we-killed-the-server-head" id="f08-we-killed-the-server-head">The timer survived.</div>
+  <div class="f08-we-killed-the-server-abs f08-we-killed-the-server-cap f08-we-killed-the-server-k2" id="f08-we-killed-the-server-k2">Temporal Web UI, from the real run</div>
+  <div class="f08-we-killed-the-server-abs f08-we-killed-the-server-card" id="f08-we-killed-the-server-card"><img src="assets/temporal-drill.png" alt=""></div>
+  <div class="f08-we-killed-the-server-abs f08-we-killed-the-server-play" id="f08-we-killed-the-server-play"><div class="f08-we-killed-the-server-abs f08-we-killed-the-server-dot"></div></div>
+  <div class="f08-we-killed-the-server-abs f08-we-killed-the-server-note f08-we-killed-the-server-dead" id="f08-we-killed-the-server-dead">Worker and server dead here. Timer still running.</div>
+  <div class="f08-we-killed-the-server-abs f08-we-killed-the-server-mono f08-we-killed-the-server-c" id="f08-we-killed-the-server-c0" style="top:700px"><i></i>timer fired 0.1 s after the server came back</div>
+  <div class="f08-we-killed-the-server-abs f08-we-killed-the-server-mono f08-we-killed-the-server-c" id="f08-we-killed-the-server-c1" style="top:770px"><i></i>0 steps ran twice</div>
+  <div class="f08-we-killed-the-server-abs f08-we-killed-the-server-alarm" id="f08-we-killed-the-server-alarm"></div>
+  <div class="f08-we-killed-the-server-abs f08-we-killed-the-server-disp f08-we-killed-the-server-h" id="f08-we-killed-the-server-h">We killed the server mid-hold.</div>
+  <div class="f08-we-killed-the-server-abs f08-we-killed-the-server-mono f08-we-killed-the-server-kill" id="f08-we-killed-the-server-kill">SIGKILL worker. SIGKILL temporal server.</div>
 
 </div>
 <script>
@@ -59,28 +53,26 @@
   const tl = gsap.timeline({ paused: true });
   const $ = (s) => document.querySelector('[data-composition-id="08-we-killed-the-server"] ' + s);
   const $$ = (s) => Array.from(document.querySelectorAll('[data-composition-id="08-we-killed-the-server"] ' + s));
-  tl.fromTo($('#f08-we-killed-the-server-bloom'), { scale: 0.85, opacity: 0.6 }, { scale: 1, opacity: 1, duration: 7, ease: "none" }, 0);
 
-  tl.fromTo($('#f08-we-killed-the-server-dark'), { opacity: 0 }, { opacity: 0 }, 0);
-  tl.fromTo($('#f08-we-killed-the-server-h'), { y: 30, opacity: 0, color: "#0D5C52" }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.05);
+  tl.fromTo($('#f08-we-killed-the-server-alarm'), { opacity: 0 }, { opacity: 0 }, 0);
+  tl.fromTo($('#f08-we-killed-the-server-h'), { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "expo.out" }, 0.05);
   tl.fromTo($('#f08-we-killed-the-server-kill'), { opacity: 0 }, { opacity: 0 }, 0);
-  // the kill: hard flicker to dark (deterministic steps), then the headline goes out with the lights
-  [[1.35, 1], [1.42, 0.2], [1.5, 1], [1.56, 0.4], [1.62, 1]].forEach(([t, o]) => tl.set($('#f08-we-killed-the-server-dark'), { opacity: o }, t));
-  tl.set($('#f08-we-killed-the-server-h'), { color: "#F4EDE0" }, 1.35);
+  // the kill: hard flicker to the alarm red (deterministic steps), then the headline goes out with the lights
+  [[1.35, 1], [1.42, 0.2], [1.5, 1], [1.56, 0.4], [1.62, 1]].forEach(([t, o]) => tl.set($('#f08-we-killed-the-server-alarm'), { opacity: o }, t));
   tl.to($('#f08-we-killed-the-server-h'), { opacity: 0, duration: 0.15 }, 1.62);
   tl.set($('#f08-we-killed-the-server-kill'), { opacity: 1 }, 1.62);
-  tl.to($('#f08-we-killed-the-server-dark'), { opacity: 0, duration: 0.35, ease: "power2.out" }, 2.0);
+  tl.to($('#f08-we-killed-the-server-alarm'), { opacity: 0, duration: 0.35, ease: "power2.out" }, 2.0);
   tl.to($('#f08-we-killed-the-server-kill'), { opacity: 0, duration: 0.2 }, 2.0);
   // the real timeline; the playhead runs along the orange room-hold bar (x 475..1400 of 1568 in the screenshot)
-  tl.fromTo($('#f08-we-killed-the-server-k2'), { opacity: 0 }, { opacity: 0.8, duration: 0.4 }, 2.1);
-  tl.fromTo($('#f08-we-killed-the-server-head'), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 2.1);
-  tl.fromTo($('#f08-we-killed-the-server-card'), { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 2.15);
+  tl.fromTo($('#f08-we-killed-the-server-head'), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 2.1);
+  tl.fromTo($('#f08-we-killed-the-server-k2'), { opacity: 0 }, { opacity: 1, duration: 0.4 }, 2.3);
+  tl.fromTo($('#f08-we-killed-the-server-card'), { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "expo.out" }, 2.15);
   const sx = 160 + 475 * 1600 / 1568, ex = 160 + 1400 * 1600 / 1568;
   tl.fromTo($('#f08-we-killed-the-server-play'), { x: sx, opacity: 0 }, { x: sx, opacity: 1, duration: 0.2 }, 2.7);
   tl.to($('#f08-we-killed-the-server-play'), { x: ex, duration: 2.3, ease: "power1.inOut" }, 2.9);
   tl.fromTo($('#f08-we-killed-the-server-dead'), { opacity: 0 }, { opacity: 1, duration: 0.4 }, 3.4);
-  tl.fromTo($('#f08-we-killed-the-server-c0'), { x: -30, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, 5.2);
-  tl.fromTo($('#f08-we-killed-the-server-c1'), { x: -30, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, 5.7);
+  tl.fromTo($('#f08-we-killed-the-server-c0'), { x: -30, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "expo.out" }, 5.2);
+  tl.fromTo($('#f08-we-killed-the-server-c1'), { x: -30, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "expo.out" }, 5.7);
 
   tl.set({}, {}, 7);
   window.__timelines = window.__timelines || {};

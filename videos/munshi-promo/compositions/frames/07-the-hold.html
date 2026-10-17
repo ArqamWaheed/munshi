@@ -2,55 +2,49 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
 <style>
 
-@font-face{font-family:"Cormorant Garamond";src:url(assets/fonts/cormorant-garamond-latin-400-normal.woff2) format("woff2");font-weight:400}
-@font-face{font-family:"Cormorant Garamond";src:url(assets/fonts/cormorant-garamond-latin-700-normal.woff2) format("woff2");font-weight:700}
-@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400}
-@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-600-normal.woff2) format("woff2");font-weight:600}
-@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-700-normal.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"Big Shoulders Display";src:url(assets/fonts/big-shoulders-display-latin-600-normal.woff2) format("woff2");font-weight:600}
+@font-face{font-family:"Big Shoulders Display";src:url(assets/fonts/big-shoulders-display-latin-800-normal.woff2) format("woff2");font-weight:800}
+@font-face{font-family:"Schibsted Grotesk";src:url(assets/fonts/schibsted-grotesk-latin-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"Schibsted Grotesk";src:url(assets/fonts/schibsted-grotesk-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic}
+@font-face{font-family:"Schibsted Grotesk";src:url(assets/fonts/schibsted-grotesk-latin-600-normal.woff2) format("woff2");font-weight:600}
+@font-face{font-family:"Schibsted Grotesk";src:url(assets/fonts/schibsted-grotesk-latin-700-normal.woff2) format("woff2");font-weight:700}
 @font-face{font-family:"JetBrains Mono";src:url(assets/fonts/JetBrainsMono-400.woff2) format("woff2");font-weight:400}
 @font-face{font-family:"JetBrains Mono";src:url(assets/fonts/JetBrainsMono-700.woff2) format("woff2");font-weight:700}
-@font-face{font-family:"Caveat";src:url(assets/fonts/caveat-latin-700-normal.woff2) format("woff2");font-weight:700}
 
-#root{position:absolute;inset:0;overflow:hidden;font-family:"Inter",sans-serif;color:#0D5C52}
-.f07-the-hold-bg{position:absolute;inset:0;background:#F4EDE0}
-.f07-the-hold-lines{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0 51px,rgba(13,92,82,.07) 51px 52px)}
-.f07-the-hold-margin{position:absolute;top:0;bottom:0;left:112px;width:2px;background:rgba(162,59,42,.35)}
-.f07-the-hold-bloom{position:absolute;left:72%;top:55%;width:1000px;height:1000px;margin-left:calc(1000px / -2);margin-top:calc(1000px / -2);
-  border-radius:50%;background:radial-gradient(circle,rgba(227,162,26,.42) 0%,rgba(244,217,159,.34) 34%,rgba(240,202,124,.12) 58%,transparent 72%)}
+#root{position:absolute;inset:0;overflow:hidden;font-family:"Schibsted Grotesk",sans-serif;color:#EDEFF3}
+.f07-the-hold-bg{position:absolute;inset:0;background:#11162A}
 .f07-the-hold-abs{position:absolute}
-.f07-the-hold-serif{font-family:"Cormorant Garamond",serif;font-weight:400;letter-spacing:-.01em}
+.f07-the-hold-disp{font-family:"Big Shoulders Display",sans-serif;font-weight:800;letter-spacing:-.005em;line-height:1}
 .f07-the-hold-mono{font-family:"JetBrains Mono",monospace}
-.f07-the-hold-hand{font-family:"Caveat",cursive;font-weight:700;color:#A23B2A}
-.f07-the-hold-kicker{font-family:"JetBrains Mono",monospace;font-size:22px;letter-spacing:.22em;text-transform:uppercase;opacity:.8}
+.f07-the-hold-note{font-style:italic;font-weight:400;color:#F06A5F}
+.f07-the-hold-cap{font-size:30px;font-weight:600;color:#9AA2C2}
 
-.f07-the-hold-h{left:180px;top:100px;font-size:92px}
-.f07-the-hold-panel{left:180px;top:250px;width:1000px}
+.f07-the-hold-h{left:180px;top:90px;font-size:120px}
+.f07-the-hold-panel{left:180px;top:260px;width:1000px}
 .f07-the-hold-clock{font-size:190px;font-weight:700;letter-spacing:-.02em;line-height:1}
-.f07-the-hold-due{font-size:32px;margin-top:22px}
-.f07-the-hold-bar{margin-top:30px;width:900px;height:16px;border-radius:8px;background:rgba(13,92,82,.15);overflow:hidden}
-.f07-the-hold-fill{height:100%;width:100%;background:#E3A21A;transform-origin:0 50%}
-.f07-the-hold-still{font-size:30px;margin-top:18px;color:#A23B2A}
-.f07-the-hold-chip{left:1240px;width:520px;border:2px solid #0D5C52;border-radius:16px;background:#FFFDF8;padding:22px 28px;font-size:32px;display:flex;justify-content:space-between}
-.f07-the-hold-stamp{left:1010px;top:570px;border:8px solid #E3A21A;color:#E3A21A;border-radius:18px;padding:6px 34px;font-size:104px;font-weight:700;letter-spacing:.04em;transform:rotate(-7deg)}
-.f07-the-hold-note{left:1020px;top:780px;font-size:50px}
+.f07-the-hold-due{font-size:32px;margin-top:22px;color:#9AA2C2}
+.f07-the-hold-bar{margin-top:30px;width:900px;height:16px;background:#2E3760;overflow:hidden}
+.f07-the-hold-fill{height:100%;width:100%;background:#C4302F;transform-origin:0 50%}
+.f07-the-hold-still{font-size:30px;margin-top:18px;color:#F06A5F}
+.f07-the-hold-chip{left:1240px;width:520px;border:2px solid #2E3760;border-radius:12px;background:#1B2240;padding:22px 28px;font-size:32px;display:flex;justify-content:space-between}
+.f07-the-hold-stamp{left:1010px;top:570px;background:#C4302F;color:#EDEFF3;padding:14px 44px 6px;font-size:132px;letter-spacing:.03em;transform:rotate(-7deg)}
+.f07-the-hold-msgnote{left:1020px;top:800px;font-size:48px}
 
 </style>
-<div data-hf-id="hf-qtlu" id="root" data-composition-id="07-the-hold" data-width="1920" data-height="1080">
-  <div data-hf-id="hf-nbjy" class="clip f07-the-hold-bg" id="f07-the-hold-bg" data-start="0" data-duration="8" data-track-index="0">
-    <div data-hf-id="hf-18n1" class="f07-the-hold-lines"></div><div data-hf-id="hf-ulou" class="f07-the-hold-margin"></div><div data-hf-id="hf-1vvy" class="f07-the-hold-bloom" id="f07-the-hold-bloom"></div>
-  </div>
+<div id="root" data-composition-id="07-the-hold" data-width="1920" data-height="1080">
+  <div class="clip f07-the-hold-bg" id="f07-the-hold-bg" data-start="0" data-duration="8" data-track-index="0"></div>
 
-  <div data-hf-id="hf-mykf" class="f07-the-hold-abs f07-the-hold-serif f07-the-hold-h" id="f07-the-hold-h">Temporal holds the room.</div>
-  <div data-hf-id="hf-6fny" class="f07-the-hold-abs f07-the-hold-panel" id="f07-the-hold-panel">
-    <div data-hf-id="hf-8lqc" class="f07-the-hold-mono f07-the-hold-clock" id="f07-the-hold-clock">11:59:58</div>
-    <div data-hf-id="hf-3bzo" class="f07-the-hold-mono f07-the-hold-due">advance due Rs 3,500</div>
-    <div data-hf-id="hf-ap2b" class="f07-the-hold-bar"><div data-hf-id="hf-ymmk" class="f07-the-hold-fill" id="f07-the-hold-fill"></div></div>
-    <div data-hf-id="hf-3e66" class="f07-the-hold-mono f07-the-hold-still" id="f07-the-hold-still">still due Rs 1,500</div>
+  <div class="f07-the-hold-abs f07-the-hold-disp f07-the-hold-h" id="f07-the-hold-h">Temporal holds the room.</div>
+  <div class="f07-the-hold-abs f07-the-hold-panel" id="f07-the-hold-panel">
+    <div class="f07-the-hold-mono f07-the-hold-clock" id="f07-the-hold-clock">11:59:58</div>
+    <div class="f07-the-hold-mono f07-the-hold-due">advance due Rs 3,500</div>
+    <div class="f07-the-hold-bar"><div class="f07-the-hold-fill" id="f07-the-hold-fill"></div></div>
+    <div class="f07-the-hold-mono f07-the-hold-still" id="f07-the-hold-still">still due Rs 1,500</div>
   </div>
-  <div data-hf-id="hf-5m7z" class="f07-the-hold-abs f07-the-hold-mono f07-the-hold-chip" id="f07-the-hold-c0" style="top:280px"><span data-hf-id="hf-m80u">JC-48120</span><span data-hf-id="hf-qkyc">Rs 2,000</span></div>
-  <div data-hf-id="hf-ghhw" class="f07-the-hold-abs f07-the-hold-mono f07-the-hold-chip" id="f07-the-hold-c1" style="top:390px"><span data-hf-id="hf-wspu">JC-48177</span><span data-hf-id="hf-xz92">Rs 1,500</span></div>
-  <div data-hf-id="hf-azvo" class="f07-the-hold-abs f07-the-hold-serif f07-the-hold-stamp" id="f07-the-hold-stamp">CONFIRMED</div>
-  <div data-hf-id="hf-wk2d" class="f07-the-hold-abs f07-the-hold-hand f07-the-hold-note" id="f07-the-hold-note">a short payment never confirms a room</div>
+  <div class="f07-the-hold-abs f07-the-hold-mono f07-the-hold-chip" id="f07-the-hold-c0" style="top:280px"><span>JC-48120</span><span>Rs 2,000</span></div>
+  <div class="f07-the-hold-abs f07-the-hold-mono f07-the-hold-chip" id="f07-the-hold-c1" style="top:390px"><span>JC-48177</span><span>Rs 1,500</span></div>
+  <div class="f07-the-hold-abs f07-the-hold-disp f07-the-hold-stamp" id="f07-the-hold-stamp">CONFIRMED</div>
+  <div class="f07-the-hold-abs f07-the-hold-note f07-the-hold-msgnote" id="f07-the-hold-msgnote">A short payment never confirms a room.</div>
 
 </div>
 <script>
@@ -58,25 +52,24 @@
   const tl = gsap.timeline({ paused: true });
   const $ = (s) => document.querySelector('[data-composition-id="07-the-hold"] ' + s);
   const $$ = (s) => Array.from(document.querySelectorAll('[data-composition-id="07-the-hold"] ' + s));
-  tl.fromTo($('#f07-the-hold-bloom'), { scale: 0.85, opacity: 0.6 }, { scale: 1, opacity: 1, duration: 8, ease: "none" }, 0);
 
-  tl.fromTo($('#f07-the-hold-h'), { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.0);
-  tl.fromTo($('#f07-the-hold-panel'), { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.2);
+  tl.fromTo($('#f07-the-hold-h'), { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "expo.out" }, 0.0);
+  tl.fromTo($('#f07-the-hold-panel'), { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "expo.out" }, 0.2);
   const c = { s: 0 };
   const fmt = (s) => { const r = 43198 - Math.floor(s); const h = Math.floor(r / 3600), m = Math.floor((r % 3600) / 60), x = r % 60;
     return String(h).padStart(2, "0") + ":" + String(m).padStart(2, "0") + ":" + String(x).padStart(2, "0"); };
   tl.to(c, { s: 8, duration: 8, ease: "none", onUpdate: () => { $('#f07-the-hold-clock').textContent = fmt(c.s); } }, 0);
   tl.fromTo($('#f07-the-hold-fill'), { scaleX: 0 }, { scaleX: 0 }, 0);
   tl.fromTo($('#f07-the-hold-still'), { opacity: 0 }, { opacity: 0 }, 0);
-  tl.fromTo($('#f07-the-hold-c0'), { x: 80, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, 2.0);
+  tl.fromTo($('#f07-the-hold-c0'), { x: 80, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "expo.out" }, 2.0);
   tl.to($('#f07-the-hold-fill'), { scaleX: 0.571, duration: 0.6, ease: "power2.out" }, 2.2);
   tl.to($('#f07-the-hold-still'), { opacity: 1, duration: 0.3 }, 2.5);
-  tl.fromTo($('#f07-the-hold-c1'), { x: 80, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, 3.8);
+  tl.fromTo($('#f07-the-hold-c1'), { x: 80, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "expo.out" }, 3.8);
   tl.to($('#f07-the-hold-fill'), { scaleX: 1, duration: 0.6, ease: "power2.out" }, 4.0);
   tl.to($('#f07-the-hold-still'), { opacity: 0, duration: 0.2 }, 4.3);
   tl.to([$('#f07-the-hold-c0'), $('#f07-the-hold-c1')], { y: -40, opacity: 0.35, duration: 0.5, ease: "power2.out" }, 5.1);
   tl.fromTo($('#f07-the-hold-stamp'), { scale: 2.2, opacity: 0, rotation: -14 }, { scale: 1, opacity: 1, rotation: -7, duration: 0.32, ease: "power4.in" }, 5.3);
-  tl.fromTo($('#f07-the-hold-note'), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5 }, 6.0);
+  tl.fromTo($('#f07-the-hold-msgnote'), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5 }, 6.0);
 
   tl.set({}, {}, 8);
   window.__timelines = window.__timelines || {};

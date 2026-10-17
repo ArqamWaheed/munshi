@@ -2,53 +2,51 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
 <style>
 
-@font-face{font-family:"Cormorant Garamond";src:url(assets/fonts/cormorant-garamond-latin-400-normal.woff2) format("woff2");font-weight:400}
-@font-face{font-family:"Cormorant Garamond";src:url(assets/fonts/cormorant-garamond-latin-700-normal.woff2) format("woff2");font-weight:700}
-@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400}
-@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-600-normal.woff2) format("woff2");font-weight:600}
-@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-700-normal.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"Big Shoulders Display";src:url(assets/fonts/big-shoulders-display-latin-600-normal.woff2) format("woff2");font-weight:600}
+@font-face{font-family:"Big Shoulders Display";src:url(assets/fonts/big-shoulders-display-latin-800-normal.woff2) format("woff2");font-weight:800}
+@font-face{font-family:"Schibsted Grotesk";src:url(assets/fonts/schibsted-grotesk-latin-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"Schibsted Grotesk";src:url(assets/fonts/schibsted-grotesk-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic}
+@font-face{font-family:"Schibsted Grotesk";src:url(assets/fonts/schibsted-grotesk-latin-600-normal.woff2) format("woff2");font-weight:600}
+@font-face{font-family:"Schibsted Grotesk";src:url(assets/fonts/schibsted-grotesk-latin-700-normal.woff2) format("woff2");font-weight:700}
 @font-face{font-family:"JetBrains Mono";src:url(assets/fonts/JetBrainsMono-400.woff2) format("woff2");font-weight:400}
 @font-face{font-family:"JetBrains Mono";src:url(assets/fonts/JetBrainsMono-700.woff2) format("woff2");font-weight:700}
-@font-face{font-family:"Caveat";src:url(assets/fonts/caveat-latin-700-normal.woff2) format("woff2");font-weight:700}
 
-#root{position:absolute;inset:0;overflow:hidden;font-family:"Inter",sans-serif;color:#0D5C52}
-.f09-the-receipts-bg{position:absolute;inset:0;background:#F4EDE0}
-.f09-the-receipts-lines{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0 51px,rgba(13,92,82,.07) 51px 52px)}
-.f09-the-receipts-margin{position:absolute;top:0;bottom:0;left:112px;width:2px;background:rgba(162,59,42,.35)}
-.f09-the-receipts-bloom{position:absolute;left:50%;top:50%;width:1500px;height:1500px;margin-left:calc(1500px / -2);margin-top:calc(1500px / -2);
-  border-radius:50%;background:radial-gradient(circle,rgba(227,162,26,.42) 0%,rgba(244,217,159,.34) 34%,rgba(240,202,124,.12) 58%,transparent 72%)}
+#root{position:absolute;inset:0;overflow:hidden;font-family:"Schibsted Grotesk",sans-serif;color:#EDEFF3}
+.f09-the-receipts-bg{position:absolute;inset:0;background:#11162A}
 .f09-the-receipts-abs{position:absolute}
-.f09-the-receipts-serif{font-family:"Cormorant Garamond",serif;font-weight:400;letter-spacing:-.01em}
+.f09-the-receipts-disp{font-family:"Big Shoulders Display",sans-serif;font-weight:800;letter-spacing:-.005em;line-height:1}
 .f09-the-receipts-mono{font-family:"JetBrains Mono",monospace}
-.f09-the-receipts-hand{font-family:"Caveat",cursive;font-weight:700;color:#A23B2A}
-.f09-the-receipts-kicker{font-family:"JetBrains Mono",monospace;font-size:22px;letter-spacing:.22em;text-transform:uppercase;opacity:.8}
+.f09-the-receipts-note{font-style:italic;font-weight:400;color:#F06A5F}
+.f09-the-receipts-cap{font-size:30px;font-weight:600;color:#9AA2C2}
 
-.f09-the-receipts-k{left:180px;top:96px}
-.f09-the-receipts-card{width:760px;height:310px;border:2px solid #0D5C52;border-radius:22px;background:#FFFDF8;padding:34px 44px;display:flex;flex-direction:column;justify-content:space-between}
-.f09-the-receipts-fig{font-size:120px;font-weight:700;line-height:1}
-.f09-the-receipts-cap{font-size:28px;opacity:.85}
+.f09-the-receipts-h{left:180px;top:70px;font-size:100px}
+.f09-the-receipts-k{left:180px;top:930px}
+.f09-the-receipts-card{width:760px;height:300px;border:2px solid #2E3760;border-radius:12px;background:#1B2240;padding:34px 44px;display:flex;flex-direction:column;justify-content:space-between}
+.f09-the-receipts-card.on{background:#C4302F;border-color:#C4302F}
+.f09-the-receipts-fig{font-size:124px;white-space:nowrap}
+.f09-the-receipts-cap{font-size:24px;color:#9AA2C2}
+.f09-the-receipts-card.on .f09-the-receipts-cap{color:#EDEFF3}
 
 </style>
-<div data-hf-id="hf-hqx0" id="root" data-composition-id="09-the-receipts" data-width="1920" data-height="1080">
-  <div data-hf-id="hf-4vi8" class="clip f09-the-receipts-bg" id="f09-the-receipts-bg" data-start="0" data-duration="6" data-track-index="0">
-    <div data-hf-id="hf-70wr" class="f09-the-receipts-lines"></div><div data-hf-id="hf-7oe4" class="f09-the-receipts-margin"></div><div data-hf-id="hf-gfuu" class="f09-the-receipts-bloom" id="f09-the-receipts-bloom"></div>
-  </div>
+<div id="root" data-composition-id="09-the-receipts" data-width="1920" data-height="1080">
+  <div class="clip f09-the-receipts-bg" id="f09-the-receipts-bg" data-start="0" data-duration="6" data-track-index="0"></div>
 
-  <div data-hf-id="hf-73vl" class="f09-the-receipts-abs f09-the-receipts-kicker f09-the-receipts-k" id="f09-the-receipts-k">measured, not claimed · all numbers in the repo</div>
-  <div data-hf-id="hf-e89r" class="f09-the-receipts-abs f09-the-receipts-card" id="f09-the-receipts-c0" style="left:180px;top:170px"><div data-hf-id="hf-0xrg" class="f09-the-receipts-serif f09-the-receipts-fig">0% <span data-hf-id="hf-jkr2" style="font-family:'JetBrains Mono',monospace;font-size:.5em;vertical-align:.22em">→</span> 75% <span data-hf-id="hf-82c2" style="font-family:'JetBrains Mono',monospace;font-size:.5em;vertical-align:.22em">→</span> 95%</div><div data-hf-id="hf-irnw" class="f09-the-receipts-mono f09-the-receipts-cap">untuned · fine-tuned · + code rules</div></div>
-  <div data-hf-id="hf-t0r8" class="f09-the-receipts-abs f09-the-receipts-card" id="f09-the-receipts-c1" style="left:980px;top:170px"><div data-hf-id="hf-qt24" class="f09-the-receipts-serif f09-the-receipts-fig">30 / 30</div><div data-hf-id="hf-1j1w" class="f09-the-receipts-mono f09-the-receipts-cap">fresh test, written after the rules froze</div></div>
-  <div data-hf-id="hf-oowq" class="f09-the-receipts-abs f09-the-receipts-card" id="f09-the-receipts-c2" style="left:180px;top:520px"><div data-hf-id="hf-pakm" class="f09-the-receipts-serif f09-the-receipts-fig">82% <span data-hf-id="hf-8gn3" style="font-family:'JetBrains Mono',monospace;font-size:.5em;vertical-align:.22em">→</span> 81%</div><div data-hf-id="hf-q97z" class="f09-the-receipts-mono f09-the-receipts-cap">TabPFN says · actually cancelled</div></div>
-  <div data-hf-id="hf-v3y5" class="f09-the-receipts-abs f09-the-receipts-card" id="f09-the-receipts-c3" style="left:980px;top:520px"><div data-hf-id="hf-gjpw" class="f09-the-receipts-serif f09-the-receipts-fig">70 / 70</div><div data-hf-id="hf-63h8" class="f09-the-receipts-mono f09-the-receipts-cap">Gemma replies passed the number check</div></div>
+  <div class="f09-the-receipts-abs f09-the-receipts-disp f09-the-receipts-h" id="f09-the-receipts-h">Measured, not claimed.</div>
+  <div class="f09-the-receipts-abs f09-the-receipts-cap f09-the-receipts-k" id="f09-the-receipts-k">Every number here is in the repo.</div>
+  <div class="f09-the-receipts-abs f09-the-receipts-card" id="f09-the-receipts-c0" style="left:180px;top:200px"><div class="f09-the-receipts-disp f09-the-receipts-fig">0% <span style="font-family:'JetBrains Mono',monospace;font-size:.45em;vertical-align:.3em">→</span> 75% <span style="font-family:'JetBrains Mono',monospace;font-size:.45em;vertical-align:.3em">→</span> 95%</div><div class="f09-the-receipts-mono f09-the-receipts-cap">untuned, fine-tuned, + code rules</div></div>
+  <div class="f09-the-receipts-abs f09-the-receipts-card on" id="f09-the-receipts-c1" style="left:980px;top:200px"><div class="f09-the-receipts-disp f09-the-receipts-fig">30 / 30</div><div class="f09-the-receipts-mono f09-the-receipts-cap">fresh test, written after the rules froze</div></div>
+  <div class="f09-the-receipts-abs f09-the-receipts-card" id="f09-the-receipts-c2" style="left:180px;top:540px"><div class="f09-the-receipts-disp f09-the-receipts-fig">82% <span style="font-family:'JetBrains Mono',monospace;font-size:.45em;vertical-align:.3em">→</span> 81%</div><div class="f09-the-receipts-mono f09-the-receipts-cap">TabPFN said, actually cancelled</div></div>
+  <div class="f09-the-receipts-abs f09-the-receipts-card" id="f09-the-receipts-c3" style="left:980px;top:540px"><div class="f09-the-receipts-disp f09-the-receipts-fig">70 / 70</div><div class="f09-the-receipts-mono f09-the-receipts-cap">Gemma replies passed the number check</div></div>
 </div>
 <script>
 (function(){
   const tl = gsap.timeline({ paused: true });
   const $ = (s) => document.querySelector('[data-composition-id="09-the-receipts"] ' + s);
   const $$ = (s) => Array.from(document.querySelectorAll('[data-composition-id="09-the-receipts"] ' + s));
-  tl.fromTo($('#f09-the-receipts-bloom'), { scale: 0.85, opacity: 0.6 }, { scale: 1, opacity: 1, duration: 6, ease: "none" }, 0);
 
-  tl.fromTo($('#f09-the-receipts-k'), { opacity: 0 }, { opacity: 0.8, duration: 0.5 }, 0.0);
-  for (let i = 0; i < 4; i++) tl.fromTo($('#f09-the-receipts-c' + i), { y: 60, opacity: 0, scale: 0.96 }, { y: 0, opacity: 1, scale: 1, duration: 0.55, ease: "power3.out" }, 0.6 + i * 0.9);
+  tl.fromTo($('#f09-the-receipts-h'), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 0.0);
+  for (let i = 0; i < 4; i++) tl.fromTo($('#f09-the-receipts-c' + i), { y: 60, opacity: 0, scale: 0.96 }, { y: 0, opacity: 1, scale: 1, duration: 0.55, ease: "expo.out" }, 0.6 + i * 0.9);
+  tl.fromTo($('#f09-the-receipts-k'), { opacity: 0 }, { opacity: 1, duration: 0.5 }, 4.3);
 
   tl.set({}, {}, 6);
   window.__timelines = window.__timelines || {};
