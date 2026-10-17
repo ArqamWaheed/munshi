@@ -1,0 +1,18 @@
+# Base model (untuned Qwen/Qwen3.5-4B), SHORT_PROMPT, 2026-10-17 19:39 PKT
+$ python -m train.sample_check --base "parso 5 bande family room 3 din"
+```json
+{
+  "booking_request": {
+    "date": "2026-10-17",
+    "day_of_week": "Saturday",
+    "hotel_name": "Parso",
+    "room_type": "Family Room",
+    "quantity": 5,
+    "duration": {
+      "type": "nights",
+      "value": 3
+    }
+  }
+}
+```
+valid JSON: {'booking_request': {'date': '2026-10-17', 'day_of_week': 'Saturday', 'hotel_name': 'Parso', 'room_type': 'Family Room', 'quantity': 5, 'duration': {'type': 'nights', 'value': 3}}}
