@@ -53,11 +53,22 @@ uvicorn app.server:app --port 8000           # terminal 3 -> http://localhost:80
 python -m munshi.temporal.schedules create   # nightly brief at 06:15 PKT
 python -m munshi.temporal.schedules trigger  # run it now -> results/briefs/
 # CLI alternative to the UI:
-python -m munshi.temporal.start_inquiry start --message "kal 2 log 1 room" --demo-speed 60
-python -m munshi.temporal.start_inquiry deposit --id hold-xxxxxxxx --amount 5000
+python -m munshi.temporal.start_inquiry start --message "3 log, family room" --demo-speed 60
+python -m munshi.temporal.start_inquiry reply --id hold-xxxxxxxx --text "kal se 2 raat"   # answers the question
+python -m munshi.temporal.start_inquiry deposit --id hold-xxxxxxxx --amount 5000 --ref JC-123
+python -m munshi.temporal.start_inquiry list
 ```
+The UI is the owner's desk: a list of holds, the guest conversation, a copy button for each drafted reply,
+a box for the guest's answer when Munshi had to ask for a date or head count (it waits `hours_clarify`, then
+re-parses the whole conversation), deposits that add up until they cover the advance (several JazzCash
+transfers are normal; a short payment never confirms, and a released hold shows what to refund), and
+"Run morning brief".
+
 Demo tricks: `DEMO_SPEED=60` makes a 2 h hold expire in 2 min. Set `MUNSHI_INJECT_FAILURE_RATE=0.5` to force
 visible first-attempt retries. Kill the worker (Ctrl+C) during a hold, wait, then restart it: the workflow resumes.
+A missing key fails fast instead of retrying: no TabPFN token -> logreg, no Gemini key -> template reply,
+no SerpApi key -> base rate. Only the parser has no fallback (raw text never goes to Gemma unless
+`allow_gemma_fallback`), so without a trained Tinker model every inquiry goes to the owner by hand.
 
 ## Tests (offline, no keys)
 ```bash
