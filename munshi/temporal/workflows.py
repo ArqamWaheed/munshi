@@ -18,7 +18,7 @@ from temporalio.exceptions import ActivityError
 with workflow.unsafe.imports_passed_through():
     from munshi import policy
     from munshi.schema import (ArrivalsQuery, Booking, Brief, BriefInput, BriefRequest, CompsInput,
-                               CompsResult, DepositInfo, DraftInput, HoldInput, HoldStatus, ParseInput,
+                               CompsResult, DepositInfo, DraftInput, GuestReply, HoldInput, HoldStatus, ParseInput,
                                RescoreInput, RiskInput)
     from munshi.temporal.activities import (draft_reply, fetch_comps, list_arrivals, parse_inquiry,
                                             record_booking, rescore_arrivals, score_risk, write_brief)
@@ -42,17 +42,26 @@ class RoomHoldWorkflow:
     def __init__(self) -> None:
         self.status = HoldStatus()
         self.deposit: DepositInfo | None = None
+        self.replies: list[str] = []
 
     @workflow.signal
     def deposit_received(self, info: DepositInfo) -> None:
-        self.deposit = info
+        self.deposit = policy.add_deposit(self.deposit, info)
+        self.status.deposit = self.deposit
+
+    @workflow.signal
+    def guest_reply(self, reply: GuestReply) -> None:
+        self.replies.append(reply.text)
+
+    def _advance_paid(self) -> bool:
+        return self.deposit is not None and self.deposit.amount_pkr >= self.status.quote.advance_pkr
 
     @workflow.query
     def get_status(self) -> HoldStatus:
         return self.status
 
-    async def _parse(self, inp: HoldInput):
-        args = dict(message=inp.message, today=inp.today, trace_headers=inp.trace_headers)
+    async def _parse(self, inp: HoldInput, message: str):
+        args = dict(message=message, today=inp.today, trace_headers=inp.trace_headers)
         if inp.parser_provider == "tinker":
             try:
                 return await workflow.execute_activity(
@@ -80,16 +89,34 @@ class RoomHoldWorkflow:
     @workflow.run
     async def run(self, inp: HoldInput) -> HoldStatus:
         st, pol = self.status, inp.policy
-        st.stage = "parsing"
-        parsed = await self._parse(inp)
-        if parsed is None:
-            st.stage, st.outcome, st.draft = "done", "needs_clarification", "(parser failed: owner to reply by hand)"
-            return st
-        st.parsed, st.parser_model, st.attempts["parse"] = parsed.inquiry, parsed.model, parsed.attempt
-        if parsed.inquiry.needs_clarification or not parsed.inquiry.check_in:
-            st.stage, st.outcome = "done", "needs_clarification"
+        message, used = inp.message, 0
+        st.guest_message = inp.message
+        for round_ in range(pol.max_clarify_rounds + 1):
+            st.stage = "parsing"
+            parsed = await self._parse(inp, message)
+            if parsed is None:
+                st.stage, st.outcome, st.draft = "done", "needs_clarification", "(parser failed: owner to reply by hand)"
+                return st
+            st.parsed, st.parser_model, st.attempts["parse"] = parsed.inquiry, parsed.model, parsed.attempt
+            if not parsed.inquiry.needs_clarification and parsed.inquiry.check_in:
+                break
             st.draft = policy.clarification_text(parsed.inquiry)
-            return st
+            st.questions.append(st.draft)
+            if round_ == pol.max_clarify_rounds:
+                st.stage, st.outcome = "done", "needs_clarification"
+                return st
+            # Ask, wait for the guest's answer, then re-parse the whole conversation so far.
+            st.stage = "awaiting guest reply"
+            st.reply_expires_at = workflow.now() + policy.clarify_duration(pol)
+            try:
+                await workflow.wait_condition(lambda n=used: len(self.replies) > n,
+                                              timeout=policy.clarify_duration(pol), timeout_summary="guest reply")
+            except asyncio.TimeoutError:
+                st.stage, st.outcome = "done", "needs_clarification"
+                return st
+            used, st.reply_expires_at = len(self.replies), None
+            st.guest_replies = self.replies[:used]
+            message = "\n".join([inp.message, *st.guest_replies])
 
         st.stage = "scoring + rates"
         risk_in = RiskInput(inquiry=parsed.inquiry, today=inp.today, guest=inp.guest,
@@ -120,8 +147,7 @@ class RoomHoldWorkflow:
         st.hold_expires_at = workflow.now() + hold
         st.stage = "holding"
         try:
-            await workflow.wait_condition(lambda: self.deposit is not None, timeout=hold,
-                                          timeout_summary="room hold")
+            await workflow.wait_condition(self._advance_paid, timeout=hold, timeout_summary="room hold")
         except asyncio.TimeoutError:
             st.outcome, st.stage = "released", "following up"
             st.followup = await self._draft(inp, "released")
@@ -148,9 +174,18 @@ class NightlyBriefWorkflow:
         today, tomorrow = now_pkt.date(), (now_pkt + timedelta(days=1)).date()
         bookings = await workflow.execute_activity(list_arrivals, ArrivalsQuery(day=tomorrow),
                                                    start_to_close_timeout=timedelta(seconds=10))
-        arrivals = await workflow.execute_activity(
-            rescore_arrivals, RescoreInput(bookings=bookings, today=today, policy=inp.policy),
-            start_to_close_timeout=timedelta(minutes=5), retry_policy=TABPFN_RETRY) if bookings else []
+        arrivals = []
+        if bookings:
+            rescore_in = RescoreInput(bookings=bookings, today=today, policy=inp.policy)
+            try:
+                arrivals = await workflow.execute_activity(
+                    rescore_arrivals, rescore_in, start_to_close_timeout=timedelta(minutes=5),
+                    retry_policy=TABPFN_RETRY, summary="rescore (TabPFN)")
+            except ActivityError:  # same fallback as RoomHoldWorkflow: the brief must still go out
+                rescore_in.prefer = "logreg"
+                arrivals = await workflow.execute_activity(
+                    rescore_arrivals, rescore_in, start_to_close_timeout=timedelta(minutes=5),
+                    retry_policy=TABPFN_RETRY, summary="rescore (fallback)")
         try:
             comps = await workflow.execute_activity(
                 fetch_comps, CompsInput(check_in=tomorrow, nights=1, adults=2),
