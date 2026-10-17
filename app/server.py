@@ -208,9 +208,11 @@ function chat(s){const out=[bubble('Guest',s.guest_message||'-','guest')];
  // clarification rounds: our question, then the guest's answer
  s.questions.forEach((q,i)=>{out.push(bubble('Munshi (question)',q,'us'));if(s.guest_replies[i]!=null)out.push(bubble('Guest',s.guest_replies[i],'guest'))});
  s.guest_replies.slice(s.questions.length).forEach(t=>out.push(bubble('Guest',t,'guest')));
- if(s.quote&&s.draft)out.push(bubble('Munshi draft (quote)',s.draft,'us'));
+ const who=k=>s.template_fallbacks.includes(k)?'Template ('+k+'): Gemma unavailable or its draft failed the checker'
+  :'Gemma draft ('+k+')'+(s.attempts['draft_'+k+'_rewrites']?' · rewritten after the checker rejected a number':'');
+ if(s.quote&&s.draft)out.push(bubble(who('quote'),s.draft,'us'));
  else if(!s.questions.length&&s.draft)out.push(el('div','muted',s.draft));  // e.g. parser failed: owner replies by hand
- if(s.followup)out.push(bubble('Munshi draft ('+s.outcome+')',s.followup,'us'));
+ if(s.followup)out.push(bubble(who(s.outcome),s.followup,'us'));
  return out}
 
 function actions(s){  // rebuilt only when what they act on changes, so typing in the reply box survives polling
