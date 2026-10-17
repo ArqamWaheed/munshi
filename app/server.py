@@ -130,7 +130,7 @@ pre{white-space:pre-wrap;background:#f1eee8;padding:8px;border-radius:6px;font-s
 .bubble.guest{background:var(--guest);justify-self:start} .bubble.us{background:var(--us);justify-self:end}
 .bubble .who{display:block;font-size:11px;color:var(--muted)}
 .big{font-size:28px;font-variant-numeric:tabular-nums;line-height:1.2} .warn{color:var(--warn)}
-dl{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;margin:0} dt{color:var(--muted)} dd{margin:0;font-variant-numeric:tabular-nums}
+dl{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;margin:0} dt{color:var(--muted)} dd{margin:0;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
 .empty{color:var(--muted);text-align:center;padding:40px 0} .err{color:var(--bad);font-size:13px}
 </style></head><body>
 <header><h1>Munshi</h1><span class="hotel">{{HOTEL}} &middot; WhatsApp front desk</span><span class="sp"></span>
@@ -235,7 +235,7 @@ async function poll(){if(!id)return;const wf=id;let s;
  if(s.risk)view.risk.textContent=(s.risk.p_cancel*100).toFixed(0)+'% cancel risk';
  if(s.quote){const q=s.quote;const med=s.comps?.median_nightly_pkr;
   dl(view.quote,[['Nightly',rs(q.nightly_pkr)+(med?' (nearby median '+rs(med)+')':' (base rate)')],['Stay',q.nights+' night(s) × '+q.rooms+' room(s)'],['Total',rs(q.total_pkr)],
-  ['Advance',rs(q.advance_pkr)+' ('+q.risk_band+' risk)'],['Hold',q.hold_hours+' h'],['Risk model',s.risk.model],['Attempts',JSON.stringify(s.attempts)]]);
+  ['Advance',rs(q.advance_pkr)+' ('+q.risk_band+' risk)'],['Hold',q.hold_hours+' h'],['Risk model',s.risk.model],['Attempts',Object.entries(s.attempts).map(([k,v])=>k+' '+v).join(' · ')]]);
   if(!amtTouched)view.amt.value=Math.max(q.advance_pkr-(s.deposit?.amount_pkr||0),0)||q.advance_pkr}
  const hasComps=!!s.comps?.comps.length;view.compsSec.style.display=hasComps?'':'none';  // SerpApi is optional
  if(hasComps)view.comps.textContent=`source: ${s.comps.source}, median ${rs(s.comps.median_nightly_pkr)}\\n`+s.comps.comps.map(c=>`${c.name}: ${rs(c.nightly_pkr)}`).join('\\n');
