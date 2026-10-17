@@ -116,6 +116,13 @@ class RiskModel:
             return cls._model, cls._name
 
 
+def warm_up(prefer: str = "tabpfn") -> str:
+    """One throwaway prediction at worker start. tabpfn_client's fit() is lazy: the real work happens on the
+    FIRST predict, which once took >90 s and blew the activity timeout (evidence/drill_tabpfn_cold_start_*)."""
+    today = date.today()
+    return score(Inquiry(check_in=today + timedelta(days=1), nights=1, guests=2), today, GuestContext(), prefer)[1]
+
+
 def score(inq: Inquiry, today: date, guest: GuestContext, prefer: str = "tabpfn") -> tuple[float, str, dict]:
     model, name = RiskModel.get(prefer)
     X = features_from_inquiry(inq, today, guest)

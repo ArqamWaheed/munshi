@@ -35,6 +35,10 @@ TABPFN_RETRY = RetryPolicy(initial_interval=timedelta(seconds=2), maximum_interv
 SERPAPI_RETRY = RetryPolicy(initial_interval=timedelta(seconds=3), maximum_interval=timedelta(seconds=30),
                             maximum_attempts=4)
 T_MODEL = timedelta(seconds=90)  # start_to_close per attempt
+# A guest is waiting for the quote: give TabPFN 2 x 30 s, then fall back to logreg (local, ~1 s). The nightly
+# brief keeps TABPFN_RETRY with 5 min per attempt because nobody is waiting on it.
+T_RISK = timedelta(seconds=30)
+TABPFN_INQUIRY_RETRY = RetryPolicy(initial_interval=timedelta(seconds=1), maximum_attempts=2)
 
 
 @workflow.defn
@@ -129,8 +133,8 @@ class RoomHoldWorkflow:
                                          adults=min(parsed.inquiry.guests or 2, 4), trace_headers=inp.trace_headers),
             start_to_close_timeout=timedelta(seconds=60), retry_policy=SERPAPI_RETRY, summary="comps (SerpApi)"))
         try:
-            st.risk = await workflow.execute_activity(score_risk, risk_in, start_to_close_timeout=T_MODEL,
-                                                      retry_policy=TABPFN_RETRY, summary="risk (TabPFN)")
+            st.risk = await workflow.execute_activity(score_risk, risk_in, start_to_close_timeout=T_RISK,
+                                                      retry_policy=TABPFN_INQUIRY_RETRY, summary="risk (TabPFN)")
         except ActivityError:
             risk_in.prefer = "logreg"
             st.risk = await workflow.execute_activity(score_risk, risk_in, start_to_close_timeout=T_MODEL,
