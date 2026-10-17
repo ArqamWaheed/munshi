@@ -17,6 +17,7 @@ import argparse
 import asyncio
 import json
 import random
+import re
 from datetime import date
 from pathlib import Path
 
@@ -30,6 +31,27 @@ ROOT = Path(__file__).resolve().parent.parent
 
 def load_rows(path: Path) -> list[dict]:
     return [json.loads(ln) for ln in path.read_text(encoding="utf-8").splitlines() if ln.strip()]
+
+
+# "28 Oct", "Nov 5", "15th", "25 ko": the generator draws a random TODAY, so an explicit date can land in the
+# past and normalise() nulls it. Those rows teach "drop the date"; they are excluded (6 of the first 732).
+_MON = r"(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*"
+EXPLICIT_DATE = re.compile(rf"\b\d{{1,2}}\s*(st|nd|rd|th)?\s*{_MON}\b|\b{_MON}\s*\d{{1,2}}\b|"
+                           r"\b\d{1,2}\s*(tareekh|tarikh|ko)\b|\b\d{1,2}(st|nd|rd|th)\b", re.I)
+
+
+def select_rows(rows: list[dict], max_clar_frac: float, seed: int = 0) -> tuple[list[dict], dict]:
+    """Drop past-date artefacts, then cap rows needing clarification at max_clar_frac of the set. The eval set
+    is ~19% clarification; the teacher's data came out ~60%, which biases the parser towards "unknown"."""
+    labelled = [(r, normalise(r["label"], date.fromisoformat(r["today"]))) for r in rows]
+    kept = [(r, inq) for r, inq in labelled if not (inq.check_in is None and EXPLICIT_DATE.search(r["message"]))]
+    clar = [r for r, inq in kept if inq.needs_clarification]
+    full = [r for r, inq in kept if not inq.needs_clarification]
+    cap = int(max_clar_frac * len(full) / (1 - max_clar_frac)) if max_clar_frac < 1 else len(clar)
+    clar = random.Random(seed).sample(clar, min(cap, len(clar)))
+    stats = {"input": len(rows), "past_date_artefacts": len(labelled) - len(kept), "complete": len(full),
+             "clarification_kept": len(clar), "clarification_dropped": sum(1 for _, i in kept if i.needs_clarification) - len(clar)}
+    return full + clar, stats
 
 
 def to_messages(row: dict) -> tuple[list[dict], str]:
@@ -66,12 +88,15 @@ async def main() -> None:
     ap.add_argument("--batch", type=int, default=32)
     ap.add_argument("--epochs", type=int, default=3)
     ap.add_argument("--name", default="munshi-parser")
+    ap.add_argument("--max-clar-frac", type=float, default=0.3)
     a = ap.parse_args()
 
     service = tinker.ServiceClient()  # reads TINKER_API_KEY
     trainer = await service.create_lora_training_client_async(base_model=a.base_model, rank=a.rank, seed=0)
     tok = trainer.get_tokenizer()
-    train = [make_datum(tok, *to_messages(r)) for r in load_rows(ROOT / "data" / "train.jsonl")]
+    rows, selection = select_rows(load_rows(ROOT / "data" / "train.jsonl"), a.max_clar_frac)
+    print("training rows:", selection)
+    train = [make_datum(tok, *to_messages(r)) for r in rows]
     dev_path = ROOT / "data" / "dev.jsonl"
     dev = [make_datum(tok, *to_messages(r)) for r in load_rows(dev_path)][:64] if dev_path.exists() else []
     n_tok = sum(d.model_input.length for d in train)
@@ -102,6 +127,7 @@ async def main() -> None:
     out.parent.mkdir(exist_ok=True)
     out.write_text(json.dumps({"base_model": a.base_model, "rank": a.rank, "lr": a.lr, "batch": a.batch,
                                "epochs": a.epochs, "examples": len(train), "train_tokens_per_epoch": n_tok,
+                               "selection": selection,
                                "sampler_path": ckpt.path, "log": log}, indent=2))
     print(f"\nSAMPLER PATH (put in .env as TINKER_MODEL_PATH):\n{ckpt.path}")
     print(f"playground: {ckpt.get_playground_url()}\nloss log: {out}")

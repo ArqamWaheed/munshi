@@ -24,9 +24,15 @@ from munshi.tracing import init_sentry
 HERE = Path(__file__).resolve().parent
 GEN_PROMPT = """You write realistic WhatsApp messages that guests send to small hotels in Pakistan
 (Murree, Naran, Swat, Islamabad). Mix Roman Urdu and English as real people do, with typos, missing
-punctuation, "kal", "parso", "2 log", "advance kitni", budgets like "8k"/"8 hazar". About 15% should
-omit the date or the number of guests. Vary room types, nights (1-5), group sizes (1-12).
+punctuation, "kal", "parso", "2 log", "advance kitni", budgets like "8k"/"8 hazar". {mode}
+Vary room types, nights (1-5), group sizes (1-12).
 Return a JSON object {{"messages": [ ... {n} strings ... ]}}. Seeds for style:\n{seeds}"""
+# Asked for "about 15% incomplete" in one prompt, Gemma wrote ~60% (no date or no head count), which would
+# teach the parser to answer "unknown". The mix is now decided here, per batch.
+COMPLETE = ("EVERY message must say WHEN (aaj, kal, parso, a weekday, 'this weekend', or a date) AND HOW MANY "
+            "people (a number, 'couple', 'family of 4', '2 bare 1 bacha'...). The number of nights may be missing.")
+INCOMPLETE = "EVERY message must leave out either the date or the number of people (sometimes both)."
+INCOMPLETE_FRAC = 0.15
 
 
 def seeds() -> list[str]:
@@ -51,8 +57,9 @@ def main() -> None:
     rng, pool = random.Random(), seeds()
     while len(seen) < a.target:
         try:
+            mode = INCOMPLETE if rng.random() < INCOMPLETE_FRAC else COMPLETE
             gen = call_gemma([{"role": "user", "content": GEN_PROMPT.format(
-                n=a.batch, seeds="\n".join(rng.sample(pool, min(6, len(pool)))))}],
+                n=a.batch, mode=mode, seeds="\n".join(rng.sample(pool, min(6, len(pool)))))}],
                 json_mode=True, max_tokens=1500, temperature=1.0)
             msgs = [m for m in extract_json(gen.text).get("messages", []) if isinstance(m, str) and m not in seen]
         except RateLimited as e:
