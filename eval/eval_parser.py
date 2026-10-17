@@ -175,12 +175,15 @@ def main() -> None:
     ap.add_argument("--limit", type=int)
     ap.add_argument("--tinker-path", help="evaluate this tinker:// sampler path instead of TINKER_MODEL_PATH")
     ap.add_argument("--out", default="parser_eval", help="output file stem under results/")
+    ap.add_argument("--reuse", help="results JSON from an earlier run: its models are kept, not re-run")
     a = ap.parse_args()
     init_sentry("eval")
     if a.tinker_path:
         cfg.TINKER_MODEL_PATH = a.tinker_path
     rows = [json.loads(ln) for ln in Path(a.eval).read_text(encoding="utf-8").splitlines() if ln.strip()][: a.limit]
-    results = {m: run_model(m, rows) for m in a.models}
+    results = json.loads(Path(a.reuse).read_text())["results"] if a.reuse else {}
+    for m in a.models:
+        results[m] = run_model(m, rows)
     out = ROOT / "results"
     out.mkdir(exist_ok=True)
     st = stats(results)

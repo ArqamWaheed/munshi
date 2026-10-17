@@ -1,0 +1,6583 @@
+{
+  "eval_file": "/home/arqamwd/theodinproject/repos/munshi/data/eval.jsonl",
+  "n": 80,
+  "results": {
+    "gemma": {
+      "rows": [
+        {
+          "ok": true,
+          "latency_s": 3.3689114789995074,
+          "in": 510,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.44e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r01",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.065338459000486,
+          "in": 505,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.395e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r02",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.2311008670003503,
+          "in": 514,
+          "out": 106,
+          "cost": 0.0,
+          "list_cost": 7.806000000000001e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r03",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.1128017689989065,
+          "in": 499,
+          "out": 94,
+          "cost": 0.0,
+          "list_cost": 7.311e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r04",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.04918594999981,
+          "in": 508,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.422e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r05",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.9941441070004657,
+          "in": 500,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.35e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r06",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.264676292998047,
+          "in": 510,
+          "out": 99,
+          "cost": 0.0,
+          "list_cost": 7.56e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r07",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": false,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.9450079559974256,
+          "in": 506,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.403999999999999e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r08",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.337512748003064,
+          "in": 504,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.386e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r09",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.954773416997341,
+          "in": 511,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.449e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r10",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.2357819819990254,
+          "in": 499,
+          "out": 108,
+          "cost": 0.0,
+          "list_cost": 7.731e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r11",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.2472610530021484,
+          "in": 516,
+          "out": 102,
+          "cost": 0.0,
+          "list_cost": 7.704e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r12",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.928915929998766,
+          "in": 507,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.413e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r13",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.0732520679994195,
+          "in": 511,
+          "out": 99,
+          "cost": 0.0,
+          "list_cost": 7.569e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r14",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.9751004479985568,
+          "in": 501,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.359e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r15",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": false,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.5089810290010064,
+          "in": 500,
+          "out": 107,
+          "cost": 0.0,
+          "list_cost": 7.709999999999999e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r16",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.8812762039997324,
+          "in": 506,
+          "out": 93,
+          "cost": 0.0,
+          "list_cost": 7.344e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r17",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.0673219559976133,
+          "in": 503,
+          "out": 99,
+          "cost": 0.0,
+          "list_cost": 7.497e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r18",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.1506762339995475,
+          "in": 512,
+          "out": 100,
+          "cost": 0.0,
+          "list_cost": 7.608e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r19",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.016164311000466,
+          "in": 508,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.422e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r20",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.007525220000389,
+          "in": 509,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.431e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r21",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.999066132997541,
+          "in": 500,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.35e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r22",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.343595844999072,
+          "in": 496,
+          "out": 106,
+          "cost": 0.0,
+          "list_cost": 7.643999999999999e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r23",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.091523605002294,
+          "in": 510,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.44e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r24",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.0905768829979934,
+          "in": 518,
+          "out": 100,
+          "cost": 0.0,
+          "list_cost": 7.662000000000001e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r25",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.970807296998828,
+          "in": 505,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.395e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r26",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.0164760209991073,
+          "in": 506,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.403999999999999e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r27",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.1136967259990342,
+          "in": 503,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.377e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r28",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.15292029000193,
+          "in": 504,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.386e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r29",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.1095502759999363,
+          "in": 500,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.35e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r31",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.954217039998184,
+          "in": 503,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.377e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r32",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.985320223000599,
+          "in": 508,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.422e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r33",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.9260292729995854,
+          "in": 503,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.377e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r34",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.1092131590012286,
+          "in": 509,
+          "out": 97,
+          "cost": 0.0,
+          "list_cost": 7.491e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r35",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.222472312998434,
+          "in": 508,
+          "out": 99,
+          "cost": 0.0,
+          "list_cost": 7.542e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r36",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.0332893090017023,
+          "in": 510,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.44e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r37",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.163481904000946,
+          "in": 507,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.413e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r38",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.3638882970008126,
+          "in": 500,
+          "out": 107,
+          "cost": 0.0,
+          "list_cost": 7.709999999999999e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r39",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.3745976669997617,
+          "in": 517,
+          "out": 99,
+          "cost": 0.0,
+          "list_cost": 7.623000000000001e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r40",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.0812483840018103,
+          "in": 501,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.359e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r41",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.091326456000388,
+          "in": 512,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.458e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r42",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.1047100289979426,
+          "in": 501,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.359e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "r30",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": false,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.9436712290007563,
+          "in": 507,
+          "out": 93,
+          "cost": 0.0,
+          "list_cost": 7.353e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "m01",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.3325235070005874,
+          "in": 510,
+          "out": 106,
+          "cost": 0.0,
+          "list_cost": 7.769999999999999e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "m02",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.93188256600115,
+          "in": 508,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.422e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "m03",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.9461001720010245,
+          "in": 509,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.431e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "m04",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.019416041999648,
+          "in": 514,
+          "out": 97,
+          "cost": 0.0,
+          "list_cost": 7.536e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "m05",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.118933568999637,
+          "in": 507,
+          "out": 93,
+          "cost": 0.0,
+          "list_cost": 7.353e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "m06",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.9197568880008475,
+          "in": 510,
+          "out": 93,
+          "cost": 0.0,
+          "list_cost": 7.379999999999999e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "m07",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.200529973000812,
+          "in": 508,
+          "out": 106,
+          "cost": 0.0,
+          "list_cost": 7.751999999999999e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "m08",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.9307831299993268,
+          "in": 506,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.403999999999999e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "m09",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.2242016889977094,
+          "in": 501,
+          "out": 100,
+          "cost": 0.0,
+          "list_cost": 7.509e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "m11",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.235863407000579,
+          "in": 518,
+          "out": 99,
+          "cost": 0.0,
+          "list_cost": 7.631999999999999e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "m12",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.1601244890007365,
+          "in": 507,
+          "out": 102,
+          "cost": 0.0,
+          "list_cost": 7.623e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "m13",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.0648214320026455,
+          "in": 511,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.449e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "m14",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.016486434997205,
+          "in": 507,
+          "out": 98,
+          "cost": 0.0,
+          "list_cost": 7.503e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "m15",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.086183108000114,
+          "in": 505,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.395e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "m16",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.9094504280001274,
+          "in": 509,
+          "out": 93,
+          "cost": 0.0,
+          "list_cost": 7.371e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "e01",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.102177566001046,
+          "in": 519,
+          "out": 99,
+          "cost": 0.0,
+          "list_cost": 7.641e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "e02",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.014506749001157,
+          "in": 509,
+          "out": 93,
+          "cost": 0.0,
+          "list_cost": 7.371e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "e03",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.2537605350007652,
+          "in": 494,
+          "out": 109,
+          "cost": 0.0,
+          "list_cost": 7.716e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "e04",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.079746191997401,
+          "in": 501,
+          "out": 102,
+          "cost": 0.0,
+          "list_cost": 7.569e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "e05",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.050488195000071,
+          "in": 514,
+          "out": 97,
+          "cost": 0.0,
+          "list_cost": 7.536e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "e06",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.9021733940026024,
+          "in": 507,
+          "out": 93,
+          "cost": 0.0,
+          "list_cost": 7.353e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "e07",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.053913014999125,
+          "in": 514,
+          "out": 94,
+          "cost": 0.0,
+          "list_cost": 7.445999999999999e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "e08",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.1903155159998278,
+          "in": 514,
+          "out": 93,
+          "cost": 0.0,
+          "list_cost": 7.416e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "e09",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.442733664000116,
+          "in": 494,
+          "out": 119,
+          "cost": 0.0,
+          "list_cost": 8.015999999999999e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "e10",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.1132393599982606,
+          "in": 508,
+          "out": 93,
+          "cost": 0.0,
+          "list_cost": 7.362e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "e11",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.4305548240008648,
+          "in": 513,
+          "out": 98,
+          "cost": 0.0,
+          "list_cost": 7.557e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "e12",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.9873821990004217,
+          "in": 503,
+          "out": 93,
+          "cost": 0.0,
+          "list_cost": 7.316999999999999e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "e13",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.0453895699974964,
+          "in": 504,
+          "out": 93,
+          "cost": 0.0,
+          "list_cost": 7.325999999999999e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "e14",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.26012413799981,
+          "in": 498,
+          "out": 106,
+          "cost": 0.0,
+          "list_cost": 7.662000000000001e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "e15",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.0228673410019837,
+          "in": 512,
+          "out": 93,
+          "cost": 0.0,
+          "list_cost": 7.397999999999999e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "m10",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.1107505979998678,
+          "in": 508,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.422e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "w01",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.991577820997918,
+          "in": 514,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.476e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "w02",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.976994731998275,
+          "in": 508,
+          "out": 93,
+          "cost": 0.0,
+          "list_cost": 7.362e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "w03",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.148348872000497,
+          "in": 505,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.395e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "u01",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.0501230240006407,
+          "in": 504,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.386e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "u02",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.293645056000969,
+          "in": 498,
+          "out": 104,
+          "cost": 0.0,
+          "list_cost": 7.602e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "u03",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.110297269999137,
+          "in": 503,
+          "out": 95,
+          "cost": 0.0,
+          "list_cost": 7.377e-05,
+          "model": "gemma-4-26b-a4b-it",
+          "id": "u04",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        }
+      ],
+      "overall": {
+        "n": 80,
+        "exact_match": 0.7875,
+        "booking_exact": 0.875,
+        "field_acc_mean": 0.971875,
+        "per_field": {
+          "check_in": 1.0,
+          "nights": 0.975,
+          "guests": 1.0,
+          "rooms": 0.9125,
+          "room_type": 1.0,
+          "budget_pkr": 0.9875,
+          "language": 0.9,
+          "needs_clarification": 1.0
+        },
+        "valid_json": 1.0
+      },
+      "roman_urdu": {
+        "n": 60,
+        "exact_match": 0.75,
+        "booking_exact": 0.8666666666666667,
+        "field_acc_mean": 0.9666666666666667,
+        "per_field": {
+          "check_in": 1.0,
+          "nights": 0.9666666666666667,
+          "guests": 1.0,
+          "rooms": 0.9166666666666666,
+          "room_type": 1.0,
+          "budget_pkr": 0.9833333333333333,
+          "language": 0.8666666666666667,
+          "needs_clarification": 1.0
+        },
+        "valid_json": 1.0
+      },
+      "latency_p50_s": 3.086183108000114,
+      "latency_p90_s": 3.3325235070005874,
+      "avg_tokens_in": 506.7625,
+      "avg_tokens_out": 97.3375,
+      "cost_per_1k_usd": 0.0,
+      "list_cost_per_1k_usd": 0.074809875,
+      "model": "gemma-4-26b-a4b-it"
+    },
+    "base": {
+      "rows": [
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r01",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r02",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r03",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r04",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r05",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r06",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r07",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r08",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r09",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r10",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r11",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r12",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r13",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r14",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r15",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r16",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r17",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r18",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r19",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r20",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r21",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r22",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r23",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r24",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r25",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r26",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r27",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r28",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r29",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r31",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r32",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r33",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r34",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r35",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r36",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r37",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r38",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r39",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r40",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r41",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r42",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "r30",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "m01",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "m02",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "m03",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "m04",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "m05",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "m06",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "m07",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "m08",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "m09",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "m11",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "m12",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "m13",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "m14",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "m15",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "m16",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "e01",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "e02",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "e03",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "e04",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "e05",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "e06",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "e07",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "e08",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "e09",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "e10",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "e11",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "e12",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "e13",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "e14",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "e15",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "m10",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "w01",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "w02",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "w03",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "u01",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "u02",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "u03",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": false,
+          "error": "base: missing keys ['check_in', 'nights', 'guests', 'rooms', 'room_type', 'budget_pkr', 'language', 'needs_clarification']",
+          "id": "u04",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        }
+      ],
+      "overall": {
+        "n": 80,
+        "exact_match": 0.0,
+        "booking_exact": 0.0,
+        "field_acc_mean": 0.0,
+        "per_field": {
+          "check_in": 0.0,
+          "nights": 0.0,
+          "guests": 0.0,
+          "rooms": 0.0,
+          "room_type": 0.0,
+          "budget_pkr": 0.0,
+          "language": 0.0,
+          "needs_clarification": 0.0
+        },
+        "valid_json": 0.0
+      },
+      "roman_urdu": {
+        "n": 60,
+        "exact_match": 0.0,
+        "booking_exact": 0.0,
+        "field_acc_mean": 0.0,
+        "per_field": {
+          "check_in": 0.0,
+          "nights": 0.0,
+          "guests": 0.0,
+          "rooms": 0.0,
+          "room_type": 0.0,
+          "budget_pkr": 0.0,
+          "language": 0.0,
+          "needs_clarification": 0.0
+        },
+        "valid_json": 0.0
+      },
+      "latency_p50_s": null,
+      "latency_p90_s": null,
+      "avg_tokens_in": 0.0,
+      "avg_tokens_out": 0.0,
+      "cost_per_1k_usd": 0.0,
+      "list_cost_per_1k_usd": 0.0,
+      "model": null
+    },
+    "base_spec": {
+      "rows": [
+        {
+          "ok": true,
+          "latency_s": 2.239405694999732,
+          "in": 538,
+          "out": 92,
+          "cost": 0.00027,
+          "list_cost": 0.00027,
+          "model": "qwen3.5-4b-base",
+          "id": "r01",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.190807611001219,
+          "in": 532,
+          "out": 92,
+          "cost": 0.00026802,
+          "list_cost": 0.00026802,
+          "model": "qwen3.5-4b-base",
+          "id": "r02",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.33905330700145,
+          "in": 543,
+          "out": 92,
+          "cost": 0.00027164999999999996,
+          "list_cost": 0.00027164999999999996,
+          "model": "qwen3.5-4b-base",
+          "id": "r03",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.7657245859991235,
+          "in": 523,
+          "out": 106,
+          "cost": 0.00027912,
+          "list_cost": 0.00027912,
+          "model": "qwen3.5-4b-base",
+          "id": "r04",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.5213932810002007,
+          "in": 533,
+          "out": 92,
+          "cost": 0.00026835000000000004,
+          "list_cost": 0.00026835000000000004,
+          "model": "qwen3.5-4b-base",
+          "id": "r05",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.279251966996526,
+          "in": 526,
+          "out": 92,
+          "cost": 0.00026604,
+          "list_cost": 0.00026604,
+          "model": "qwen3.5-4b-base",
+          "id": "r06",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.435885283997777,
+          "in": 534,
+          "out": 96,
+          "cost": 0.0002727,
+          "list_cost": 0.0002727,
+          "model": "qwen3.5-4b-base",
+          "id": "r07",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.2260235520006972,
+          "in": 530,
+          "out": 92,
+          "cost": 0.00026736,
+          "list_cost": 0.00026736,
+          "model": "qwen3.5-4b-base",
+          "id": "r08",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.263304361000337,
+          "in": 532,
+          "out": 95,
+          "cost": 0.000271035,
+          "list_cost": 0.000271035,
+          "model": "qwen3.5-4b-base",
+          "id": "r09",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": false,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.254781745003129,
+          "in": 535,
+          "out": 93,
+          "cost": 0.00027001499999999997,
+          "list_cost": 0.00027001499999999997,
+          "model": "qwen3.5-4b-base",
+          "id": "r10",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": false,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.4468033669982105,
+          "in": 523,
+          "out": 106,
+          "cost": 0.00027912,
+          "list_cost": 0.00027912,
+          "model": "qwen3.5-4b-base",
+          "id": "r11",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.3729535069978738,
+          "in": 542,
+          "out": 100,
+          "cost": 0.00027936000000000004,
+          "list_cost": 0.00027936000000000004,
+          "model": "qwen3.5-4b-base",
+          "id": "r12",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.32517560999986,
+          "in": 534,
+          "out": 94,
+          "cost": 0.00027068999999999997,
+          "list_cost": 0.00027068999999999997,
+          "model": "qwen3.5-4b-base",
+          "id": "r13",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.605822426001396,
+          "in": 536,
+          "out": 96,
+          "cost": 0.00027336,
+          "list_cost": 0.00027336,
+          "model": "qwen3.5-4b-base",
+          "id": "r14",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.3500212420003663,
+          "in": 528,
+          "out": 92,
+          "cost": 0.0002667,
+          "list_cost": 0.0002667,
+          "model": "qwen3.5-4b-base",
+          "id": "r15",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": false,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.5552993419987615,
+          "in": 523,
+          "out": 124,
+          "cost": 0.00029720999999999995,
+          "list_cost": 0.00029720999999999995,
+          "model": "qwen3.5-4b-base",
+          "id": "r16",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.325144859001739,
+          "in": 530,
+          "out": 92,
+          "cost": 0.00026736,
+          "list_cost": 0.00026736,
+          "model": "qwen3.5-4b-base",
+          "id": "r17",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.246838335002394,
+          "in": 527,
+          "out": 98,
+          "cost": 0.00027239999999999995,
+          "list_cost": 0.00027239999999999995,
+          "model": "qwen3.5-4b-base",
+          "id": "r18",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.301228312000603,
+          "in": 537,
+          "out": 98,
+          "cost": 0.0002757,
+          "list_cost": 0.0002757,
+          "model": "qwen3.5-4b-base",
+          "id": "r19",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": false,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.3737714439994306,
+          "in": 533,
+          "out": 94,
+          "cost": 0.00027036000000000003,
+          "list_cost": 0.00027036000000000003,
+          "model": "qwen3.5-4b-base",
+          "id": "r20",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.684245052998449,
+          "in": 535,
+          "out": 94,
+          "cost": 0.00027101999999999996,
+          "list_cost": 0.00027101999999999996,
+          "model": "qwen3.5-4b-base",
+          "id": "r21",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.554605053999694,
+          "in": 525,
+          "out": 94,
+          "cost": 0.00026772,
+          "list_cost": 0.00026772,
+          "model": "qwen3.5-4b-base",
+          "id": "r22",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": false,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.278451665999455,
+          "in": 522,
+          "out": 99,
+          "cost": 0.000271755,
+          "list_cost": 0.000271755,
+          "model": "qwen3.5-4b-base",
+          "id": "r23",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": false,
+            "guests": true,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.403760801997123,
+          "in": 536,
+          "out": 100,
+          "cost": 0.00027738,
+          "list_cost": 0.00027738,
+          "model": "qwen3.5-4b-base",
+          "id": "r24",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.4164554820017656,
+          "in": 544,
+          "out": 96,
+          "cost": 0.000276,
+          "list_cost": 0.000276,
+          "model": "qwen3.5-4b-base",
+          "id": "r25",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.240266116001294,
+          "in": 530,
+          "out": 94,
+          "cost": 0.00026937,
+          "list_cost": 0.00026937,
+          "model": "qwen3.5-4b-base",
+          "id": "r26",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.3110375520009256,
+          "in": 531,
+          "out": 93,
+          "cost": 0.000268695,
+          "list_cost": 0.000268695,
+          "model": "qwen3.5-4b-base",
+          "id": "r27",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.267547685001773,
+          "in": 527,
+          "out": 96,
+          "cost": 0.00027038999999999996,
+          "list_cost": 0.00027038999999999996,
+          "model": "qwen3.5-4b-base",
+          "id": "r28",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.2583342739999352,
+          "in": 530,
+          "out": 92,
+          "cost": 0.00026736,
+          "list_cost": 0.00026736,
+          "model": "qwen3.5-4b-base",
+          "id": "r29",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": false,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.6434603369998513,
+          "in": 523,
+          "out": 94,
+          "cost": 0.00026706,
+          "list_cost": 0.00026706,
+          "model": "qwen3.5-4b-base",
+          "id": "r31",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.1901486739989195,
+          "in": 527,
+          "out": 94,
+          "cost": 0.00026838,
+          "list_cost": 0.00026838,
+          "model": "qwen3.5-4b-base",
+          "id": "r32",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.2162518549994275,
+          "in": 534,
+          "out": 92,
+          "cost": 0.00026868,
+          "list_cost": 0.00026868,
+          "model": "qwen3.5-4b-base",
+          "id": "r33",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.3870177650023834,
+          "in": 529,
+          "out": 92,
+          "cost": 0.00026703,
+          "list_cost": 0.00026703,
+          "model": "qwen3.5-4b-base",
+          "id": "r34",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.2326341629996023,
+          "in": 534,
+          "out": 95,
+          "cost": 0.000271695,
+          "list_cost": 0.000271695,
+          "model": "qwen3.5-4b-base",
+          "id": "r35",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.197370296998997,
+          "in": 534,
+          "out": 98,
+          "cost": 0.00027471,
+          "list_cost": 0.00027471,
+          "model": "qwen3.5-4b-base",
+          "id": "r36",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.239424258001236,
+          "in": 536,
+          "out": 94,
+          "cost": 0.00027134999999999995,
+          "list_cost": 0.00027134999999999995,
+          "model": "qwen3.5-4b-base",
+          "id": "r37",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.5126748270013195,
+          "in": 533,
+          "out": 94,
+          "cost": 0.00027036000000000003,
+          "list_cost": 0.00027036000000000003,
+          "model": "qwen3.5-4b-base",
+          "id": "r38",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.3187720159985474,
+          "in": 526,
+          "out": 111,
+          "cost": 0.000285135,
+          "list_cost": 0.000285135,
+          "model": "qwen3.5-4b-base",
+          "id": "r39",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.284408165000059,
+          "in": 541,
+          "out": 96,
+          "cost": 0.00027501,
+          "list_cost": 0.00027501,
+          "model": "qwen3.5-4b-base",
+          "id": "r40",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.6281720330007374,
+          "in": 524,
+          "out": 92,
+          "cost": 0.00026538,
+          "list_cost": 0.00026538,
+          "model": "qwen3.5-4b-base",
+          "id": "r41",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.2059938219972537,
+          "in": 538,
+          "out": 92,
+          "cost": 0.00027,
+          "list_cost": 0.00027,
+          "model": "qwen3.5-4b-base",
+          "id": "r42",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.5851546020021487,
+          "in": 524,
+          "out": 92,
+          "cost": 0.00026538,
+          "list_cost": 0.00026538,
+          "model": "qwen3.5-4b-base",
+          "id": "r30",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": false,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.5074125659994024,
+          "in": 531,
+          "out": 92,
+          "cost": 0.00026769,
+          "list_cost": 0.00026769,
+          "model": "qwen3.5-4b-base",
+          "id": "m01",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.235183462002169,
+          "in": 534,
+          "out": 97,
+          "cost": 0.000273705,
+          "list_cost": 0.000273705,
+          "model": "qwen3.5-4b-base",
+          "id": "m02",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": false,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.2602410709987453,
+          "in": 533,
+          "out": 92,
+          "cost": 0.00026835000000000004,
+          "list_cost": 0.00026835000000000004,
+          "model": "qwen3.5-4b-base",
+          "id": "m03",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.5782070179993752,
+          "in": 534,
+          "out": 92,
+          "cost": 0.00026868,
+          "list_cost": 0.00026868,
+          "model": "qwen3.5-4b-base",
+          "id": "m04",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.2224801260017557,
+          "in": 538,
+          "out": 97,
+          "cost": 0.000275025,
+          "list_cost": 0.000275025,
+          "model": "qwen3.5-4b-base",
+          "id": "m05",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": false,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.3940922239999054,
+          "in": 531,
+          "out": 92,
+          "cost": 0.00026769,
+          "list_cost": 0.00026769,
+          "model": "qwen3.5-4b-base",
+          "id": "m06",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.525003850001667,
+          "in": 535,
+          "out": 92,
+          "cost": 0.00026901,
+          "list_cost": 0.00026901,
+          "model": "qwen3.5-4b-base",
+          "id": "m07",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.267140408999694,
+          "in": 533,
+          "out": 102,
+          "cost": 0.0002784,
+          "list_cost": 0.0002784,
+          "model": "qwen3.5-4b-base",
+          "id": "m08",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.417944439999701,
+          "in": 532,
+          "out": 92,
+          "cost": 0.00026802,
+          "list_cost": 0.00026802,
+          "model": "qwen3.5-4b-base",
+          "id": "m09",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.274895959002606,
+          "in": 524,
+          "out": 95,
+          "cost": 0.000268395,
+          "list_cost": 0.000268395,
+          "model": "qwen3.5-4b-base",
+          "id": "m11",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.350849770999048,
+          "in": 542,
+          "out": 98,
+          "cost": 0.00027735000000000005,
+          "list_cost": 0.00027735000000000005,
+          "model": "qwen3.5-4b-base",
+          "id": "m12",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.235040559000481,
+          "in": 530,
+          "out": 96,
+          "cost": 0.00027138,
+          "list_cost": 0.00027138,
+          "model": "qwen3.5-4b-base",
+          "id": "m13",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": false,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.290510044000257,
+          "in": 537,
+          "out": 104,
+          "cost": 0.00028173,
+          "list_cost": 0.00028173,
+          "model": "qwen3.5-4b-base",
+          "id": "m14",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 3.389638474000094,
+          "in": 530,
+          "out": 97,
+          "cost": 0.000272385,
+          "list_cost": 0.000272385,
+          "model": "qwen3.5-4b-base",
+          "id": "m15",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.493665467998653,
+          "in": 530,
+          "out": 93,
+          "cost": 0.000268365,
+          "list_cost": 0.000268365,
+          "model": "qwen3.5-4b-base",
+          "id": "m16",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.894620652998128,
+          "in": 532,
+          "out": 92,
+          "cost": 0.00026802,
+          "list_cost": 0.00026802,
+          "model": "qwen3.5-4b-base",
+          "id": "e01",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.3567197310003394,
+          "in": 542,
+          "out": 98,
+          "cost": 0.00027735000000000005,
+          "list_cost": 0.00027735000000000005,
+          "model": "qwen3.5-4b-base",
+          "id": "e02",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.4567062220012303,
+          "in": 532,
+          "out": 92,
+          "cost": 0.00026802,
+          "list_cost": 0.00026802,
+          "model": "qwen3.5-4b-base",
+          "id": "e03",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.4439755710009194,
+          "in": 517,
+          "out": 91,
+          "cost": 0.000262065,
+          "list_cost": 0.000262065,
+          "model": "qwen3.5-4b-base",
+          "id": "e04",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.3860912560012366,
+          "in": 524,
+          "out": 99,
+          "cost": 0.000272415,
+          "list_cost": 0.000272415,
+          "model": "qwen3.5-4b-base",
+          "id": "e05",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.833771298999636,
+          "in": 537,
+          "out": 96,
+          "cost": 0.00027369,
+          "list_cost": 0.00027369,
+          "model": "qwen3.5-4b-base",
+          "id": "e06",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.232046615001309,
+          "in": 530,
+          "out": 92,
+          "cost": 0.00026736,
+          "list_cost": 0.00026736,
+          "model": "qwen3.5-4b-base",
+          "id": "e07",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.659852206001233,
+          "in": 537,
+          "out": 93,
+          "cost": 0.000270675,
+          "list_cost": 0.000270675,
+          "model": "qwen3.5-4b-base",
+          "id": "e08",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": false,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.3644245710020186,
+          "in": 536,
+          "out": 92,
+          "cost": 0.00026933999999999997,
+          "list_cost": 0.00026933999999999997,
+          "model": "qwen3.5-4b-base",
+          "id": "e09",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.3650106340028287,
+          "in": 517,
+          "out": 98,
+          "cost": 0.00026910000000000004,
+          "list_cost": 0.00026910000000000004,
+          "model": "qwen3.5-4b-base",
+          "id": "e10",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.5169313559999864,
+          "in": 531,
+          "out": 93,
+          "cost": 0.000268695,
+          "list_cost": 0.000268695,
+          "model": "qwen3.5-4b-base",
+          "id": "e11",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.3744633620008244,
+          "in": 536,
+          "out": 97,
+          "cost": 0.000274365,
+          "list_cost": 0.000274365,
+          "model": "qwen3.5-4b-base",
+          "id": "e12",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.3934017819992732,
+          "in": 526,
+          "out": 92,
+          "cost": 0.00026604,
+          "list_cost": 0.00026604,
+          "model": "qwen3.5-4b-base",
+          "id": "e13",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.3070499540008313,
+          "in": 527,
+          "out": 93,
+          "cost": 0.000267375,
+          "list_cost": 0.000267375,
+          "model": "qwen3.5-4b-base",
+          "id": "e14",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.3128281319986854,
+          "in": 521,
+          "out": 101,
+          "cost": 0.000273435,
+          "list_cost": 0.000273435,
+          "model": "qwen3.5-4b-base",
+          "id": "e15",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.445721047002735,
+          "in": 536,
+          "out": 93,
+          "cost": 0.00027034499999999996,
+          "list_cost": 0.00027034499999999996,
+          "model": "qwen3.5-4b-base",
+          "id": "m10",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.2278079290008463,
+          "in": 532,
+          "out": 92,
+          "cost": 0.00026802,
+          "list_cost": 0.00026802,
+          "model": "qwen3.5-4b-base",
+          "id": "w01",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.5174905760031834,
+          "in": 540,
+          "out": 92,
+          "cost": 0.00027066000000000004,
+          "list_cost": 0.00027066000000000004,
+          "model": "qwen3.5-4b-base",
+          "id": "w02",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.4527536450004845,
+          "in": 531,
+          "out": 92,
+          "cost": 0.00026769,
+          "list_cost": 0.00026769,
+          "model": "qwen3.5-4b-base",
+          "id": "w03",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.2615678729998763,
+          "in": 536,
+          "out": 94,
+          "cost": 0.00027134999999999995,
+          "list_cost": 0.00027134999999999995,
+          "model": "qwen3.5-4b-base",
+          "id": "u01",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.3249180849998083,
+          "in": 534,
+          "out": 103,
+          "cost": 0.00027973500000000003,
+          "list_cost": 0.00027973500000000003,
+          "model": "qwen3.5-4b-base",
+          "id": "u02",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.5770177000013064,
+          "in": 523,
+          "out": 114,
+          "cost": 0.00028715999999999995,
+          "list_cost": 0.00028715999999999995,
+          "model": "qwen3.5-4b-base",
+          "id": "u03",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.305893198998092,
+          "in": 534,
+          "out": 94,
+          "cost": 0.00027068999999999997,
+          "list_cost": 0.00027068999999999997,
+          "model": "qwen3.5-4b-base",
+          "id": "u04",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        }
+      ],
+      "overall": {
+        "n": 80,
+        "exact_match": 0.3875,
+        "booking_exact": 0.6875,
+        "field_acc_mean": 0.8890625,
+        "per_field": {
+          "check_in": 0.875,
+          "nights": 0.9125,
+          "guests": 0.975,
+          "rooms": 0.9375,
+          "room_type": 1.0,
+          "budget_pkr": 0.9125,
+          "language": 0.5625,
+          "needs_clarification": 0.9375
+        },
+        "valid_json": 1.0
+      },
+      "roman_urdu": {
+        "n": 60,
+        "exact_match": 0.4166666666666667,
+        "booking_exact": 0.7,
+        "field_acc_mean": 0.8895833333333333,
+        "per_field": {
+          "check_in": 0.9166666666666666,
+          "nights": 0.9,
+          "guests": 0.9666666666666667,
+          "rooms": 0.9333333333333333,
+          "room_type": 1.0,
+          "budget_pkr": 0.8833333333333333,
+          "language": 0.5833333333333334,
+          "needs_clarification": 0.9333333333333333
+        },
+        "valid_json": 1.0
+      },
+      "latency_p50_s": 2.3744633620008244,
+      "latency_p90_s": 3.246838335002394,
+      "avg_tokens_in": 531.5875,
+      "avg_tokens_out": 95.675,
+      "cost_per_1k_usd": 0.2715772500000001,
+      "list_cost_per_1k_usd": 0.2715772500000001,
+      "model": "qwen3.5-4b-base"
+    },
+    "tinker": {
+      "rows": [
+        {
+          "ok": true,
+          "latency_s": 9.749641405000148,
+          "in": 74,
+          "out": 60,
+          "cost": 8.472e-05,
+          "list_cost": 8.472e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r01",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.042158111999015,
+          "in": 68,
+          "out": 60,
+          "cost": 8.274e-05,
+          "list_cost": 8.274e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r02",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.5148621590014955,
+          "in": 79,
+          "out": 60,
+          "cost": 8.637e-05,
+          "list_cost": 8.637e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r03",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.5481744309981877,
+          "in": 59,
+          "out": 63,
+          "cost": 8.2785e-05,
+          "list_cost": 8.2785e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r04",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.4547748650002177,
+          "in": 69,
+          "out": 60,
+          "cost": 8.306999999999999e-05,
+          "list_cost": 8.306999999999999e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r05",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.0279114410004695,
+          "in": 62,
+          "out": 60,
+          "cost": 8.075999999999999e-05,
+          "list_cost": 8.075999999999999e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r06",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.0067697810009122,
+          "in": 70,
+          "out": 63,
+          "cost": 8.641499999999999e-05,
+          "list_cost": 8.641499999999999e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r07",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 0.9436898980020487,
+          "in": 66,
+          "out": 60,
+          "cost": 8.208e-05,
+          "list_cost": 8.208e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r08",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 0.984277027000644,
+          "in": 68,
+          "out": 60,
+          "cost": 8.274e-05,
+          "list_cost": 8.274e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r09",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.1456219239989878,
+          "in": 71,
+          "out": 61,
+          "cost": 8.473499999999998e-05,
+          "list_cost": 8.473499999999998e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r10",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.0682607470007497,
+          "in": 59,
+          "out": 74,
+          "cost": 9.383999999999998e-05,
+          "list_cost": 9.383999999999998e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r11",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": true,
+            "guests": true,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.0046895800005586,
+          "in": 78,
+          "out": 65,
+          "cost": 9.1065e-05,
+          "list_cost": 9.1065e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r12",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.5860969400018803,
+          "in": 70,
+          "out": 60,
+          "cost": 8.340000000000001e-05,
+          "list_cost": 8.340000000000001e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r13",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.456639808999171,
+          "in": 72,
+          "out": 63,
+          "cost": 8.707499999999999e-05,
+          "list_cost": 8.707499999999999e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r14",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.4767513519982458,
+          "in": 64,
+          "out": 60,
+          "cost": 8.142e-05,
+          "list_cost": 8.142e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r15",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.3903243099994143,
+          "in": 59,
+          "out": 74,
+          "cost": 9.383999999999998e-05,
+          "list_cost": 9.383999999999998e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r16",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.07492383600038,
+          "in": 66,
+          "out": 60,
+          "cost": 8.208e-05,
+          "list_cost": 8.208e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r17",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.7338819110009354,
+          "in": 63,
+          "out": 63,
+          "cost": 8.4105e-05,
+          "list_cost": 8.4105e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r18",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 0.892874478999147,
+          "in": 73,
+          "out": 64,
+          "cost": 8.841e-05,
+          "list_cost": 8.841e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r19",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.1051190559992392,
+          "in": 69,
+          "out": 60,
+          "cost": 8.306999999999999e-05,
+          "list_cost": 8.306999999999999e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r20",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.2251532049995149,
+          "in": 71,
+          "out": 60,
+          "cost": 8.372999999999999e-05,
+          "list_cost": 8.372999999999999e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r21",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.0422698040019895,
+          "in": 61,
+          "out": 60,
+          "cost": 8.043e-05,
+          "list_cost": 8.043e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r22",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": false,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.106419083000219,
+          "in": 58,
+          "out": 65,
+          "cost": 8.446499999999998e-05,
+          "list_cost": 8.446499999999998e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r23",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": false,
+            "guests": true,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.137050969999109,
+          "in": 72,
+          "out": 60,
+          "cost": 8.406e-05,
+          "list_cost": 8.406e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r24",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.0127443489982397,
+          "in": 80,
+          "out": 64,
+          "cost": 9.072e-05,
+          "list_cost": 9.072e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r25",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 5.953781209998851,
+          "in": 66,
+          "out": 60,
+          "cost": 8.208e-05,
+          "list_cost": 8.208e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r26",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 6.4695611279967125,
+          "in": 67,
+          "out": 61,
+          "cost": 8.341499999999999e-05,
+          "list_cost": 8.341499999999999e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r27",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 0.8977894829986326,
+          "in": 63,
+          "out": 60,
+          "cost": 8.109e-05,
+          "list_cost": 8.109e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r28",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 0.9997202819977247,
+          "in": 66,
+          "out": 60,
+          "cost": 8.208e-05,
+          "list_cost": 8.208e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r29",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 0.9822676250005316,
+          "in": 59,
+          "out": 60,
+          "cost": 7.976999999999999e-05,
+          "list_cost": 7.976999999999999e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r31",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.2691606730004423,
+          "in": 63,
+          "out": 60,
+          "cost": 8.109e-05,
+          "list_cost": 8.109e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r32",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 0.9235911010000564,
+          "in": 70,
+          "out": 60,
+          "cost": 8.340000000000001e-05,
+          "list_cost": 8.340000000000001e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r33",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 0.917989685000066,
+          "in": 65,
+          "out": 60,
+          "cost": 8.175e-05,
+          "list_cost": 8.175e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r34",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.050292494997848,
+          "in": 70,
+          "out": 61,
+          "cost": 8.4405e-05,
+          "list_cost": 8.4405e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r35",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.1243475820010644,
+          "in": 70,
+          "out": 63,
+          "cost": 8.641499999999999e-05,
+          "list_cost": 8.641499999999999e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r36",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.1211736540026322,
+          "in": 72,
+          "out": 60,
+          "cost": 8.406e-05,
+          "list_cost": 8.406e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r37",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": false,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.3341510690006544,
+          "in": 69,
+          "out": 60,
+          "cost": 8.306999999999999e-05,
+          "list_cost": 8.306999999999999e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r38",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 0.9232852460008871,
+          "in": 62,
+          "out": 74,
+          "cost": 9.482999999999998e-05,
+          "list_cost": 9.482999999999998e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r39",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.50959879599759,
+          "in": 77,
+          "out": 63,
+          "cost": 8.872499999999999e-05,
+          "list_cost": 8.872499999999999e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r40",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.4411396450013854,
+          "in": 60,
+          "out": 60,
+          "cost": 8.01e-05,
+          "list_cost": 8.01e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r41",
+          "ru": true,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 2.1718215229993802,
+          "in": 74,
+          "out": 60,
+          "cost": 8.472e-05,
+          "list_cost": 8.472e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r42",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 0.9506216670015419,
+          "in": 60,
+          "out": 60,
+          "cost": 8.01e-05,
+          "list_cost": 8.01e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "r30",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": false,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.0356395479975617,
+          "in": 67,
+          "out": 58,
+          "cost": 8.039999999999999e-05,
+          "list_cost": 8.039999999999999e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "m01",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 0.871056125000905,
+          "in": 70,
+          "out": 62,
+          "cost": 8.541e-05,
+          "list_cost": 8.541e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "m02",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 0.922597245000361,
+          "in": 69,
+          "out": 60,
+          "cost": 8.306999999999999e-05,
+          "list_cost": 8.306999999999999e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "m03",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.0063755110022612,
+          "in": 70,
+          "out": 60,
+          "cost": 8.340000000000001e-05,
+          "list_cost": 8.340000000000001e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "m04",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.2176589029986644,
+          "in": 74,
+          "out": 62,
+          "cost": 8.672999999999999e-05,
+          "list_cost": 8.672999999999999e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "m05",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.0294699619989842,
+          "in": 67,
+          "out": 60,
+          "cost": 8.240999999999999e-05,
+          "list_cost": 8.240999999999999e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "m06",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.5642179139977088,
+          "in": 71,
+          "out": 58,
+          "cost": 8.172e-05,
+          "list_cost": 8.172e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "m07",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.021444063000672,
+          "in": 69,
+          "out": 60,
+          "cost": 8.306999999999999e-05,
+          "list_cost": 8.306999999999999e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "m08",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 0.8005508059977728,
+          "in": 68,
+          "out": 60,
+          "cost": 8.274e-05,
+          "list_cost": 8.274e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "m09",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 0.9313372229989909,
+          "in": 60,
+          "out": 60,
+          "cost": 8.01e-05,
+          "list_cost": 8.01e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "m11",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.0108157889990252,
+          "in": 78,
+          "out": 63,
+          "cost": 8.9055e-05,
+          "list_cost": 8.9055e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "m12",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.6197635360003915,
+          "in": 66,
+          "out": 66,
+          "cost": 8.811e-05,
+          "list_cost": 8.811e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "m13",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.1412248960004945,
+          "in": 73,
+          "out": 60,
+          "cost": 8.439e-05,
+          "list_cost": 8.439e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "m14",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.1252732100001595,
+          "in": 66,
+          "out": 64,
+          "cost": 8.609999999999999e-05,
+          "list_cost": 8.609999999999999e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "m15",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 0.9213694370009762,
+          "in": 66,
+          "out": 61,
+          "cost": 8.3085e-05,
+          "list_cost": 8.3085e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "m16",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": false,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.1247028629986744,
+          "in": 68,
+          "out": 58,
+          "cost": 8.073e-05,
+          "list_cost": 8.073e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "e01",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.0251257580021047,
+          "in": 78,
+          "out": 63,
+          "cost": 8.9055e-05,
+          "list_cost": 8.9055e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "e02",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.0234459080020315,
+          "in": 68,
+          "out": 58,
+          "cost": 8.073e-05,
+          "list_cost": 8.073e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "e03",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.0134418579982594,
+          "in": 53,
+          "out": 61,
+          "cost": 7.8795e-05,
+          "list_cost": 7.8795e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "e04",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 6.14751767800044,
+          "in": 60,
+          "out": 58,
+          "cost": 7.808999999999999e-05,
+          "list_cost": 7.808999999999999e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "e05",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 0.9263995389992488,
+          "in": 73,
+          "out": 61,
+          "cost": 8.539499999999999e-05,
+          "list_cost": 8.539499999999999e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "e06",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": false,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 0.9243512190005276,
+          "in": 66,
+          "out": 58,
+          "cost": 8.007e-05,
+          "list_cost": 8.007e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "e07",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 5.913817083997856,
+          "in": 73,
+          "out": 59,
+          "cost": 8.338499999999999e-05,
+          "list_cost": 8.338499999999999e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "e08",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": false,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 6.049108299997897,
+          "in": 72,
+          "out": 58,
+          "cost": 8.205e-05,
+          "list_cost": 8.205e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "e09",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 5.963608846002899,
+          "in": 53,
+          "out": 66,
+          "cost": 8.382e-05,
+          "list_cost": 8.382e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "e10",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 5.959963975001301,
+          "in": 67,
+          "out": 59,
+          "cost": 8.1405e-05,
+          "list_cost": 8.1405e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "e11",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 5.837954768998316,
+          "in": 72,
+          "out": 62,
+          "cost": 8.607e-05,
+          "list_cost": 8.607e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "e12",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.5726641310029663,
+          "in": 62,
+          "out": 58,
+          "cost": 7.875e-05,
+          "list_cost": 7.875e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "e13",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.4999151099982555,
+          "in": 63,
+          "out": 59,
+          "cost": 8.008499999999999e-05,
+          "list_cost": 8.008499999999999e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "e14",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.004712739999377,
+          "in": 57,
+          "out": 66,
+          "cost": 8.514e-05,
+          "list_cost": 8.514e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "e15",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": false,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 0.9587984030004009,
+          "in": 72,
+          "out": 59,
+          "cost": 8.3055e-05,
+          "list_cost": 8.3055e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "m10",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 0.9200655599997845,
+          "in": 68,
+          "out": 60,
+          "cost": 8.274e-05,
+          "list_cost": 8.274e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "w01",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 5.900281451002229,
+          "in": 76,
+          "out": 60,
+          "cost": 8.538e-05,
+          "list_cost": 8.538e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "w02",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 6.1625112110014015,
+          "in": 67,
+          "out": 58,
+          "cost": 8.039999999999999e-05,
+          "list_cost": 8.039999999999999e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "w03",
+          "ru": true,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 1.185395991000405,
+          "in": 72,
+          "out": 60,
+          "cost": 8.406e-05,
+          "list_cost": 8.406e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "u01",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 0.9727745819982374,
+          "in": 70,
+          "out": 60,
+          "cost": 8.340000000000001e-05,
+          "list_cost": 8.340000000000001e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "u02",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        },
+        {
+          "ok": false,
+          "error": "tinker: no JSON object in model output: '{\"check_in\":null,\"nights\":null,\"guests\":null,\"rooms\":1,\"room_type\":\"any\",\"budget_pkr\":null,\"language\":\"roman_urdu\",\"need'",
+          "id": "u03",
+          "ru": false,
+          "fields": {
+            "check_in": false,
+            "nights": false,
+            "guests": false,
+            "rooms": false,
+            "room_type": false,
+            "budget_pkr": false,
+            "language": false,
+            "needs_clarification": false
+          }
+        },
+        {
+          "ok": true,
+          "latency_s": 0.8992343279969646,
+          "in": 70,
+          "out": 60,
+          "cost": 8.340000000000001e-05,
+          "list_cost": 8.340000000000001e-05,
+          "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser",
+          "id": "u04",
+          "ru": false,
+          "fields": {
+            "check_in": true,
+            "nights": true,
+            "guests": true,
+            "rooms": true,
+            "room_type": true,
+            "budget_pkr": true,
+            "language": true,
+            "needs_clarification": true
+          }
+        }
+      ],
+      "overall": {
+        "n": 80,
+        "exact_match": 0.625,
+        "booking_exact": 0.7375,
+        "field_acc_mean": 0.9328125,
+        "per_field": {
+          "check_in": 0.9125,
+          "nights": 0.9,
+          "guests": 0.975,
+          "rooms": 0.85,
+          "room_type": 0.9875,
+          "budget_pkr": 0.9875,
+          "language": 0.8625,
+          "needs_clarification": 0.9875
+        },
+        "valid_json": 0.9875
+      },
+      "roman_urdu": {
+        "n": 60,
+        "exact_match": 0.6333333333333333,
+        "booking_exact": 0.7833333333333333,
+        "field_acc_mean": 0.9416666666666667,
+        "per_field": {
+          "check_in": 0.9166666666666666,
+          "nights": 0.9166666666666666,
+          "guests": 0.9833333333333333,
+          "rooms": 0.8833333333333333,
+          "room_type": 1.0,
+          "budget_pkr": 1.0,
+          "language": 0.8333333333333334,
+          "needs_clarification": 1.0
+        },
+        "valid_json": 1.0
+      },
+      "latency_p50_s": 1.106419083000219,
+      "latency_p90_s": 5.913817083997856,
+      "avg_tokens_in": 67.69620253164557,
+      "avg_tokens_out": 61.21518987341772,
+      "cost_per_1k_usd": 0.08386101265822786,
+      "list_cost_per_1k_usd": 0.08386101265822786,
+      "model": "tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser"
+    }
+  },
+  "stats": {
+    "ci": {
+      "gemma": {
+        "booking_exact": [
+          0.8,
+          0.9375
+        ],
+        "exact_match": [
+          0.7,
+          0.875
+        ]
+      },
+      "base": {
+        "booking_exact": [
+          0.0,
+          0.0
+        ],
+        "exact_match": [
+          0.0,
+          0.0
+        ]
+      },
+      "base_spec": {
+        "booking_exact": [
+          0.5875,
+          0.7875
+        ],
+        "exact_match": [
+          0.2875,
+          0.5
+        ]
+      },
+      "tinker": {
+        "booking_exact": [
+          0.6375,
+          0.825
+        ],
+        "exact_match": [
+          0.5125,
+          0.725
+        ]
+      }
+    },
+    "vs_tinker": {
+      "gemma": {
+        "booking_exact": {
+          "only_first": 1,
+          "only_second": 12,
+          "p": 0.00341796875
+        },
+        "exact_match": {
+          "only_first": 3,
+          "only_second": 16,
+          "p": 0.004425048828125
+        }
+      },
+      "base": {
+        "booking_exact": {
+          "only_first": 59,
+          "only_second": 0,
+          "p": 3.469446951953614e-18
+        },
+        "exact_match": {
+          "only_first": 50,
+          "only_second": 0,
+          "p": 1.7763568394002505e-15
+        }
+      },
+      "base_spec": {
+        "booking_exact": {
+          "only_first": 15,
+          "only_second": 11,
+          "p": 0.557197093963623
+        },
+        "exact_match": {
+          "only_first": 34,
+          "only_second": 15,
+          "p": 0.009399241523873059
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+# Fine-tuned Qwen3.5-4B + Munshi LoRA v1, SHORT_PROMPT, 2026-10-17 21:24 PKT, TODAY=2026-10-17
+# sampler: tinker://7962983b-a1b6-507c-8466-20ec4f800a9b:train:0/sampler_weights/munshi-parser
+$ python -m train.sample_check "parso 5 bande family room 3 din"
+{"check_in":"2026-10-19","nights":3,"guests":5,"rooms":2,"room_type":"family","budget_pkr":null,"language":"roman_urdu","needs_clarification":false,"clarification_question":null}
+latency 9.60s (first call, cold)  tokens 58+60  $0.000079

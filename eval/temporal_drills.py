@@ -57,13 +57,14 @@ class Stack:
             [shutil.which("temporal"), "server", "start-dev", "--headless", "--db-filename",
              str(DRILLS / "drills.db"), "--port", str(PORT), "--ui-port", str(UI_PORT)],
             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        for _ in range(60):
+        self.mark(f"Temporal server process started (pid {self.server.pid})")
+        for _ in range(120):
             try:
                 asyncio.run(asyncio.wait_for(connect(), 2))
                 break
             except Exception:  # noqa: BLE001
                 time.sleep(1)
-        self.mark(f"Temporal server started (pid {self.server.pid})")
+        self.mark("Temporal server accepting client connections")
 
     def start_worker(self, env: dict | None = None) -> None:
         self.n_workers += 1
