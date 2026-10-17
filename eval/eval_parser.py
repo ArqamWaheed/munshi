@@ -32,6 +32,7 @@ from pathlib import Path
 
 import numpy as np
 
+from munshi import config as cfg
 from munshi.llm import ProviderError, RateLimited
 from munshi.parser import parse_message
 from munshi.schema import PARSED_FIELDS, Inquiry
@@ -172,17 +173,21 @@ def main() -> None:
     ap.add_argument("--models", nargs="+", default=["gemma", "base", "base_spec", "tinker"],
                     choices=["gemma", "base", "base_spec", "tinker"])
     ap.add_argument("--limit", type=int)
+    ap.add_argument("--tinker-path", help="evaluate this tinker:// sampler path instead of TINKER_MODEL_PATH")
+    ap.add_argument("--out", default="parser_eval", help="output file stem under results/")
     a = ap.parse_args()
     init_sentry("eval")
+    if a.tinker_path:
+        cfg.TINKER_MODEL_PATH = a.tinker_path
     rows = [json.loads(ln) for ln in Path(a.eval).read_text(encoding="utf-8").splitlines() if ln.strip()][: a.limit]
     results = {m: run_model(m, rows) for m in a.models}
     out = ROOT / "results"
     out.mkdir(exist_ok=True)
     st = stats(results)
-    (out / "parser_eval.json").write_text(json.dumps({"eval_file": a.eval, "n": len(rows), "results": results,
+    (out / f"{a.out}.json").write_text(json.dumps({"eval_file": a.eval, "n": len(rows), "results": results,
                                                       "stats": st}, indent=2, default=str))
     md = table(results) + stats_table(results, st)
-    (out / "parser_eval.md").write_text(md)
+    (out / f"{a.out}.md").write_text(md)
     print(md)
 
 

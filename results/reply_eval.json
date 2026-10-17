@@ -1,0 +1,662 @@
+{
+  "summary": {
+    "n": 70,
+    "first_pass": 70,
+    "rejected_first": 0,
+    "fixed_by_retry": 0,
+    "template": 0,
+    "problem_kinds": {},
+    "by_language": {
+      "english": {
+        "n": 13,
+        "rejected_first": 0
+      },
+      "mixed": {
+        "n": 16,
+        "rejected_first": 0
+      },
+      "roman_urdu": {
+        "n": 38,
+        "rejected_first": 0
+      },
+      "urdu_script": {
+        "n": 3,
+        "rejected_first": 0
+      }
+    },
+    "latency_p50_s": 2.4210936544986907,
+    "model": "gemma-4-26b-a4b-it"
+  },
+  "rows": [
+    {
+      "id": "r01",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "22 October ke liye 1 room available hai. Total 8,000 Rs banta hai. Booking confirm karne ke liye 2,000 Rs advance jama karwana hoga. Hum ye room sirf 12 hours ke liye hold kar sakte hain. 🏨",
+      "latency_s": 2.4489384360022086,
+      "words": 37,
+      "sent": "gemma"
+    },
+    {
+      "id": "r02",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 21 October ki booking ke liye 1 double room available hai. 4 raaton ka total 32,000 Rs banta hai. Booking confirm karne ke liye 10,000 Rs advance jama karwana hoga. Hum yeh room sirf 6 ghanton ke liye hold kar sakte hain. 🏨",
+      "latency_s": 2.499873798002227,
+      "words": 44,
+      "sent": "gemma"
+    },
+    {
+      "id": "r03",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 23 October ki booking ke liye 3 rooms available hain. 2 nights ka total 48,000 Rs banta hai. Booking confirm karne ke liye 24,000 Rs advance jama karwana hoga. Hum ye rooms sirf 2 ghantay tak hold kar sakte hain. 🏨",
+      "latency_s": 2.3503704670001753,
+      "words": 42,
+      "sent": "gemma"
+    },
+    {
+      "id": "r05",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 2 family rooms ki booking 2 November 2026 se 3 raaton ke liye available hain. Total amount Rs 48,000 banti hai. Booking confirm karne ke liye Rs 10,000 advance dena hoga. Hum ye rooms sirf 12 ghanton ke liye hold kar sakte hain. 🏨",
+      "latency_s": 2.6120648849973804,
+      "words": 45,
+      "sent": "gemma"
+    },
+    {
+      "id": "r06",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 28 October ki booking ke liye single room available hai. Ek raat ka total 8,000 Rs banta hai. Booking confirm karne ke liye 2,500 Rs advance jama karwana hoga. Hum ye room sirf 6 ghanton ke liye hold kar sakte hain.",
+      "latency_s": 2.313858535999316,
+      "words": 42,
+      "sent": "gemma"
+    },
+    {
+      "id": "r07",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 31 October ki booking ke liye 1 room available hai. 2 nights ka total 16,000 Rs banta hai. Booking confirm karne ke liye 8,000 Rs advance dena hoga. Hum ye room sirf 2 hours ke liye hold kar sakte hain.",
+      "latency_s": 2.2015425070021593,
+      "words": 41,
+      "sent": "gemma"
+    },
+    {
+      "id": "r08",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 2 rooms ki booking 2 November se 3 raaton ke liye available hain. Total amount 48,000 Rs banti hai. Booking confirm karne ke liye 10,000 Rs advance jama karwana hoga. Hum aapki request sirf 12 ghanton ke liye hold kar sakte hain. 🏨",
+      "latency_s": 2.455705083000794,
+      "words": 44,
+      "sent": "gemma"
+    },
+    {
+      "id": "r09",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "3 November 2026 ke liye aapka 1 room available hai. Total 8,000 Rs banta hai. Booking confirm karne ke liye 2,500 Rs advance jama karwana hoga. Hum aapka room sirf 6 ghanton ke liye hold kar sakte hain.",
+      "latency_s": 2.2801957099982246,
+      "words": 38,
+      "sent": "gemma"
+    },
+    {
+      "id": "r10",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 15 November ki booking ke liye 1 triple room available hai. 3 nights ka total 24,000 Rs banta hai. Booking confirm karne ke liye 12,000 Rs advance dena hoga. Hum ye room sirf 2 ghantay tak hold kar sakte hain.",
+      "latency_s": 2.2650810070008447,
+      "words": 41,
+      "sent": "gemma"
+    },
+    {
+      "id": "r12",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 5 November ki booking ke liye 4 rooms available hain. 2 raaton ka total 64,000 Rs banta hai. Booking confirm karne ke liye 13,000 Rs advance jama karwana hoga. Hum ye rooms sirf 12 ghanton ke liye hold kar sakte hain. 🏨",
+      "latency_s": 2.391231166999205,
+      "words": 43,
+      "sent": "gemma"
+    },
+    {
+      "id": "r13",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 12 November ki booking ke liye 2 rooms available hain. 2 nights ka total 32,000 Rs banta hai. Booking confirm karne ke liye 10,000 Rs advance jama karwana hoga. Hum ye rooms sirf 6 ghantay tak hold kar sakte hain. 🏨",
+      "latency_s": 2.493968421000318,
+      "words": 42,
+      "sent": "gemma"
+    },
+    {
+      "id": "r14",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 14 November ki booking ke liye 1 double room available hai. Total 8,000 Rs bante hain. Booking confirm karne ke liye 4,000 Rs advance jama karwana hoga. Hum aapka room sirf 2 ghantay tak hold kar sakte hain.",
+      "latency_s": 2.119798218998767,
+      "words": 39,
+      "sent": "gemma"
+    },
+    {
+      "id": "r15",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 15 November ki booking ke liye 1 room available hai. Total amount 8,000 Rs banti hai. Booking confirm karne ke liye 2,000 Rs advance jama karwana hoga. Hum ye room sirf 12 ghanton ke liye hold kar sakte hain.",
+      "latency_s": 2.176970557000459,
+      "words": 40,
+      "sent": "gemma"
+    },
+    {
+      "id": "r17",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapke liye 24 December ko 3 raaton ke liye 1 suite available hai. Total amount 24,000 Rs banti hai. Booking confirm karne ke liye 7,500 Rs advance jama karwana hoga. Hum yeh room sirf 6 ghanton ke liye hold kar sakte hain.",
+      "latency_s": 2.6431374969979515,
+      "words": 42,
+      "sent": "gemma"
+    },
+    {
+      "id": "r18",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Hum aapke liye 1 room available rakh sakte hain. 2 December 2026 ke liye total 8,000 Rs bante hain. Booking confirm karne ke liye 4,000 Rs advance jama karwana hoga. Hum ye room sirf 2 ghante tak hold kar sakte hain.",
+      "latency_s": 2.313360190997628,
+      "words": 41,
+      "sent": "gemma"
+    },
+    {
+      "id": "r19",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "3 nights ke liye 2 rooms mil jayenge. Total amount 48,000 Rs banti hai. Booking confirm karne ke liye 10,000 Rs advance jama karwana hoga. Hum aapki request sirf 12 ghanton ke liye hold kar sakte hain. 🏨",
+      "latency_s": 2.2190370989992516,
+      "words": 38,
+      "sent": "gemma"
+    },
+    {
+      "id": "r20",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 23 October ki booking ke liye 1 room available hai. 2 nights ka total 16,000 Rs banta hai. Booking confirm karne ke liye 5,000 Rs advance jama karwana hoga. Hum ye room sirf 6 ghantay tak hold kar sakte hain. 🏨",
+      "latency_s": 2.2829863329970976,
+      "words": 42,
+      "sent": "gemma"
+    },
+    {
+      "id": "r21",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "24 October ke liye 1 room mil jayega. Total 8,000 Rs banta hai. Booking confirm karne ke liye 4,000 Rs advance dena hoga. Hum ye room sirf 2 ghante tak hold kar sakte hain. 🏨",
+      "latency_s": 2.0307638459999,
+      "words": 35,
+      "sent": "gemma"
+    },
+    {
+      "id": "r22",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 24 October ki booking ke liye 2 rooms available hain. 2 nights ka total 32,000 Rs banta hai. Booking confirm karne ke liye 6,500 Rs advance jama karwana hoga. Hum ye rooms sirf 12 ghanton ke liye hold kar sakte hain. 🏨",
+      "latency_s": 2.38959510299901,
+      "words": 43,
+      "sent": "gemma"
+    },
+    {
+      "id": "r24",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 30 October ki booking ke liye 1 room available hai. 2 nights ka total Rs 16,000 banta hai. Booking confirm karne ke liye Rs 5,000 advance dena hoga. Hum ye room sirf 6 ghantay tak hold kar sakte hain.",
+      "latency_s": 2.2760023510018073,
+      "words": 40,
+      "sent": "gemma"
+    },
+    {
+      "id": "r25",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 17 October ki booking ke liye 1 room available hai. 3 nights ka total 24,000 Rs banta hai. Booking confirm karne ke liye 12,000 Rs advance jama karwana hoga. Hum ye reservation sirf 2 ghantay tak hold kar sakte hain. 🏨",
+      "latency_s": 2.422298230998422,
+      "words": 42,
+      "sent": "gemma"
+    },
+    {
+      "id": "r26",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 18 October ki booking ke liye hamare paas 1 family room available hai. 2 nights ka total Rs 16,000 banta hai. Booking confirm karne ke liye Rs 3,500 advance jama karwana hoga. Hum ye room sirf 12 ghanton ke liye hold kar sakte hain. 🏨",
+      "latency_s": 2.639475613999821,
+      "words": 46,
+      "sent": "gemma"
+    },
+    {
+      "id": "r27",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 19 October ki booking ke liye hamare paas 1 twin room available hai. 2 raaton ka total 16,000 Rs banta hai. Booking confirm karne ke liye 5,000 Rs advance jama karwana hoga. Hum ye room sirf 6 ghanton ke liye hold kar sakte hain.",
+      "latency_s": 2.380803088999528,
+      "words": 45,
+      "sent": "gemma"
+    },
+    {
+      "id": "r28",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 17 October ki 3 raaton ki booking ke liye 1 room available hai. Total amount 24,000 Rs banti hai. Booking confirm karne ke liye 12,000 Rs advance dena hoga. Hum ye room sirf 2 ghantay tak hold kar sakte hain. 🏨",
+      "latency_s": 2.403299822999543,
+      "words": 42,
+      "sent": "gemma"
+    },
+    {
+      "id": "r29",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 9 November ki booking ke liye 3 rooms available hain. 2 nights ka total Rs 48,000 banta hai. Booking confirm karne ke liye Rs 10,000 advance jama karwana hoga. Hum aapki request sirf 12 ghanton ke liye hold kar sakte hain.",
+      "latency_s": 2.2701911340009246,
+      "words": 42,
+      "sent": "gemma"
+    },
+    {
+      "id": "r31",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "17 October ke liye 1 room available hai. Total 8,000 Rs banta hai. Booking confirm karne ke liye 2,500 Rs advance jama karwana hoga. Hum aapki request sirf 6 ghanton ke liye hold kar sakte hain. 🏨",
+      "latency_s": 2.17434733600021,
+      "words": 37,
+      "sent": "gemma"
+    },
+    {
+      "id": "r32",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 18 October ki booking ke liye 1 room available hai. 2 nights ka total Rs 16,000 banta hai. Booking confirm karne ke liye Rs 8,000 advance dena hoga. Hum ye reservation sirf 2 ghantay tak hold kar sakte hain.",
+      "latency_s": 2.5560037409995857,
+      "words": 40,
+      "sent": "gemma"
+    },
+    {
+      "id": "r33",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 28 October ki booking ke liye 2 double rooms available hain. 3 nights ka total 48,000 Rs banta hai. Booking confirm karne ke liye 10,000 Rs advance jama karwana hoga. Hum ye rooms sirf 12 hours ke liye hold kar sakte hain. 🏨",
+      "latency_s": 2.3942583959978947,
+      "words": 44,
+      "sent": "gemma"
+    },
+    {
+      "id": "r34",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "21 October 2026 ke liye aapka 1 room available hai. 7 nights ka total 56,000 Rs banta hai. Booking confirm karne ke liye 17,000 Rs advance jama karwana hoga. Hum yeh reservation sirf 6 ghanton ke liye hold kar sakte hain. 🏨",
+      "latency_s": 2.367395317000046,
+      "words": 42,
+      "sent": "gemma"
+    },
+    {
+      "id": "r35",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 6 November ki booking ke liye 4 rooms available hain. 2 nights ka total 64,000 Rs banta hai. Booking confirm karne ke liye 32,000 Rs advance jama karwana hoga. Hum ye rooms sirf 2 ghantay tak hold kar sakte hain.",
+      "latency_s": 2.3030987849997473,
+      "words": 41,
+      "sent": "gemma"
+    },
+    {
+      "id": "r36",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "28 October ke liye 1 room available hai. Total 8,000 Rs banta hai. Booking confirm karne ke liye 2,000 Rs advance jama karwana hoga. Hum aapka room sirf 12 ghanton ke liye hold kar sakte hain. 🏨",
+      "latency_s": 2.334828421000566,
+      "words": 37,
+      "sent": "gemma"
+    },
+    {
+      "id": "r37",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 6 guests ke liye 2 rooms available hain. 2 nights ka total 32,000 Rs banta hai. Booking confirm karne ke liye 10,000 Rs advance dena hoga. Hum ye rooms sirf 6 ghanton ke liye hold kar sakte hain. 🏨",
+      "latency_s": 2.4809360269973695,
+      "words": 40,
+      "sent": "gemma"
+    },
+    {
+      "id": "r38",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 2 single rooms ki booking 14 November 2026 ke liye available hain. 2 raaton ka total 32,000 Rs banta hai. Booking confirm karne ke liye 16,000 Rs advance jama karwana hoga. Hum ye rooms sirf 2 ghanton ke liye hold kar sakte hain. 🏨",
+      "latency_s": 2.7332107779984653,
+      "words": 45,
+      "sent": "gemma"
+    },
+    {
+      "id": "r40",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 10 December ki booking ke liye hamare paas 1 double room available hai. 3 raaton ka total bill 24,000 Rs banta hai. Room confirm karne ke liye 5,000 Rs advance jama karwana hoga. Hum ye booking sirf 12 ghanton ke liye hold kar sakte hain.",
+      "latency_s": 2.5766404230016633,
+      "words": 46,
+      "sent": "gemma"
+    },
+    {
+      "id": "r41",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 5 guests ke liye 2 rooms available hain. 2 nights ka total Rs 32,000 banta hai. Booking confirm karne ke liye Rs 10,000 advance jama karwana hoga. Hum ye rooms sirf 6 ghantay tak hold kar sakte hain. 🏨",
+      "latency_s": 2.3932736610004213,
+      "words": 40,
+      "sent": "gemma"
+    },
+    {
+      "id": "r42",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 23 October ki booking ke liye 1 room available hai. 2 nights ka total 16,000 Rs banta hai. Booking confirm karne ke liye 8,000 Rs advance jama karwana hoga. Hum ye room sirf 2 ghante tak hold kar sakte hain.",
+      "latency_s": 2.3149284049977723,
+      "words": 41,
+      "sent": "gemma"
+    },
+    {
+      "id": "r30",
+      "language": "mixed",
+      "first_problems": [],
+      "first_text": "Ji, 4th November ko aapka 1 room available hai. Total 8,000 Rs banay ga. Booking confirm karnay ke liye 2,000 Rs advance payment karni hogi. Hum sirf 12 hours tak room hold kar saktay hain. Please jaldi confirm kar dein.",
+      "latency_s": 2.3567187420012488,
+      "words": 40,
+      "sent": "gemma"
+    },
+    {
+      "id": "m01",
+      "language": "mixed",
+      "first_problems": [],
+      "first_text": "21 October ke liye 1 room available hai. Total amount Rs 16,000 banay gi for 2 nights. Booking confirm karnay ke liye Rs 5,000 advance payment karni hogi. Hum aapki request sirf 6 hours ke liye hold kar saktay hain. Please jaldi confirm kar dein.",
+      "latency_s": 2.4871080119992257,
+      "words": 45,
+      "sent": "gemma"
+    },
+    {
+      "id": "m02",
+      "language": "mixed",
+      "first_problems": [],
+      "first_text": "Aapke 9 guests ke liye 3 rooms available hain. Total amount Rs 24,000 ban rahi hai. Booking confirm karne ke liye Rs 12,000 advance payment karni hogi. Hum aapki request sirf 2 hours ke liye hold kar sakte hain. Please jaldi confirm kar dein.",
+      "latency_s": 2.728939493001235,
+      "words": 44,
+      "sent": "gemma"
+    },
+    {
+      "id": "m03",
+      "language": "mixed",
+      "first_problems": [],
+      "first_text": "Aapki 5th November ki booking ke liye hamare paas 1 family room available hai 4 guests ke liye. Total 2 nights ka amount Rs 16,000 banta hai. Booking confirm karne ke liye Rs 3,500 advance payment karni hogi. Hum ye room sirf 12 hours ke liye hold kar sakte hain. Please confirm kar dein.",
+      "latency_s": 3.0251789939975424,
+      "words": 54,
+      "sent": "gemma"
+    },
+    {
+      "id": "m04",
+      "language": "mixed",
+      "first_problems": [],
+      "first_text": "Aapki 28 October ki booking ke liye 1 double room available hai. Total amount Rs 8,000 banti hai. Booking confirm karne ke liye Rs 2,500 advance payment karni hogi. Hum ye room sirf 6 hours ke liye hold kar sakte hain. Please jaldi confirm kar dein. 🏨",
+      "latency_s": 2.5243147399996815,
+      "words": 47,
+      "sent": "gemma"
+    },
+    {
+      "id": "m05",
+      "language": "mixed",
+      "first_problems": [],
+      "first_text": "Aapki 13th Nov ki booking ke liye 1 twin room available hai. 2 nights ka total 16,000 Rs banta hai. Booking confirm karne ke liye 8,000 Rs advance payment karni hogi. Hum sirf 2 hours tak room hold kar sakte hain. Please confirm kar dein.",
+      "latency_s": 2.2833073010006046,
+      "words": 45,
+      "sent": "gemma"
+    },
+    {
+      "id": "m06",
+      "language": "mixed",
+      "first_problems": [],
+      "first_text": "Aapke 4 guests ke liye 2 rooms available hain. Total amount Rs 16,000 banti hai. Booking confirm karne ke liye Rs 3,500 advance payment karni hogi. Hum ye rooms sirf 12 hours ke liye hold kar sakte hain. Please confirm kar dein.",
+      "latency_s": 2.4999660389985365,
+      "words": 42,
+      "sent": "gemma"
+    },
+    {
+      "id": "m07",
+      "language": "mixed",
+      "first_problems": [],
+      "first_text": "Ji, 31st December ke liye 1 room available hai. Total amount Rs 8,000 ban rahi hai. Booking confirm karne ke liye Rs 2,500 advance payment karni hogi. Hum aapki request sirf 6 hours ke liye hold kar sakte hain. Please confirm kar dein.",
+      "latency_s": 2.3531728010020743,
+      "words": 43,
+      "sent": "gemma"
+    },
+    {
+      "id": "m08",
+      "language": "mixed",
+      "first_problems": [],
+      "first_text": "Hum aapko 1 room provide kar sakte hain 3 guests ke liye. Total amount Rs 8,000 banti hai. Booking confirm karne ke liye Rs 4,000 advance payment karni hogi. Hum ye room sirf 2 hours ke liye hold kar sakte hain. Please jaldi confirm kar dein.",
+      "latency_s": 2.5525617439998314,
+      "words": 46,
+      "sent": "gemma"
+    },
+    {
+      "id": "m09",
+      "language": "mixed",
+      "first_problems": [],
+      "first_text": "Aapke 5 guests ke liye 2 rooms available hain. Total amount Rs 16,000 banti hai. Booking confirm karne ke liye Rs 3,500 advance payment karni hogi. Hum ye rooms sirf 12 hours ke liye hold kar sakte hain. Please jaldi confirm kar dein.",
+      "latency_s": 2.532386838000093,
+      "words": 43,
+      "sent": "gemma"
+    },
+    {
+      "id": "m11",
+      "language": "mixed",
+      "first_problems": [],
+      "first_text": "Aapke 4 guests ke liye 1 room available hai. Total amount Rs 8,000 ban rahi hai. Booking confirm karne ke liye Rs 2,500 advance payment karni hogi. Hum sirf 6 hours ke liye room hold kar sakte hain. Please jaldi confirm kar dein.",
+      "latency_s": 2.477679437997722,
+      "words": 43,
+      "sent": "gemma"
+    },
+    {
+      "id": "m12",
+      "language": "mixed",
+      "first_problems": [],
+      "first_text": "Aapki 5th November ki booking ke liye 4 rooms available hain. Total amount Rs 64,000 banti hai. Booking confirm karne ke liye Rs 32,000 advance payment karni hogi. Hum ye rooms sirf 2 hours ke liye hold kar sakte hain. Please jaldi confirm kar dein.",
+      "latency_s": 2.3167901710003207,
+      "words": 45,
+      "sent": "gemma"
+    },
+    {
+      "id": "m14",
+      "language": "mixed",
+      "first_problems": [],
+      "first_text": "Aapki 2 nights ki double room booking available hai. Total amount Rs 16,000 ban rahi hai. Booking confirm karne ke liye Rs 3,500 advance payment karni hogi. Hum ye room sirf 12 hours ke liye hold kar sakte hain. Please confirm kar dein.",
+      "latency_s": 2.330836420002015,
+      "words": 43,
+      "sent": "gemma"
+    },
+    {
+      "id": "m15",
+      "language": "mixed",
+      "first_problems": [],
+      "first_text": "23 October ko 2 nights ke liye 1 room available hai. Total amount Rs 16,000 ban rahi hai. Booking confirm karne ke liye Rs 5,000 advance payment karni hogi. Hum aapki request sirf 6 hours ke liye hold kar sakte hain. Please confirm kar dein.",
+      "latency_s": 2.589017453999986,
+      "words": 45,
+      "sent": "gemma"
+    },
+    {
+      "id": "m16",
+      "language": "mixed",
+      "first_problems": [],
+      "first_text": "Aapki 15 December ki booking ke liye triple room available hai. 3 nights ka total Rs 24,000 banta hai. Booking confirm karne ke liye Rs 12,000 advance dena hoga. Hum ye room sirf 2 hours ke liye hold kar sakte hain. Please jaldi confirm kar dein.",
+      "latency_s": 2.4391886580015125,
+      "words": 46,
+      "sent": "gemma"
+    },
+    {
+      "id": "e01",
+      "language": "english",
+      "first_problems": [],
+      "first_text": "We have one double room available for your stay on 2026-10-21. The total for 1 night is Rs 8,000. To confirm your booking, an advance payment of Rs 2,000 is required. Please note that we can only hold this reservation for 12 hours. 🏨",
+      "latency_s": 2.499702392000472,
+      "words": 44,
+      "sent": "gemma"
+    },
+    {
+      "id": "e02",
+      "language": "english",
+      "first_problems": [],
+      "first_text": "We can provide 4 rooms for your group of 12 guests for 2 nights. The total amount is Rs 64,000. To confirm your booking, an advance payment of Rs 19,500 is required. Please note that we can only hold these rooms for 6 hours. 🏨",
+      "latency_s": 2.398227814002894,
+      "words": 45,
+      "sent": "gemma"
+    },
+    {
+      "id": "e03",
+      "language": "english",
+      "first_problems": [],
+      "first_text": "We have one family room available for your stay from October 22, 2026, for 3 nights. The total amount is Rs 24,000. To confirm your booking, an advance payment of Rs 12,000 is required. We will hold this reservation for you for the next 2 hours. 🏨",
+      "latency_s": 2.461827460996574,
+      "words": 47,
+      "sent": "gemma"
+    },
+    {
+      "id": "e05",
+      "language": "english",
+      "first_problems": [],
+      "first_text": "We can offer one room for 2 guests on 2026-10-31. The total amount is Rs 8,000. To confirm your booking, an advance payment of Rs 2,000 is required. Please note that we can only hold this reservation for 12 hours. 🏨",
+      "latency_s": 2.328628999999637,
+      "words": 41,
+      "sent": "gemma"
+    },
+    {
+      "id": "e06",
+      "language": "english",
+      "first_problems": [],
+      "first_text": "We have one single room available for your stay from November 1, 2026, for 3 nights. The total amount is Rs 24,000. To confirm your booking, an advance payment of Rs 7,500 is required. We can hold this reservation for you for the next 6 hours. 🏔️",
+      "latency_s": 2.4961497870026506,
+      "words": 47,
+      "sent": "gemma"
+    },
+    {
+      "id": "e07",
+      "language": "english",
+      "first_problems": [],
+      "first_text": "We have 2 rooms available for your group of 6 guests from November 4, 2026, for 2 nights. The total amount is Rs 32,000. To confirm your booking, an advance payment of Rs 16,000 is required. Please note that we can only hold these rooms for 2 hours. 🏨",
+      "latency_s": 2.5544107780006016,
+      "words": 49,
+      "sent": "gemma"
+    },
+    {
+      "id": "e08",
+      "language": "english",
+      "first_problems": [],
+      "first_text": "We can provide 5 rooms for your group of 15 guests for 2 nights starting November 20, 2026. The total amount is Rs 80,000. To confirm your booking, an advance payment of Rs 16,000 is required. Please note that we can only hold these rooms for 12 hours. 🏨",
+      "latency_s": 2.626628031001019,
+      "words": 49,
+      "sent": "gemma"
+    },
+    {
+      "id": "e09",
+      "language": "english",
+      "first_problems": [],
+      "first_text": "We have one suite available for your stay on 2026-11-28 for 2 nights. The total amount is Rs 16,000. To confirm your booking, an advance payment of Rs 5,000 is required. We can hold this reservation for you for the next 6 hours. 🏔️",
+      "latency_s": 2.742819431001408,
+      "words": 44,
+      "sent": "gemma"
+    },
+    {
+      "id": "e11",
+      "language": "english",
+      "first_problems": [],
+      "first_text": "We have one twin room available for 2 guests on 2026-12-01. The total for 1 night is Rs 8,000. To confirm your booking, an advance payment of Rs 4,000 is required. We can hold this reservation for you for 2.0 hours. 🏨",
+      "latency_s": 2.747626020998723,
+      "words": 42,
+      "sent": "gemma"
+    },
+    {
+      "id": "e12",
+      "language": "english",
+      "first_problems": [],
+      "first_text": "We have one room available for 4 guests from December 20, 2026, for 3 nights. The total amount is Rs 24,000. To confirm your booking, an advance payment of Rs 5,000 is required. We can hold this reservation for you for 12 hours. 🏨",
+      "latency_s": 2.3740717040018353,
+      "words": 44,
+      "sent": "gemma"
+    },
+    {
+      "id": "e13",
+      "language": "english",
+      "first_problems": [],
+      "first_text": "We can offer one room for 2 guests for 2 nights starting October 18, 2026. The total amount is Rs 16,000. To confirm your booking, an advance payment of Rs 5,000 is required. Please note that we can only hold this reservation for 6 hours. 🏨",
+      "latency_s": 2.4198890779989597,
+      "words": 46,
+      "sent": "gemma"
+    },
+    {
+      "id": "e14",
+      "language": "english",
+      "first_problems": [],
+      "first_text": "We can offer 3 triple rooms for 9 guests on 2026-10-23. The total for 1 night is Rs 24,000. To confirm your booking, an advance payment of Rs 12,000 is required. We will hold these rooms for you for 2.0 hours. 🏔️",
+      "latency_s": 2.6468912249983987,
+      "words": 42,
+      "sent": "gemma"
+    },
+    {
+      "id": "m10",
+      "language": "english",
+      "first_problems": [],
+      "first_text": "We have one triple room available for 3 guests from October 25, 2026, for 3 nights. The total amount is Rs 24,000. To confirm your booking, an advance payment of Rs 5,000 is required. We can hold this reservation for you for the next 12 hours. 🏔️",
+      "latency_s": 2.4892324249995,
+      "words": 47,
+      "sent": "gemma"
+    },
+    {
+      "id": "w01",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 21 October ki booking ke liye 1 room available hai. 2 nights ka total Rs 16,000 banta hai. Booking confirm karne ke liye Rs 5,000 advance dena hoga. Hum ye room sirf 6 ghanto ke liye hold kar sakte hain.",
+      "latency_s": 2.1934293070007698,
+      "words": 41,
+      "sent": "gemma"
+    },
+    {
+      "id": "w02",
+      "language": "roman_urdu",
+      "first_problems": [],
+      "first_text": "Aapki 5 November ki booking ke liye hamare paas 1 family room available hai. 2 nights ka total 16,000 Rs banta hai. Booking confirm karne ke liye 8,000 Rs advance jama karwana hoga. Hum ye room sirf 2 ghante tak hold kar sakte hain. 🏨",
+      "latency_s": 2.4187351299988222,
+      "words": 45,
+      "sent": "gemma"
+    },
+    {
+      "id": "w03",
+      "language": "mixed",
+      "first_problems": [],
+      "first_text": "Aapki 20 December ki booking ke liye 2 rooms available hain. 3 nights ka total amount Rs 48,000 banta hai. Booking confirm karne ke liye Rs 10,000 advance payment karni hogi. Hum ye rooms sirf 12 hours ke liye hold kar sakte hain. Please confirm kar dein.",
+      "latency_s": 2.515076707000844,
+      "words": 47,
+      "sent": "gemma"
+    },
+    {
+      "id": "u01",
+      "language": "urdu_script",
+      "first_problems": [],
+      "first_text": "آپ کی 21 اکتوبر 2026 کی بکنگ کے لیے ایک کمرہ دستیاب ہے۔ دو راتوں کا کل کرایہ 16,000 روپے ہے۔ بکنگ کنفرم کرنے کے لیے 5,000 روپے ایڈوانس جمع کروانا ہوں گے۔ ہم یہ کمرہ صرف 6 گھنٹوں کے لیے روک سکتے ہیں۔ 🏨",
+      "latency_s": 2.5383957650010416,
+      "words": 45,
+      "sent": "gemma"
+    },
+    {
+      "id": "u02",
+      "language": "urdu_script",
+      "first_problems": [],
+      "first_text": "آپ کی تاریخ 31 اکتوبر 2026 کے لیے 2 کمرے دستیاب ہیں۔ کل کرایہ 16,000 روپے ہے، جس میں سے بکنگ کنفرم کرنے کے لیے 8,000 روپے ایڈوانس جمع کروانا ہوں گے۔ ہم یہ کمرے صرف 2 گھنٹے تک ہولڈ کر سکتے ہیں۔ 🏨",
+      "latency_s": 2.4518800050027494,
+      "words": 44,
+      "sent": "gemma"
+    },
+    {
+      "id": "u04",
+      "language": "urdu_script",
+      "first_problems": [],
+      "first_text": "آپ کی 3 راتوں کے لیے 2 فیملی رومز کا کل کرایہ 48,000 روپے ہے۔ بکنگ کنفرم کرنے کے لیے 10,000 روپے ایڈوانس جمع کروانا ہوں گے۔ ہم یہ کمرے صرف 12 گھنٹوں کے لیے ہولڈ کر سکتے ہیں۔ 🏨",
+      "latency_s": 2.5618366800008516,
+      "words": 40,
+      "sent": "gemma"
+    }
+  ]
+}

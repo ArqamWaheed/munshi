@@ -123,7 +123,7 @@ async def main() -> None:
             step += 1
 
     ckpt = await (await trainer.save_weights_for_sampler_async(name=a.name)).result_async()
-    out = ROOT / "results" / "train_log.json"
+    out = ROOT / "results" / ("train_log.json" if a.name == "munshi-parser" else f"train_log_{a.name}.json")
     out.parent.mkdir(exist_ok=True)
     out.write_text(json.dumps({"base_model": a.base_model, "rank": a.rank, "lr": a.lr, "batch": a.batch,
                                "epochs": a.epochs, "examples": len(train), "train_tokens_per_epoch": n_tok,
