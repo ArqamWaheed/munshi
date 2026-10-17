@@ -1,0 +1,85 @@
+{
+  "lines": [
+    {
+      "id": "01",
+      "sfx": [
+        "notification pop",
+        "keyboard typing"
+      ]
+    },
+    {
+      "id": "02",
+      "sfx": [
+        "whoosh",
+        "pen scratch"
+      ]
+    },
+    {
+      "id": "03",
+      "sfx": [
+        "swoosh",
+        "soft impact"
+      ]
+    },
+    {
+      "id": "04",
+      "sfx": [
+        "tick",
+        "tick",
+        "tick",
+        "confirm"
+      ]
+    },
+    {
+      "id": "05",
+      "sfx": [
+        "counter",
+        "click"
+      ]
+    },
+    {
+      "id": "06",
+      "sfx": [
+        "typing",
+        "tick",
+        "tick",
+        "tick"
+      ]
+    },
+    {
+      "id": "07",
+      "sfx": [
+        "clock ticking",
+        "coin",
+        "coin",
+        "stamp"
+      ]
+    },
+    {
+      "id": "08",
+      "sfx": [
+        "power down",
+        "glitch",
+        "power up"
+      ]
+    },
+    {
+      "id": "09",
+      "sfx": [
+        "tick",
+        "tick",
+        "tick",
+        "tick"
+      ]
+    },
+    {
+      "id": "10",
+      "sfx": [
+        "impact"
+      ]
+    }
+  ],
+  "bgm": {
+    "mode": "none"
+  }
+}

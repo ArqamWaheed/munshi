@@ -1,0 +1,81 @@
+<template>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+
+@font-face{font-family:"Cormorant Garamond";src:url(assets/fonts/cormorant-garamond-latin-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"Cormorant Garamond";src:url(assets/fonts/cormorant-garamond-latin-700-normal.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-600-normal.woff2) format("woff2");font-weight:600}
+@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-700-normal.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"JetBrains Mono";src:url(assets/fonts/JetBrainsMono-400.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"JetBrains Mono";src:url(assets/fonts/JetBrainsMono-700.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"Caveat";src:url(assets/fonts/caveat-latin-700-normal.woff2) format("woff2");font-weight:700}
+
+#root{position:absolute;inset:0;overflow:hidden;font-family:"Inter",sans-serif;color:#0D5C52}
+.f05-prices-the-risk-bg{position:absolute;inset:0;background:#F4EDE0}
+.f05-prices-the-risk-lines{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0 51px,rgba(13,92,82,.07) 51px 52px)}
+.f05-prices-the-risk-margin{position:absolute;top:0;bottom:0;left:112px;width:2px;background:rgba(162,59,42,.35)}
+.f05-prices-the-risk-bloom{position:absolute;left:30%;top:35%;width:1000px;height:1000px;margin-left:calc(1000px / -2);margin-top:calc(1000px / -2);
+  border-radius:50%;background:radial-gradient(circle,rgba(227,162,26,.42) 0%,rgba(244,217,159,.34) 34%,rgba(240,202,124,.12) 58%,transparent 72%)}
+.f05-prices-the-risk-abs{position:absolute}
+.f05-prices-the-risk-serif{font-family:"Cormorant Garamond",serif;font-weight:400;letter-spacing:-.01em}
+.f05-prices-the-risk-mono{font-family:"JetBrains Mono",monospace}
+.f05-prices-the-risk-hand{font-family:"Caveat",cursive;font-weight:700;color:#A23B2A}
+.f05-prices-the-risk-kicker{font-family:"JetBrains Mono",monospace;font-size:22px;letter-spacing:.22em;text-transform:uppercase;opacity:.8}
+
+.f05-prices-the-risk-shot{left:200px;top:90px;width:1520px;border:2px solid #0D5C52;border-radius:20px;overflow:hidden;background:#fff;transform-origin:83% 52%}
+.f05-prices-the-risk-shot img{display:block;width:100%}
+.f05-prices-the-risk-dim{position:absolute;inset:0;background:#F4EDE0}
+.f05-prices-the-risk-pct{left:220px;top:110px;font-size:330px;font-weight:700;line-height:1}
+.f05-prices-the-risk-pl{left:240px;top:470px;font-size:30px}
+.f05-prices-the-risk-tiers{left:960px;top:150px;display:flex;flex-direction:column;gap:26px}
+.f05-prices-the-risk-tier{width:700px;border:2px solid #0D5C52;border-radius:16px;padding:22px 30px;font-size:34px;display:flex;justify-content:space-between;background:#FFFDF8}
+.f05-prices-the-risk-tier.on{background:#E3A21A;border-color:#E3A21A;color:#1D1B18}
+.f05-prices-the-risk-res{left:960px;top:640px;font-size:74px}
+.f05-prices-the-risk-src{left:240px;top:540px;font-size:22px;opacity:.75}
+
+</style>
+<div data-hf-id="hf-i5pp" id="root" data-composition-id="05-prices-the-risk" data-width="1920" data-height="1080">
+  <div data-hf-id="hf-j137" class="clip f05-prices-the-risk-bg" id="f05-prices-the-risk-bg" data-start="0" data-duration="7" data-track-index="0">
+    <div data-hf-id="hf-wku6" class="f05-prices-the-risk-lines"></div><div data-hf-id="hf-x2oj" class="f05-prices-the-risk-margin"></div><div data-hf-id="hf-xrvm" class="f05-prices-the-risk-bloom" id="f05-prices-the-risk-bloom"></div>
+  </div>
+
+  <div data-hf-id="hf-zkeu" class="f05-prices-the-risk-abs f05-prices-the-risk-shot" id="f05-prices-the-risk-shot" data-layout-allow-overflow><img data-hf-id="hf-nt3t" src="assets/app-quote.jpg" alt=""></div>
+  <div data-hf-id="hf-esyl" class="f05-prices-the-risk-abs f05-prices-the-risk-dim" id="f05-prices-the-risk-dim"></div>
+  <div data-hf-id="hf-jx24" class="f05-prices-the-risk-abs f05-prices-the-risk-serif f05-prices-the-risk-pct" id="f05-prices-the-risk-pct">0%</div>
+  <div data-hf-id="hf-vq1n" class="f05-prices-the-risk-abs f05-prices-the-risk-kicker f05-prices-the-risk-pl" id="f05-prices-the-risk-pl">cancel risk · TabPFN-3.5</div>
+  <div data-hf-id="hf-pppk" class="f05-prices-the-risk-abs f05-prices-the-risk-mono f05-prices-the-risk-src" id="f05-prices-the-risk-src">from a 300-booking register</div>
+  <div data-hf-id="hf-1zin" class="f05-prices-the-risk-abs f05-prices-the-risk-tiers" id="f05-prices-the-risk-tiers">
+    <div data-hf-id="hf-vb8w" class="f05-prices-the-risk-tier f05-prices-the-risk-mono" id="f05-prices-the-risk-t0"><span data-hf-id="hf-7x3s">low risk</span><span data-hf-id="hf-zk0e">20% · 12 h</span></div>
+    <div data-hf-id="hf-w2wp" class="f05-prices-the-risk-tier f05-prices-the-risk-mono" id="f05-prices-the-risk-t1"><span data-hf-id="hf-gwbe">medium</span><span data-hf-id="hf-v5oi">30% · 6 h</span></div>
+    <div data-hf-id="hf-28mi" class="f05-prices-the-risk-tier f05-prices-the-risk-mono" id="f05-prices-the-risk-t2"><span data-hf-id="hf-a1pg">high risk</span><span data-hf-id="hf-trjw">50% · 2 h</span></div>
+  </div>
+  <div data-hf-id="hf-rc83" class="f05-prices-the-risk-abs f05-prices-the-risk-serif f05-prices-the-risk-res" id="f05-prices-the-risk-res">Advance Rs 3,500 · hold 12 h</div>
+
+</div>
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  const $ = (s) => document.querySelector('[data-composition-id="05-prices-the-risk"] ' + s);
+  const $$ = (s) => Array.from(document.querySelectorAll('[data-composition-id="05-prices-the-risk"] ' + s));
+  tl.fromTo($('#f05-prices-the-risk-bloom'), { scale: 0.85, opacity: 0.6 }, { scale: 1, opacity: 1, duration: 7, ease: "none" }, 0);
+
+  tl.fromTo($('#f05-prices-the-risk-shot'), { opacity: 0, y: 30, scale: 1 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.0);
+  tl.to($('#f05-prices-the-risk-shot'), { scale: 1.55, duration: 1.6, ease: "power2.inOut" }, 0.35);
+  tl.fromTo($('#f05-prices-the-risk-dim'), { opacity: 0 }, { opacity: 1, duration: 0.5 }, 1.8);
+  tl.fromTo($('#f05-prices-the-risk-pct'), { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" }, 1.9);
+  const p = { v: 0 };
+  tl.to(p, { v: 5, duration: 1.4, ease: "power2.out", onUpdate: () => { $('#f05-prices-the-risk-pct').textContent = Math.round(p.v) + "%"; } }, 2.0);
+  tl.fromTo($('#f05-prices-the-risk-pl'), { opacity: 0 }, { opacity: 0.8, duration: 0.5 }, 2.4);
+  tl.fromTo($('#f05-prices-the-risk-src'), { opacity: 0 }, { opacity: 0.75, duration: 0.5 }, 2.8);
+  for (let i = 0; i < 3; i++) tl.fromTo($('#f05-prices-the-risk-t' + i), { x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, 3.6 + i * 0.45);
+  tl.call(() => {}, null, 5.2);
+  tl.fromTo($('#f05-prices-the-risk-t0'), { backgroundColor: "#FFFDF8", borderColor: "#0D5C52" }, { backgroundColor: "#E3A21A", borderColor: "#E3A21A", duration: 0.3 }, 5.2);
+  tl.fromTo($('#f05-prices-the-risk-res'), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 5.45);
+
+  tl.set({}, {}, 7);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["05-prices-the-risk"] = tl;
+})();
+</script>
+</template>

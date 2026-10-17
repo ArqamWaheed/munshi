@@ -1,0 +1,14 @@
+Munshi — a WhatsApp front desk for small hotels (Hacktoberfest Week 2: Side Hustle).
+Guest message: "AoA, kal 2 log ke liye 1 room chahiye 2 raat ke liye. rate kya hai? advance kitni?"
+Parsed by a fine-tuned Qwen3.5-4B (LoRA on Tinker): check_in 2026-10-18, nights 2, guests 2, rooms 1.
+TabPFN-3.5 cancel risk: 5%. Quote: Rs 8,000/night x 2 nights = Rs 16,000. Advance Rs 3,500 (low risk). Hold 12 h.
+Gemma 4 draft: "Aapki 18 October ki booking ke liye 1 room available hai. 2 nights ka total 16,000 Rs banta hai. Booking confirm karne ke liye 3,500 Rs advance jama karwana hoga. Hum ye room sirf 12 ghanto ke liye hold kar sakte hain."
+Deposits: JC-48120 Rs 2,000 (still due Rs 1,500), then JC-48177 Rs 1,500 -> CONFIRMED.
+Gemma confirmation: "Aapki booking confirm ho gayi hai. Humne aapka Rs. 3,500 advance receive kar liya hai. Aap 18 October 2026 ko check-in kar sakte hain."
+Clarification: guest "Salam bhai, hum 3 log hain, family room chahiye. rate kya hai?" -> Munshi "Aap kab se check-in karna chahte hain?" -> guest "parso se 2 raat" -> quote for 19 October.
+Durability drill: worker and Temporal server SIGKILLed past the hold deadline; server back at t=127.3 s, timer fired at 127.4 s; 0 activities ran twice.
+Numbers: fine-tune 75% -> 95% booking-exact with code rules; 30/30 on a fresh set written after the rules froze (base 4B + rulebook 27/30); untuned 4B 0%.
+TabPFN: says 82%, 81% cancel (high band); AUC 0.830 vs 0.806; risk-tiered advance keeps 37.7% of cancelled value, asks honest guests 26.9%.
+Gemma replies passed the number checker 70/70.
+Thesis: Models read. Code decides. Temporal keeps the promise.
+Repo: github.com/ArqamWaheed/munshi

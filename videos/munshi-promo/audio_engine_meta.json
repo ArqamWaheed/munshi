@@ -1,0 +1,203 @@
+{
+  "tts_provider": null,
+  "voice_id": null,
+  "bgm": {
+    "path": "assets/bgm/track.mp3",
+    "volume": 0.9,
+    "query": "confident minimal tech underscore, light percussion, modern product launch, steady build",
+    "mode": "retrieve",
+    "duration_s": 40
+  },
+  "bgm_pending": false,
+  "bgm_provider": "heygen",
+  "bgm_pid": null,
+  "bgm_log": null,
+  "bgm_mode": "retrieve",
+  "bgm_target_duration_s": null,
+  "bgm_seed_duration_s": null,
+  "bgm_loop_count": null,
+  "voices": [],
+  "sfx": [
+    {
+      "id": "01",
+      "name": "notification pop",
+      "file": "assets/sfx/notification-pop.mp3",
+      "source": "heygen",
+      "offset_s": 0,
+      "duration_s": 0.72,
+      "volume": 0.35
+    },
+    {
+      "id": "01",
+      "name": "keyboard typing",
+      "file": "assets/sfx/keyboard-typing.mp3",
+      "source": "heygen",
+      "offset_s": 0,
+      "duration_s": 44.382,
+      "volume": 0.35
+    },
+    {
+      "id": "02",
+      "name": "whoosh",
+      "file": "assets/sfx/whoosh.mp3",
+      "source": "heygen",
+      "offset_s": 0,
+      "duration_s": 1.58,
+      "volume": 0.35
+    },
+    {
+      "id": "02",
+      "name": "pen scratch",
+      "file": "assets/sfx/pen-scratch.mp3",
+      "source": "heygen",
+      "offset_s": 0,
+      "duration_s": 0.936,
+      "volume": 0.35
+    },
+    {
+      "id": "03",
+      "name": "swoosh",
+      "file": "assets/sfx/swoosh.mp3",
+      "source": "heygen",
+      "offset_s": 0,
+      "duration_s": 1.423,
+      "volume": 0.35
+    },
+    {
+      "id": "03",
+      "name": "soft impact",
+      "file": "assets/sfx/soft-impact.mp3",
+      "source": "heygen",
+      "offset_s": 0,
+      "duration_s": 0.816,
+      "volume": 0.35
+    },
+    {
+      "id": "04",
+      "name": "tick",
+      "file": "assets/sfx/tick.mp3",
+      "source": "heygen",
+      "offset_s": 0,
+      "duration_s": 7.778,
+      "volume": 0.35
+    },
+    {
+      "id": "04",
+      "name": "confirm",
+      "file": "assets/sfx/confirm.mp3",
+      "source": "heygen",
+      "offset_s": 0,
+      "duration_s": 0.336,
+      "volume": 0.35
+    },
+    {
+      "id": "05",
+      "name": "counter",
+      "file": "assets/sfx/counter.mp3",
+      "source": "heygen",
+      "offset_s": 0,
+      "duration_s": 3.855,
+      "volume": 0.35
+    },
+    {
+      "id": "05",
+      "name": "click",
+      "file": "assets/sfx/click.mp3",
+      "source": "heygen",
+      "offset_s": 0,
+      "duration_s": 0.24,
+      "volume": 0.35
+    },
+    {
+      "id": "06",
+      "name": "typing",
+      "file": "assets/sfx/typing.mp3",
+      "source": "heygen",
+      "offset_s": 0,
+      "duration_s": 44.382,
+      "volume": 0.35
+    },
+    {
+      "id": "06",
+      "name": "tick",
+      "file": "assets/sfx/tick.mp3",
+      "source": "heygen",
+      "offset_s": 0,
+      "duration_s": 7.778,
+      "volume": 0.35
+    },
+    {
+      "id": "07",
+      "name": "clock ticking",
+      "file": "assets/sfx/clock-ticking.mp3",
+      "source": "heygen",
+      "offset_s": 0,
+      "duration_s": 7.016,
+      "volume": 0.35
+    },
+    {
+      "id": "07",
+      "name": "coin",
+      "file": "assets/sfx/coin.mp3",
+      "source": "heygen",
+      "offset_s": 0,
+      "duration_s": 1.238,
+      "volume": 0.35
+    },
+    {
+      "id": "07",
+      "name": "stamp",
+      "file": "assets/sfx/stamp.mp3",
+      "source": "heygen",
+      "offset_s": 0,
+      "duration_s": 1.79,
+      "volume": 0.35
+    },
+    {
+      "id": "08",
+      "name": "power down",
+      "file": "assets/sfx/power-down.mp3",
+      "source": "heygen",
+      "offset_s": 0,
+      "duration_s": 2.524,
+      "volume": 0.35
+    },
+    {
+      "id": "08",
+      "name": "glitch",
+      "file": "assets/sfx/glitch.mp3",
+      "source": "heygen",
+      "offset_s": 0,
+      "duration_s": 1.372,
+      "volume": 0.35
+    },
+    {
+      "id": "08",
+      "name": "power up",
+      "file": "assets/sfx/power-up.mp3",
+      "source": "heygen",
+      "offset_s": 0,
+      "duration_s": 5.265,
+      "volume": 0.35
+    },
+    {
+      "id": "09",
+      "name": "tick",
+      "file": "assets/sfx/tick.mp3",
+      "source": "heygen",
+      "offset_s": 0,
+      "duration_s": 7.778,
+      "volume": 0.35
+    },
+    {
+      "id": "10",
+      "name": "impact",
+      "file": "assets/sfx/impact.mp3",
+      "source": "heygen",
+      "offset_s": 0,
+      "duration_s": 5.387,
+      "volume": 0.35
+    }
+  ],
+  "total_duration_s": 0
+}

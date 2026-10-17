@@ -1,0 +1,60 @@
+<template>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+
+@font-face{font-family:"Cormorant Garamond";src:url(assets/fonts/cormorant-garamond-latin-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"Cormorant Garamond";src:url(assets/fonts/cormorant-garamond-latin-700-normal.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-600-normal.woff2) format("woff2");font-weight:600}
+@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-700-normal.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"JetBrains Mono";src:url(assets/fonts/JetBrainsMono-400.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"JetBrains Mono";src:url(assets/fonts/JetBrainsMono-700.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"Caveat";src:url(assets/fonts/caveat-latin-700-normal.woff2) format("woff2");font-weight:700}
+
+#root{position:absolute;inset:0;overflow:hidden;font-family:"Inter",sans-serif;color:#0D5C52}
+.f03-munshi-bg{position:absolute;inset:0;background:#F4EDE0}
+.f03-munshi-lines{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0 51px,rgba(13,92,82,.07) 51px 52px)}
+.f03-munshi-margin{position:absolute;top:0;bottom:0;left:112px;width:2px;background:rgba(162,59,42,.35)}
+.f03-munshi-bloom{position:absolute;left:50%;top:46%;width:1300px;height:1300px;margin-left:calc(1300px / -2);margin-top:calc(1300px / -2);
+  border-radius:50%;background:radial-gradient(circle,rgba(227,162,26,.42) 0%,rgba(244,217,159,.34) 34%,rgba(240,202,124,.12) 58%,transparent 72%)}
+.f03-munshi-abs{position:absolute}
+.f03-munshi-serif{font-family:"Cormorant Garamond",serif;font-weight:400;letter-spacing:-.01em}
+.f03-munshi-mono{font-family:"JetBrains Mono",monospace}
+.f03-munshi-hand{font-family:"Caveat",cursive;font-weight:700;color:#A23B2A}
+.f03-munshi-kicker{font-family:"JetBrains Mono",monospace;font-size:22px;letter-spacing:.22em;text-transform:uppercase;opacity:.8}
+
+.f03-munshi-swipe{left:560px;top:418px;width:800px;height:150px;background:#E3A21A;border-radius:18px 60px 24px 50px;transform-origin:0 50%;transform:rotate(-2deg)}
+.f03-munshi-word{left:0;right:0;top:300px;text-align:center;font-size:300px;font-weight:700;line-height:1}
+.f03-munshi-k{left:0;right:0;top:250px;text-align:center}
+.f03-munshi-tag{left:0;right:0;top:660px;text-align:center;font-size:66px;font-style:italic}
+
+</style>
+<div data-hf-id="hf-ayx7" id="root" data-composition-id="03-munshi" data-width="1920" data-height="1080">
+  <div data-hf-id="hf-ypv8" class="clip f03-munshi-bg" id="f03-munshi-bg" data-start="0" data-duration="4" data-track-index="0">
+    <div data-hf-id="hf-yfia" class="f03-munshi-lines"></div><div data-hf-id="hf-385r" class="f03-munshi-margin"></div><div data-hf-id="hf-076q" class="f03-munshi-bloom" id="f03-munshi-bloom"></div>
+  </div>
+
+  <div data-hf-id="hf-scln" class="f03-munshi-abs f03-munshi-swipe" id="f03-munshi-swipe"></div>
+  <div data-hf-id="hf-wkr5" class="f03-munshi-abs f03-munshi-kicker f03-munshi-k" id="f03-munshi-k">a whatsapp front desk for small hotels</div>
+  <div data-hf-id="hf-160l" class="f03-munshi-abs f03-munshi-serif f03-munshi-word" id="f03-munshi-word">Munshi</div>
+  <div data-hf-id="hf-j8zs" class="f03-munshi-abs f03-munshi-serif f03-munshi-tag" id="f03-munshi-tag">the front desk that holds the clock.</div>
+
+</div>
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  const $ = (s) => document.querySelector('[data-composition-id="03-munshi"] ' + s);
+  const $$ = (s) => Array.from(document.querySelectorAll('[data-composition-id="03-munshi"] ' + s));
+  tl.fromTo($('#f03-munshi-bloom'), { scale: 0.85, opacity: 0.6 }, { scale: 1, opacity: 1, duration: 4, ease: "none" }, 0);
+
+  tl.fromTo($('#f03-munshi-swipe'), { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power3.inOut" }, 0.0);
+  tl.fromTo($('#f03-munshi-word'), { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 0.35);
+  tl.fromTo($('#f03-munshi-k'), { opacity: 0, y: 12 }, { opacity: 0.8, y: 0, duration: 0.5 }, 1.2);
+  tl.fromTo($('#f03-munshi-tag'), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 1.5);
+
+  tl.set({}, {}, 4);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["03-munshi"] = tl;
+})();
+</script>
+</template>

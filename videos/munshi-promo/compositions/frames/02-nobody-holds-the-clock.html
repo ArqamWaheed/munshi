@@ -1,0 +1,61 @@
+<template>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+
+@font-face{font-family:"Cormorant Garamond";src:url(assets/fonts/cormorant-garamond-latin-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"Cormorant Garamond";src:url(assets/fonts/cormorant-garamond-latin-700-normal.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-600-normal.woff2) format("woff2");font-weight:600}
+@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-700-normal.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"JetBrains Mono";src:url(assets/fonts/JetBrainsMono-400.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"JetBrains Mono";src:url(assets/fonts/JetBrainsMono-700.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"Caveat";src:url(assets/fonts/caveat-latin-700-normal.woff2) format("woff2");font-weight:700}
+
+#root{position:absolute;inset:0;overflow:hidden;font-family:"Inter",sans-serif;color:#0D5C52}
+.f02-nobody-holds-the-clock-bg{position:absolute;inset:0;background:#F4EDE0}
+.f02-nobody-holds-the-clock-lines{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0 51px,rgba(13,92,82,.07) 51px 52px)}
+.f02-nobody-holds-the-clock-margin{position:absolute;top:0;bottom:0;left:112px;width:2px;background:rgba(162,59,42,.35)}
+.f02-nobody-holds-the-clock-bloom{position:absolute;left:50%;top:48%;width:1100px;height:1100px;margin-left:calc(1100px / -2);margin-top:calc(1100px / -2);
+  border-radius:50%;background:radial-gradient(circle,rgba(227,162,26,.42) 0%,rgba(244,217,159,.34) 34%,rgba(240,202,124,.12) 58%,transparent 72%)}
+.f02-nobody-holds-the-clock-abs{position:absolute}
+.f02-nobody-holds-the-clock-serif{font-family:"Cormorant Garamond",serif;font-weight:400;letter-spacing:-.01em}
+.f02-nobody-holds-the-clock-mono{font-family:"JetBrains Mono",monospace}
+.f02-nobody-holds-the-clock-hand{font-family:"Caveat",cursive;font-weight:700;color:#A23B2A}
+.f02-nobody-holds-the-clock-kicker{font-family:"JetBrains Mono",monospace;font-size:22px;letter-spacing:.22em;text-transform:uppercase;opacity:.8}
+
+.f02-nobody-holds-the-clock-line{left:0;right:0;text-align:center;font-size:120px}
+.f02-nobody-holds-the-clock-txt{position:relative;display:inline-block}
+.f02-nobody-holds-the-clock-strike{position:absolute;left:-14px;right:-14px;top:56%;height:8px;background:#A23B2A;border-radius:4px;transform-origin:0 50%}
+
+</style>
+<div data-hf-id="hf-6dnl" id="root" data-composition-id="02-nobody-holds-the-clock" data-width="1920" data-height="1080">
+  <div data-hf-id="hf-q474" class="clip f02-nobody-holds-the-clock-bg" id="f02-nobody-holds-the-clock-bg" data-start="0" data-duration="4" data-track-index="0">
+    <div data-hf-id="hf-c344" class="f02-nobody-holds-the-clock-lines"></div><div data-hf-id="hf-gddd" class="f02-nobody-holds-the-clock-margin"></div><div data-hf-id="hf-juuy" class="f02-nobody-holds-the-clock-bloom" id="f02-nobody-holds-the-clock-bloom"></div>
+  </div>
+  <div data-hf-id="hf-tcxg" class="f02-nobody-holds-the-clock-abs f02-nobody-holds-the-clock-serif f02-nobody-holds-the-clock-line" id="f02-nobody-holds-the-clock-l0" style="top:200px"><span data-hf-id="hf-kvkd" class="f02-nobody-holds-the-clock-txt">Rate quoted from memory.<span data-hf-id="hf-pfhq" class="f02-nobody-holds-the-clock-strike" id="f02-nobody-holds-the-clock-s0"></span></span></div>
+  <div data-hf-id="hf-j3bj" class="f02-nobody-holds-the-clock-abs f02-nobody-holds-the-clock-serif f02-nobody-holds-the-clock-line" id="f02-nobody-holds-the-clock-l1" style="top:390px"><span data-hf-id="hf-b2p4" class="f02-nobody-holds-the-clock-txt">Advance never chased.<span data-hf-id="hf-tdlr" class="f02-nobody-holds-the-clock-strike" id="f02-nobody-holds-the-clock-s1"></span></span></div>
+  <div data-hf-id="hf-v81l" class="f02-nobody-holds-the-clock-abs f02-nobody-holds-the-clock-serif f02-nobody-holds-the-clock-line" id="f02-nobody-holds-the-clock-l2" style="top:580px"><span data-hf-id="hf-fu11" class="f02-nobody-holds-the-clock-txt">Room sits empty.<span data-hf-id="hf-kppw" class="f02-nobody-holds-the-clock-strike" id="f02-nobody-holds-the-clock-s2"></span></span></div>
+</div>
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  const $ = (s) => document.querySelector('[data-composition-id="02-nobody-holds-the-clock"] ' + s);
+  const $$ = (s) => Array.from(document.querySelectorAll('[data-composition-id="02-nobody-holds-the-clock"] ' + s));
+  tl.fromTo($('#f02-nobody-holds-the-clock-bloom'), { scale: 0.85, opacity: 0.6 }, { scale: 1, opacity: 1, duration: 4, ease: "none" }, 0);
+
+  tl.fromTo($('#f02-nobody-holds-the-clock-l0'), { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 0.05);
+  tl.fromTo($('#f02-nobody-holds-the-clock-s0'), { scaleX: 0 }, { scaleX: 1, duration: 0.35, ease: "power2.inOut" }, 0.62);
+  tl.to($('#f02-nobody-holds-the-clock-l0'), { opacity: 0.4, duration: 0.4 }, 1.17);
+
+  tl.fromTo($('#f02-nobody-holds-the-clock-l1'), { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 1.1700000000000002);
+  tl.fromTo($('#f02-nobody-holds-the-clock-s1'), { scaleX: 0 }, { scaleX: 1, duration: 0.35, ease: "power2.inOut" }, 1.7400000000000002);
+  tl.to($('#f02-nobody-holds-the-clock-l1'), { opacity: 0.4, duration: 0.4 }, 2.29);
+
+  tl.fromTo($('#f02-nobody-holds-the-clock-l2'), { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 2.29);
+  tl.fromTo($('#f02-nobody-holds-the-clock-s2'), { scaleX: 0 }, { scaleX: 1, duration: 0.35, ease: "power2.inOut" }, 2.8600000000000003);
+  tl.set({}, {}, 4);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["02-nobody-holds-the-clock"] = tl;
+})();
+</script>
+</template>

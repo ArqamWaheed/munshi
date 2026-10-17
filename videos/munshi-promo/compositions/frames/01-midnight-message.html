@@ -1,0 +1,78 @@
+<template>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+
+@font-face{font-family:"Cormorant Garamond";src:url(assets/fonts/cormorant-garamond-latin-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"Cormorant Garamond";src:url(assets/fonts/cormorant-garamond-latin-700-normal.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-600-normal.woff2) format("woff2");font-weight:600}
+@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-700-normal.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"JetBrains Mono";src:url(assets/fonts/JetBrainsMono-400.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"JetBrains Mono";src:url(assets/fonts/JetBrainsMono-700.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"Caveat";src:url(assets/fonts/caveat-latin-700-normal.woff2) format("woff2");font-weight:700}
+
+#root{position:absolute;inset:0;overflow:hidden;font-family:"Inter",sans-serif;color:#0D5C52}
+.f01-midnight-message-bg{position:absolute;inset:0;background:#F4EDE0}
+.f01-midnight-message-lines{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0 51px,rgba(13,92,82,.07) 51px 52px)}
+.f01-midnight-message-margin{position:absolute;top:0;bottom:0;left:112px;width:2px;background:rgba(162,59,42,.35)}
+.f01-midnight-message-bloom{position:absolute;left:28%;top:42%;width:1000px;height:1000px;margin-left:calc(1000px / -2);margin-top:calc(1000px / -2);
+  border-radius:50%;background:radial-gradient(circle,rgba(227,162,26,.42) 0%,rgba(244,217,159,.34) 34%,rgba(240,202,124,.12) 58%,transparent 72%)}
+.f01-midnight-message-abs{position:absolute}
+.f01-midnight-message-serif{font-family:"Cormorant Garamond",serif;font-weight:400;letter-spacing:-.01em}
+.f01-midnight-message-mono{font-family:"JetBrains Mono",monospace}
+.f01-midnight-message-hand{font-family:"Caveat",cursive;font-weight:700;color:#A23B2A}
+.f01-midnight-message-kicker{font-family:"JetBrains Mono",monospace;font-size:22px;letter-spacing:.22em;text-transform:uppercase;opacity:.8}
+
+.f01-midnight-message-clock{left:180px;top:300px;font-size:250px;line-height:.9}
+.f01-midnight-message-sub{left:190px;top:250px}
+.f01-midnight-message-note{left:190px;top:560px;font-size:46px}
+.f01-midnight-message-phone{left:1180px;top:70px;width:560px;height:800px;border:3px solid #0D5C52;border-radius:58px;background:#FFFDF8;overflow:hidden}
+.f01-midnight-message-head{height:118px;background:#0D5C52;color:#F4EDE0;padding:46px 34px 0;display:flex;gap:18px;align-items:center}
+.f01-midnight-message-avatar{width:52px;height:52px;border-radius:50%;background:#E3A21A}
+.f01-midnight-message-name{font-size:28px;font-weight:600} .f01-midnight-message-num{font-size:20px;opacity:.75;font-family:"JetBrains Mono",monospace}
+.f01-midnight-message-chat{position:absolute;top:118px;left:0;right:0;bottom:0;background:#EFEAE2;padding:40px 30px}
+.f01-midnight-message-bubble{background:#fff;border-radius:6px 26px 26px 26px;padding:26px 30px;font-size:34px;line-height:1.38;color:#1D1B18;width:430px;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.f01-midnight-message-w{display:inline}
+.f01-midnight-message-time{font-family:"JetBrains Mono",monospace;font-size:18px;color:#7B766B;text-align:right;margin-top:10px}
+.f01-midnight-message-badge{left:1680px;top:52px;width:86px;height:86px;border-radius:50%;background:#A23B2A;color:#fff;font:700 34px/86px "Inter";text-align:center}
+
+</style>
+<div data-hf-id="hf-3yh1" id="root" data-composition-id="01-midnight-message" data-width="1920" data-height="1080">
+  <div data-hf-id="hf-1c53" class="clip f01-midnight-message-bg" id="f01-midnight-message-bg" data-start="0" data-duration="5" data-track-index="0">
+    <div data-hf-id="hf-ghg4" class="f01-midnight-message-lines"></div><div data-hf-id="hf-n7c1" class="f01-midnight-message-margin"></div><div data-hf-id="hf-kw6a" class="f01-midnight-message-bloom" id="f01-midnight-message-bloom"></div>
+  </div>
+
+  <div data-hf-id="hf-40lc" class="f01-midnight-message-abs f01-midnight-message-kicker f01-midnight-message-sub" id="f01-midnight-message-sub">a hotel owner's phone, tonight</div>
+  <div data-hf-id="hf-n956" class="f01-midnight-message-abs f01-midnight-message-serif f01-midnight-message-clock" id="f01-midnight-message-clock">11:40 PM</div>
+  <div data-hf-id="hf-ra5n" class="f01-midnight-message-abs f01-midnight-message-hand f01-midnight-message-note" id="f01-midnight-message-note">a new booking. and 42 others.</div>
+  <div data-hf-id="hf-t6nd" class="f01-midnight-message-abs f01-midnight-message-phone" id="f01-midnight-message-phone">
+    <div data-hf-id="hf-aa0x" class="f01-midnight-message-head"><div data-hf-id="hf-qeto" class="f01-midnight-message-avatar"></div><div data-hf-id="hf-yeow"><div data-hf-id="hf-itwu" class="f01-midnight-message-name">Guest</div><div data-hf-id="hf-ud1u" class="f01-midnight-message-num">+92 3•• •••••••</div></div></div>
+    <div data-hf-id="hf-39wx" class="f01-midnight-message-chat"><div data-hf-id="hf-4ins" class="f01-midnight-message-bubble" id="f01-midnight-message-bubble"><span data-hf-id="hf-x9pi" class="f01-midnight-message-w">AoA,</span> <span data-hf-id="hf-xyp1" class="f01-midnight-message-w">kal</span> <span data-hf-id="hf-h5zn" class="f01-midnight-message-w">2</span> <span data-hf-id="hf-1x0z" class="f01-midnight-message-w">log</span> <span data-hf-id="hf-5ziv" class="f01-midnight-message-w">ke</span> <span data-hf-id="hf-fm8u" class="f01-midnight-message-w">liye</span> <span data-hf-id="hf-grom" class="f01-midnight-message-w">1</span> <span data-hf-id="hf-432c" class="f01-midnight-message-w">room</span> <span data-hf-id="hf-l1wq" class="f01-midnight-message-w">chahiye</span> <span data-hf-id="hf-8e0j" class="f01-midnight-message-w">2</span> <span data-hf-id="hf-dcwj" class="f01-midnight-message-w">raat</span> <span data-hf-id="hf-6p7b" class="f01-midnight-message-w">ke</span> <span data-hf-id="hf-pkcw" class="f01-midnight-message-w">liye.</span> <span data-hf-id="hf-hol5" class="f01-midnight-message-w">rate</span> <span data-hf-id="hf-uk9y" class="f01-midnight-message-w">kya</span> <span data-hf-id="hf-m2rg" class="f01-midnight-message-w">hai?</span> <span data-hf-id="hf-a0i3" class="f01-midnight-message-w">advance</span> <span data-hf-id="hf-v4t1" class="f01-midnight-message-w">kitni?</span><div data-hf-id="hf-g0i3" class="f01-midnight-message-time">11:40 PM</div></div></div>
+  </div>
+  <div data-hf-id="hf-slp8" class="f01-midnight-message-abs f01-midnight-message-badge" id="f01-midnight-message-badge">1</div>
+
+</div>
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  const $ = (s) => document.querySelector('[data-composition-id="01-midnight-message"] ' + s);
+  const $$ = (s) => Array.from(document.querySelectorAll('[data-composition-id="01-midnight-message"] ' + s));
+  tl.fromTo($('#f01-midnight-message-bloom'), { scale: 0.85, opacity: 0.6 }, { scale: 1, opacity: 1, duration: 5, ease: "none" }, 0);
+
+  tl.fromTo($('#f01-midnight-message-clock'), { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: "power3.out" }, 0.05);
+  tl.fromTo($('#f01-midnight-message-sub'), { opacity: 0 }, { opacity: 0.8, duration: 0.6 }, 0.35);
+  tl.fromTo($('#f01-midnight-message-phone'), { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 1.0);
+  tl.fromTo($('#f01-midnight-message-bubble'), { scale: 0.9, opacity: 0, transformOrigin: "0% 0%" }, { scale: 1, opacity: 1, duration: 0.3, ease: "power3.out" }, 1.45);
+  const ws = $$('.f01-midnight-message-w');
+  ws.forEach((w, i) => tl.fromTo(w, { opacity: 0 }, { opacity: 1, duration: 0.05 }, 1.6 + i * (2.5 / ws.length)));
+  tl.fromTo($('#f01-midnight-message-badge'), { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2)" }, 1.1);
+  const n = { v: 1 };
+  tl.to(n, { v: 43, duration: 0.8, ease: "power2.in", onUpdate: () => { $('#f01-midnight-message-badge').textContent = Math.round(n.v); } }, 4.2);
+  tl.fromTo($('#f01-midnight-message-note'), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 4.2);
+
+  tl.set({}, {}, 5);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["01-midnight-message"] = tl;
+})();
+</script>
+</template>

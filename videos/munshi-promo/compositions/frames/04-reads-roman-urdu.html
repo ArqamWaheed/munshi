@@ -1,0 +1,82 @@
+<template>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+
+@font-face{font-family:"Cormorant Garamond";src:url(assets/fonts/cormorant-garamond-latin-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"Cormorant Garamond";src:url(assets/fonts/cormorant-garamond-latin-700-normal.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-600-normal.woff2) format("woff2");font-weight:600}
+@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-700-normal.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"JetBrains Mono";src:url(assets/fonts/JetBrainsMono-400.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"JetBrains Mono";src:url(assets/fonts/JetBrainsMono-700.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"Caveat";src:url(assets/fonts/caveat-latin-700-normal.woff2) format("woff2");font-weight:700}
+
+#root{position:absolute;inset:0;overflow:hidden;font-family:"Inter",sans-serif;color:#0D5C52}
+.f04-reads-roman-urdu-bg{position:absolute;inset:0;background:#F4EDE0}
+.f04-reads-roman-urdu-lines{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0 51px,rgba(13,92,82,.07) 51px 52px)}
+.f04-reads-roman-urdu-margin{position:absolute;top:0;bottom:0;left:112px;width:2px;background:rgba(162,59,42,.35)}
+.f04-reads-roman-urdu-bloom{position:absolute;left:70%;top:45%;width:1100px;height:1100px;margin-left:calc(1100px / -2);margin-top:calc(1100px / -2);
+  border-radius:50%;background:radial-gradient(circle,rgba(227,162,26,.42) 0%,rgba(244,217,159,.34) 34%,rgba(240,202,124,.12) 58%,transparent 72%)}
+.f04-reads-roman-urdu-abs{position:absolute}
+.f04-reads-roman-urdu-serif{font-family:"Cormorant Garamond",serif;font-weight:400;letter-spacing:-.01em}
+.f04-reads-roman-urdu-mono{font-family:"JetBrains Mono",monospace}
+.f04-reads-roman-urdu-hand{font-family:"Caveat",cursive;font-weight:700;color:#A23B2A}
+.f04-reads-roman-urdu-kicker{font-family:"JetBrains Mono",monospace;font-size:22px;letter-spacing:.22em;text-transform:uppercase;opacity:.8}
+
+.f04-reads-roman-urdu-h{left:180px;top:110px;font-size:92px}
+.f04-reads-roman-urdu-bubble{left:180px;top:330px;width:720px;background:#fff;border-radius:6px 28px 28px 28px;padding:30px 36px;font-size:40px;line-height:1.5;color:#1D1B18;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.f04-reads-roman-urdu-T{border-radius:8px;padding:0 6px;margin:0 -6px}
+.f04-reads-roman-urdu-card{left:1040px;top:300px;width:700px;border:2px solid #0D5C52;border-radius:18px;background:#FFFDF8;padding:34px 40px;font-size:36px;line-height:1.75}
+.f04-reads-roman-urdu-key{color:#0D5C52} .f04-reads-roman-urdu-val{color:#A23B2A;font-weight:700}
+.f04-reads-roman-urdu-chip{left:520px;top:450px;background:#E3A21A;color:#1D1B18;border-radius:10px;padding:4px 14px;font-size:34px;font-weight:700}
+.f04-reads-roman-urdu-foot{left:1040px;top:720px;font-size:24px;opacity:.85}
+.f04-reads-roman-urdu-arrow{left:930px;top:470px;font-size:64px;color:#B07E14}
+
+</style>
+<div data-hf-id="hf-y16q" id="root" data-composition-id="04-reads-roman-urdu" data-width="1920" data-height="1080">
+  <div data-hf-id="hf-lrw3" class="clip f04-reads-roman-urdu-bg" id="f04-reads-roman-urdu-bg" data-start="0" data-duration="7" data-track-index="0">
+    <div data-hf-id="hf-1bsh" class="f04-reads-roman-urdu-lines"></div><div data-hf-id="hf-73i2" class="f04-reads-roman-urdu-margin"></div><div data-hf-id="hf-pkgi" class="f04-reads-roman-urdu-bloom" id="f04-reads-roman-urdu-bloom"></div>
+  </div>
+
+  <div data-hf-id="hf-u5t9" class="f04-reads-roman-urdu-abs f04-reads-roman-urdu-serif f04-reads-roman-urdu-h" id="f04-reads-roman-urdu-h">A fine-tuned 4B reads it.</div>
+  <div data-hf-id="hf-dph0" class="f04-reads-roman-urdu-abs f04-reads-roman-urdu-bubble" id="f04-reads-roman-urdu-bubble">AoA, <span data-hf-id="hf-v5y3" class="f04-reads-roman-urdu-T" id="f04-reads-roman-urdu-T0">kal</span> <span data-hf-id="hf-s3o8" class="f04-reads-roman-urdu-T" id="f04-reads-roman-urdu-T1">2 log</span> ke liye <span data-hf-id="hf-vu5g" class="f04-reads-roman-urdu-T" id="f04-reads-roman-urdu-T3">1 room</span> chahiye <span data-hf-id="hf-weq5" class="f04-reads-roman-urdu-T" id="f04-reads-roman-urdu-T2">2 raat</span> ke liye. rate kya hai? advance kitni?</div>
+  <div data-hf-id="hf-pmpp" class="f04-reads-roman-urdu-abs f04-reads-roman-urdu-mono f04-reads-roman-urdu-arrow" id="f04-reads-roman-urdu-arrow">→</div>
+  <div data-hf-id="hf-70h5" class="f04-reads-roman-urdu-abs f04-reads-roman-urdu-mono f04-reads-roman-urdu-card" id="f04-reads-roman-urdu-card">{<br data-hf-id="hf-x5px">&nbsp;&nbsp;<span data-hf-id="hf-qjsq" class="f04-reads-roman-urdu-key">"check_in"</span>: <span data-hf-id="hf-7h5m" class="f04-reads-roman-urdu-val" id="f04-reads-roman-urdu-v0">"2026-10-18"</span>,<br data-hf-id="hf-rsrt">&nbsp;&nbsp;<span data-hf-id="hf-hfzb" class="f04-reads-roman-urdu-key">"guests"</span>: <span data-hf-id="hf-a2tl" class="f04-reads-roman-urdu-val" id="f04-reads-roman-urdu-v1">2</span>,<br data-hf-id="hf-szow">&nbsp;&nbsp;<span data-hf-id="hf-5rit" class="f04-reads-roman-urdu-key">"nights"</span>: <span data-hf-id="hf-myps" class="f04-reads-roman-urdu-val" id="f04-reads-roman-urdu-v2">2</span>,<br data-hf-id="hf-sldv">&nbsp;&nbsp;<span data-hf-id="hf-ywws" class="f04-reads-roman-urdu-key">"rooms"</span>: <span data-hf-id="hf-62om" class="f04-reads-roman-urdu-val" id="f04-reads-roman-urdu-v3">1</span><br data-hf-id="hf-qluq">}</div>
+  <div data-hf-id="hf-02dh" class="f04-reads-roman-urdu-abs f04-reads-roman-urdu-chip" id="f04-reads-roman-urdu-c0" data-layout-allow-overlap>kal</div>
+  <div data-hf-id="hf-gmgi" class="f04-reads-roman-urdu-abs f04-reads-roman-urdu-chip" id="f04-reads-roman-urdu-c1" data-layout-allow-overlap>2 log</div>
+  <div data-hf-id="hf-av6j" class="f04-reads-roman-urdu-abs f04-reads-roman-urdu-chip" id="f04-reads-roman-urdu-c2" data-layout-allow-overlap>2 raat</div>
+  <div data-hf-id="hf-6sfy" class="f04-reads-roman-urdu-abs f04-reads-roman-urdu-chip" id="f04-reads-roman-urdu-c3" data-layout-allow-overlap>1 room</div>
+  <div data-hf-id="hf-ro12" class="f04-reads-roman-urdu-abs f04-reads-roman-urdu-mono f04-reads-roman-urdu-foot" id="f04-reads-roman-urdu-foot">Qwen3.5-4B + LoRA on Tinker · dates resolved in code</div>
+
+</div>
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  const $ = (s) => document.querySelector('[data-composition-id="04-reads-roman-urdu"] ' + s);
+  const $$ = (s) => Array.from(document.querySelectorAll('[data-composition-id="04-reads-roman-urdu"] ' + s));
+  tl.fromTo($('#f04-reads-roman-urdu-bloom'), { scale: 0.85, opacity: 0.6 }, { scale: 1, opacity: 1, duration: 7, ease: "none" }, 0);
+
+  tl.fromTo($('#f04-reads-roman-urdu-h'), { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 0.05);
+  tl.fromTo($('#f04-reads-roman-urdu-bubble'), { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.3);
+  tl.fromTo($('#f04-reads-roman-urdu-card'), { x: 40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.8);
+  tl.fromTo($('#f04-reads-roman-urdu-arrow'), { opacity: 0 }, { opacity: 1, duration: 0.4 }, 1.0);
+  for (let i = 0; i < 4; i++) tl.set($('#f04-reads-roman-urdu-v' + i), { opacity: 0 }, 0);
+  const targets = [[1240, 360], [1210, 425], [1210, 488], [1200, 551]];
+  const starts = [[300, 340], [400, 340], [560, 400], [210, 400]];
+  for (let i = 0; i < 4; i++) {
+    const t0 = 1.6 + i * 1.0;
+    tl.fromTo($('#f04-reads-roman-urdu-T' + i), { backgroundColor: "rgba(227,162,26,0)" }, { backgroundColor: "rgba(227,162,26,.85)", duration: 0.25 }, t0);
+    tl.fromTo($('#f04-reads-roman-urdu-c' + i), { x: starts[i][0] - 520, y: starts[i][1] - 450, opacity: 0, scale: 0.8 },
+      { x: starts[i][0] - 520, y: starts[i][1] - 450, opacity: 1, scale: 1, duration: 0.15 }, t0 + 0.15);
+    tl.to($('#f04-reads-roman-urdu-c' + i), { x: targets[i][0] - 520, y: targets[i][1] - 450, duration: 0.55, ease: "power3.inOut" }, t0 + 0.3);
+    tl.to($('#f04-reads-roman-urdu-c' + i), { opacity: 0, duration: 0.12 }, t0 + 0.85);
+    tl.fromTo($('#f04-reads-roman-urdu-v' + i), { opacity: 0 }, { opacity: 1, duration: 0.15 }, t0 + 0.8);
+  }
+  tl.fromTo($('#f04-reads-roman-urdu-foot'), { opacity: 0, y: 10 }, { opacity: 0.85, y: 0, duration: 0.5 }, 5.4);
+
+  tl.set({}, {}, 7);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["04-reads-roman-urdu"] = tl;
+})();
+</script>
+</template>

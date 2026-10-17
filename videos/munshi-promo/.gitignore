@@ -1,0 +1,14 @@
+# HeyGen catalog audio is licensed for use in the rendered video, not for redistribution as raw files.
+assets/bgm/
+assets/sfx/
+.media/
+# build / review artifacts
+.hyperframes/artifacts/
+renders/
+node_modules/
+.thumbnails/
+.waveform-cache/
+.hyperframes/preview/
+.hyperframes/render-outputs.json
+.hyperframes/video-state.json
+.hyperframes/history-id

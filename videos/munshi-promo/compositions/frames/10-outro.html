@@ -1,0 +1,66 @@
+<template>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+
+@font-face{font-family:"Cormorant Garamond";src:url(assets/fonts/cormorant-garamond-latin-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"Cormorant Garamond";src:url(assets/fonts/cormorant-garamond-latin-700-normal.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-600-normal.woff2) format("woff2");font-weight:600}
+@font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-700-normal.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"JetBrains Mono";src:url(assets/fonts/JetBrainsMono-400.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"JetBrains Mono";src:url(assets/fonts/JetBrainsMono-700.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"Caveat";src:url(assets/fonts/caveat-latin-700-normal.woff2) format("woff2");font-weight:700}
+
+#root{position:absolute;inset:0;overflow:hidden;font-family:"Inter",sans-serif;color:#0D5C52}
+.f10-outro-bg{position:absolute;inset:0;background:#F4EDE0}
+.f10-outro-lines{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0 51px,rgba(13,92,82,.07) 51px 52px)}
+.f10-outro-margin{position:absolute;top:0;bottom:0;left:112px;width:2px;background:rgba(162,59,42,.35)}
+.f10-outro-bloom{position:absolute;left:50%;top:48%;width:1500px;height:1500px;margin-left:calc(1500px / -2);margin-top:calc(1500px / -2);
+  border-radius:50%;background:radial-gradient(circle,rgba(227,162,26,.42) 0%,rgba(244,217,159,.34) 34%,rgba(240,202,124,.12) 58%,transparent 72%)}
+.f10-outro-abs{position:absolute}
+.f10-outro-serif{font-family:"Cormorant Garamond",serif;font-weight:400;letter-spacing:-.01em}
+.f10-outro-mono{font-family:"JetBrains Mono",monospace}
+.f10-outro-hand{font-family:"Caveat",cursive;font-weight:700;color:#A23B2A}
+.f10-outro-kicker{font-family:"JetBrains Mono",monospace;font-size:22px;letter-spacing:.22em;text-transform:uppercase;opacity:.8}
+
+.f10-outro-stack{left:0;right:0;top:250px;text-align:center;transform-origin:50% 0%}
+.f10-outro-l{font-size:110px;line-height:1.15}
+.f10-outro-sw{position:relative;display:inline-block;isolation:isolate}
+.f10-outro-swipe{position:absolute;left:-18px;right:-18px;top:18%;bottom:6%;background:#E3A21A;border-radius:14px 40px 16px 36px;transform-origin:0 50%;z-index:-1}
+.f10-outro-word{left:0;right:0;top:590px;text-align:center;font-size:150px;font-weight:700}
+.f10-outro-url{left:0;right:0;top:780px;text-align:center;font-size:34px}
+
+</style>
+<div data-hf-id="hf-d454" id="root" data-composition-id="10-outro" data-width="1920" data-height="1080">
+  <div data-hf-id="hf-9mmw" class="clip f10-outro-bg" id="f10-outro-bg" data-start="0" data-duration="4" data-track-index="0">
+    <div data-hf-id="hf-i4ud" class="f10-outro-lines"></div><div data-hf-id="hf-77t2" class="f10-outro-margin"></div><div data-hf-id="hf-vt30" class="f10-outro-bloom" id="f10-outro-bloom"></div>
+  </div>
+
+  <div data-hf-id="hf-sd4q" class="f10-outro-abs f10-outro-stack" id="f10-outro-stack">
+    <div data-hf-id="hf-0vkd" class="f10-outro-serif f10-outro-l" id="f10-outro-l0">Models read.</div>
+    <div data-hf-id="hf-vdy2" class="f10-outro-serif f10-outro-l" id="f10-outro-l1">Code decides.</div>
+    <div data-hf-id="hf-ma07" class="f10-outro-serif f10-outro-l" id="f10-outro-l2"><span data-hf-id="hf-0v0d" class="f10-outro-sw"><span data-hf-id="hf-zkiz" class="f10-outro-swipe" id="f10-outro-swipe"></span>Temporal keeps the promise.</span></div>
+  </div>
+  <div data-hf-id="hf-fwo9" class="f10-outro-abs f10-outro-serif f10-outro-word" id="f10-outro-word">Munshi</div>
+  <div data-hf-id="hf-lxfh" class="f10-outro-abs f10-outro-mono f10-outro-url" id="f10-outro-url">github.com/ArqamWaheed/munshi</div>
+
+</div>
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  const $ = (s) => document.querySelector('[data-composition-id="10-outro"] ' + s);
+  const $$ = (s) => Array.from(document.querySelectorAll('[data-composition-id="10-outro"] ' + s));
+  tl.fromTo($('#f10-outro-bloom'), { scale: 0.85, opacity: 0.6 }, { scale: 1, opacity: 1, duration: 4, ease: "none" }, 0);
+
+  for (let i = 0; i < 3; i++) tl.fromTo($('#f10-outro-l' + i), { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 0.05 + i * 0.55);
+  tl.fromTo($('#f10-outro-swipe'), { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power3.inOut" }, 1.25);
+  tl.to($('#f10-outro-stack'), { scale: 0.62, y: -120, duration: 0.6, ease: "power3.inOut" }, 1.8);
+  tl.fromTo($('#f10-outro-word'), { y: 40, opacity: 0 }, { y: -60, opacity: 1, duration: 0.6, ease: "power3.out" }, 1.95);
+  tl.fromTo($('#f10-outro-url'), { opacity: 0 }, { opacity: 1, y: -60, duration: 0.5 }, 2.35);
+
+  tl.set({}, {}, 4);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["10-outro"] = tl;
+})();
+</script>
+</template>

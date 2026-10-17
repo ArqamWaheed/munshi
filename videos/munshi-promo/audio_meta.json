@@ -1,0 +1,261 @@
+{
+  "bgm": {
+    "path": "assets/bgm/track-57s.wav",
+    "volume": 0.6,
+    "query": "confident minimal tech underscore, light percussion, modern product launch, steady build",
+    "duration_s": 56.91,
+    "edit": "HeyGen catalog track (assets/bgm/track.mp3, 40 s, ~125.5 bpm) cut on bar lines: bars 3-15, then bars 8-15 twice, then the tail to 36.16 s; 30 ms crossfades; 3 s fade-out. Drop lands at 9.56 s (frame 3, the Munshi reveal)."
+  },
+  "bgm_pending": false,
+  "voices": [],
+  "sfx": [
+    {
+      "frame": 1,
+      "file": "assets/sfx/notification-pop.mp3",
+      "offset_s": 1.0,
+      "duration_s": 0.7,
+      "volume": 0.5,
+      "cue": "phone card arrives"
+    },
+    {
+      "frame": 1,
+      "file": "assets/sfx/keyboard-typing.mp3",
+      "offset_s": 1.6,
+      "duration_s": 2.6,
+      "volume": 0.22,
+      "cue": "guest message types out"
+    },
+    {
+      "frame": 2,
+      "file": "assets/sfx/whoosh.mp3",
+      "offset_s": 0.0,
+      "duration_s": 1.2,
+      "volume": 0.25,
+      "cue": "first pain line rises"
+    },
+    {
+      "frame": 2,
+      "file": "assets/sfx/pen-scratch.mp3",
+      "offset_s": 0.65,
+      "duration_s": 0.6,
+      "volume": 0.4,
+      "cue": "strike 1"
+    },
+    {
+      "frame": 2,
+      "file": "assets/sfx/pen-scratch.mp3",
+      "offset_s": 1.75,
+      "duration_s": 0.6,
+      "volume": 0.4,
+      "cue": "strike 2"
+    },
+    {
+      "frame": 2,
+      "file": "assets/sfx/pen-scratch.mp3",
+      "offset_s": 2.95,
+      "duration_s": 0.6,
+      "volume": 0.4,
+      "cue": "strike 3"
+    },
+    {
+      "frame": 3,
+      "file": "assets/sfx/swoosh.mp3",
+      "offset_s": -0.18,
+      "duration_s": 1.0,
+      "volume": 0.35,
+      "cue": "saffron swipe draws (file starts 0.18 s late)"
+    },
+    {
+      "frame": 3,
+      "file": "assets/sfx/soft-impact.mp3",
+      "offset_s": 0.55,
+      "duration_s": 0.8,
+      "volume": 0.45,
+      "cue": "wordmark lands on the music drop at 9.56 s"
+    },
+    {
+      "frame": 4,
+      "file": "assets/sfx/tick.mp3",
+      "offset_s": 2.0,
+      "duration_s": 0.2,
+      "volume": 0.4,
+      "cue": "JSON field lands"
+    },
+    {
+      "frame": 4,
+      "file": "assets/sfx/tick.mp3",
+      "offset_s": 3.0,
+      "duration_s": 0.2,
+      "volume": 0.4,
+      "cue": "JSON field lands"
+    },
+    {
+      "frame": 4,
+      "file": "assets/sfx/tick.mp3",
+      "offset_s": 4.0,
+      "duration_s": 0.2,
+      "volume": 0.4,
+      "cue": "JSON field lands"
+    },
+    {
+      "frame": 4,
+      "file": "assets/sfx/tick.mp3",
+      "offset_s": 5.0,
+      "duration_s": 0.2,
+      "volume": 0.4,
+      "cue": "JSON field lands"
+    },
+    {
+      "frame": 4,
+      "file": "assets/sfx/confirm.mp3",
+      "offset_s": 5.3,
+      "duration_s": 0.34,
+      "volume": 0.4,
+      "cue": "card complete"
+    },
+    {
+      "frame": 5,
+      "file": "assets/sfx/counter.mp3",
+      "offset_s": 0.66,
+      "duration_s": 2.6,
+      "volume": 0.3,
+      "cue": "5% counts up (file's ticking starts at 1.14 s)"
+    },
+    {
+      "frame": 5,
+      "file": "assets/sfx/click.mp3",
+      "offset_s": 5.2,
+      "duration_s": 0.24,
+      "volume": 0.5,
+      "cue": "low tier chip lights"
+    },
+    {
+      "frame": 6,
+      "file": "assets/sfx/typing.mp3",
+      "offset_s": 0.2,
+      "duration_s": 2.4,
+      "volume": 0.2,
+      "cue": "Gemma reply types"
+    },
+    {
+      "frame": 6,
+      "file": "assets/sfx/tick.mp3",
+      "offset_s": 2.8,
+      "duration_s": 0.2,
+      "volume": 0.4,
+      "cue": "number checked"
+    },
+    {
+      "frame": 6,
+      "file": "assets/sfx/tick.mp3",
+      "offset_s": 3.3,
+      "duration_s": 0.2,
+      "volume": 0.4,
+      "cue": "number checked"
+    },
+    {
+      "frame": 6,
+      "file": "assets/sfx/tick.mp3",
+      "offset_s": 3.8,
+      "duration_s": 0.2,
+      "volume": 0.4,
+      "cue": "number checked"
+    },
+    {
+      "frame": 7,
+      "file": "assets/sfx/clock-ticking.mp3",
+      "offset_s": 0.0,
+      "duration_s": 5.4,
+      "volume": 0.22,
+      "cue": "countdown runs"
+    },
+    {
+      "frame": 7,
+      "file": "assets/sfx/coin.mp3",
+      "offset_s": 2.1,
+      "duration_s": 0.9,
+      "volume": 0.45,
+      "cue": "deposit JC-48120"
+    },
+    {
+      "frame": 7,
+      "file": "assets/sfx/coin.mp3",
+      "offset_s": 3.9,
+      "duration_s": 0.9,
+      "volume": 0.45,
+      "cue": "deposit JC-48177"
+    },
+    {
+      "frame": 7,
+      "file": "assets/sfx/stamp.mp3",
+      "offset_s": 5.28,
+      "duration_s": 1.5,
+      "volume": 0.55,
+      "cue": "CONFIRMED stamp (file hits at 0.32 s)"
+    },
+    {
+      "frame": 8,
+      "file": "assets/sfx/power-down.mp3",
+      "offset_s": 1.16,
+      "duration_s": 1.2,
+      "volume": 0.5,
+      "cue": "server killed"
+    },
+    {
+      "frame": 8,
+      "file": "assets/sfx/glitch.mp3",
+      "offset_s": 1.4,
+      "duration_s": 0.7,
+      "volume": 0.4,
+      "cue": "screen glitch"
+    },
+    {
+      "frame": 8,
+      "file": "assets/sfx/power-up.mp3",
+      "offset_s": 1.5,
+      "duration_s": 2.0,
+      "volume": 0.4,
+      "cue": "timeline returns (file starts 0.5 s late)"
+    },
+    {
+      "frame": 9,
+      "file": "assets/sfx/tick.mp3",
+      "offset_s": 0.9,
+      "duration_s": 0.2,
+      "volume": 0.4,
+      "cue": "stat card lands"
+    },
+    {
+      "frame": 9,
+      "file": "assets/sfx/tick.mp3",
+      "offset_s": 1.8,
+      "duration_s": 0.2,
+      "volume": 0.4,
+      "cue": "stat card lands"
+    },
+    {
+      "frame": 9,
+      "file": "assets/sfx/tick.mp3",
+      "offset_s": 2.7,
+      "duration_s": 0.2,
+      "volume": 0.4,
+      "cue": "stat card lands"
+    },
+    {
+      "frame": 9,
+      "file": "assets/sfx/tick.mp3",
+      "offset_s": 3.6,
+      "duration_s": 0.2,
+      "volume": 0.4,
+      "cue": "stat card lands"
+    },
+    {
+      "frame": 10,
+      "file": "assets/sfx/impact.mp3",
+      "offset_s": 1.68,
+      "duration_s": 2.2,
+      "volume": 0.45,
+      "cue": "wordmark lands"
+    }
+  ]
+}
