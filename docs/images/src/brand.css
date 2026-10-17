@@ -1,0 +1,16 @@
+/* Night-desk brand kit (../../../DESIGN.md). Fonts are the video's self-hosted files. */
+@font-face{font-family:"Big Shoulders Display";src:url(../../../videos/munshi-promo/assets/fonts/big-shoulders-display-latin-800-normal.woff2) format("woff2");font-weight:800}
+@font-face{font-family:"Schibsted Grotesk";src:url(../../../videos/munshi-promo/assets/fonts/schibsted-grotesk-latin-400-normal.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"Schibsted Grotesk";src:url(../../../videos/munshi-promo/assets/fonts/schibsted-grotesk-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic}
+@font-face{font-family:"Schibsted Grotesk";src:url(../../../videos/munshi-promo/assets/fonts/schibsted-grotesk-latin-600-normal.woff2) format("woff2");font-weight:600}
+@font-face{font-family:"Schibsted Grotesk";src:url(../../../videos/munshi-promo/assets/fonts/schibsted-grotesk-latin-700-normal.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"JetBrains Mono";src:url(../../../videos/munshi-promo/assets/fonts/JetBrainsMono-400.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"JetBrains Mono";src:url(../../../videos/munshi-promo/assets/fonts/JetBrainsMono-700.woff2) format("woff2");font-weight:700}
+:root{--night:#11162A;--night2:#1B2240;--line:#2E3760;--chalk:#EDEFF3;--muted:#9AA2C2;--red:#C4302F;--signal:#F06A5F}
+*{box-sizing:border-box;margin:0}
+html,body{width:1600px;height:900px;background:var(--night);color:var(--chalk);font-family:"Schibsted Grotesk",sans-serif;overflow:hidden}
+.page{position:relative;width:1600px;height:900px;padding:72px 88px}
+.disp{font-family:"Big Shoulders Display",sans-serif;font-weight:800;line-height:1;letter-spacing:-.005em}
+.mono{font-family:"JetBrains Mono",monospace}
+.muted{color:var(--muted)}
+.foot{position:absolute;left:88px;right:88px;bottom:56px;font-size:28px;font-style:italic;color:var(--signal)}

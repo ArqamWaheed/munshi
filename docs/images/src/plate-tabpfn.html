@@ -1,0 +1,39 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="brand.css"><style>
+h1{font-size:132px}
+.sub{font-size:28px;margin-top:14px}
+.chart{position:absolute;left:88px;top:330px;width:640px;height:400px}
+.base{position:absolute;left:0;right:0;bottom:60px;height:2px;background:var(--line)}
+.grp{position:absolute;bottom:62px;display:flex;gap:10px;align-items:flex-end}
+.bar{width:74px;position:relative}
+.bar.p{border:2px solid var(--muted);border-bottom:0}
+.bar.a{background:var(--chalk)}
+.bar span{position:absolute;top:-38px;left:0;right:0;text-align:center;font-size:24px}
+.lab{position:absolute;bottom:14px;width:158px;text-align:center;font-size:26px;font-weight:600}
+.key{position:absolute;left:88px;top:756px;font-size:22px;display:flex;gap:28px;align-items:center}
+.key i{display:inline-block;width:22px;height:22px;margin-right:8px;vertical-align:-4px}
+table{position:absolute;left:820px;top:380px;width:692px;border-collapse:collapse;font-size:28px}
+th{font-weight:600;color:var(--muted);text-align:right;padding:0 18px 18px;font-size:24px;line-height:1.25}
+th:first-child,td:first-child{text-align:left}
+td{padding:26px 18px;text-align:right;border-top:2px solid var(--line)}
+td.n{font-family:"JetBrains Mono",monospace;font-size:34px}
+tr.code td{background:var(--red);border-top-color:var(--red);font-weight:700}
+</style></head><body><div class="page">
+<h1 class="disp">It says 82%. 81% cancel.</h1>
+<div class="sub muted">TabPFN-3.5 trained on 300 bookings, tested on 2,000 it never saw.</div>
+<div class="chart">
+ <div class="base"></div>
+ <div class="grp" style="left:0"><div class="bar p" style="height:39px"><span class="mono">13%</span></div><div class="bar a" style="height:37px"><span class="mono">12%</span></div></div>
+ <div class="lab" style="left:0">low</div>
+ <div class="grp" style="left:240px"><div class="bar p" style="height:108px"><span class="mono">36%</span></div><div class="bar a" style="height:89px"><span class="mono">30%</span></div></div>
+ <div class="lab" style="left:240px">medium</div>
+ <div class="grp" style="left:480px"><div class="bar p" style="height:245px"><span class="mono">82%</span></div><div class="bar a" style="height:244px"><span class="mono">81%</span></div></div>
+ <div class="lab" style="left:480px">high</div>
+</div>
+<div class="key muted"><span><i style="border:2px solid var(--muted)"></i>predicted cancel rate</span><span><i style="background:var(--chalk)"></i>actually cancelled</span></div>
+<table>
+ <tr><th>Advance policy</th><th>Kept when a<br>guest cancels</th><th>Asked of guests<br>who came</th></tr>
+ <tr><td>Flat 30%</td><td class="n">30.0%</td><td class="n">30.0%</td></tr>
+ <tr class="code"><td>Risk-tiered<br>20 / 30 / 50%</td><td class="n">37.7%</td><td class="n">26.9%</td></tr>
+</table>
+<div class="foot">Price the advance by risk: keep more from no-shows, ask less from everyone else.</div>
+</div></body></html>

@@ -1,0 +1,32 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="brand.css"><style>
+h1{font-size:96px;margin-bottom:24px}
+.row{display:flex;align-items:stretch;gap:0}
+.box{flex:1;min-height:250px;border:2px solid var(--line);border-radius:12px;background:var(--night2);padding:24px 22px;display:flex;flex-direction:column;justify-content:space-between}
+.box.code{background:var(--red);border-color:var(--red)}
+.box b{font-weight:700;font-size:28px;line-height:1.15}
+.box .mono{font-size:18px;line-height:1.4;color:var(--muted)}
+.box.code .mono{color:var(--chalk)}
+.box .tag{margin-top:12px;color:var(--chalk);background:var(--red);border-radius:6px;padding:8px 10px;font-size:18px;color:var(--chalk)}
+.arr{width:44px;display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--muted)}
+.temporal{margin-top:36px;border:2px solid var(--line);border-radius:12px;padding:26px 32px;display:flex;align-items:center;gap:48px}
+.temporal .t{font-weight:700;font-size:30px;min-width:250px}
+.temporal span{font-size:26px}
+.temporal i{flex:1;height:2px;background:var(--line)}
+.sentry{margin-top:18px;border:2px dashed var(--line);border-radius:12px;padding:14px 32px;font-size:24px}
+.legend{margin-bottom:44px;font-size:24px;display:flex;gap:12px;align-items:center}
+.legend em{display:inline-block;width:26px;height:26px;background:var(--red);border-radius:4px}
+</style></head><body><div class="page">
+<h1 class="disp">One inquiry, one durable promise.</h1>
+<div class="legend"><em></em>code decides</div>
+<div class="row">
+ <div class="box"><b>WhatsApp message</b><span class="mono">Roman Urdu, English, mixed, Urdu script</span></div><div class="arr mono">→</div>
+ <div class="box"><b>4B parser, fine-tuned</b><span class="mono">Qwen3.5-4B + LoRA on Tinker</span></div><div class="arr mono">→</div>
+ <div class="box code"><b>normalise() + dates.py</b><span class="mono">dates, counts, the clarifying question</span></div><div class="arr mono">→</div>
+ <div class="box"><b>TabPFN risk</b><span class="mono">P(cancel)</span></div><div class="arr mono">→</div>
+ <div class="box code"><b>policy.py</b><span class="mono">advance 20/30/50%<br>hold 12/6/2 h</span></div><div class="arr mono">→</div>
+ <div class="box"><b>Gemma 4 reply</b><div><span class="mono">facts only, guest's language</span><div class="tag mono">check_draft()</div></div></div>
+</div>
+<div class="temporal"><span class="t">Temporal workflow</span><span>durable hold timer</span><i></i><span>signals: deposit, guest reply</span><i></i><span>confirm or release</span></div>
+<div class="sentry muted">Sentry: one trace per inquiry, every model call and every check as a span</div>
+<div class="foot">Models read and write. Code decides. Temporal keeps the promise.</div>
+</div></body></html>

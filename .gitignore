@@ -11,3 +11,4 @@ results/briefs/
 planning/
 .pytest_cache/
 results/drills/
+models/

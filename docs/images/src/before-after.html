@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="brand.css"><style>
+.page{padding:0;display:flex}
+.half{position:relative;width:800px;height:900px;overflow:hidden}
+.before{background:url(art/owner-night.jpg) 50% 50%/cover no-repeat}
+.before::after{content:"";position:absolute;left:0;right:0;bottom:0;height:300px;background:linear-gradient(transparent,rgba(17,22,42,.92) 60%)}
+.after{background:var(--night);border-left:2px solid var(--line)}
+.lab{position:absolute;left:56px;z-index:2}
+.lab .disp{font-size:72px}
+.lab p{font-size:26px;margin-top:10px}
+.before .lab{bottom:56px}
+.after .lab{top:56px}
+.shot{position:absolute;left:40px;right:40px;top:300px;border:2px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.shot img{display:block;width:100%}
+.stamp{position:absolute;right:70px;top:610px;background:var(--red);font-size:64px;padding:8px 28px 2px;transform:rotate(-5deg)}
+</style></head><body><div class="page">
+<div class="half before"><div class="lab"><div class="disp">Before: 11:40 pm.</div><p class="muted">Rate from memory. Advance never chased. Room sits empty.</p></div></div>
+<div class="half after"><div class="lab"><div class="disp">After: Munshi.</div><p class="muted">Every quote computed. Every hold has a deadline.</p></div>
+<div class="shot"><img src="../app-confirmed.png" alt=""></div>
+<div class="disp stamp">CONFIRMED</div></div>
+</div></body></html>
