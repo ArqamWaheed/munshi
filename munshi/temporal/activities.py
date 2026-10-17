@@ -20,7 +20,7 @@ from temporalio.exceptions import ApplicationError
 from munshi import comps as comps_mod
 from munshi import config as cfg
 from munshi import parser, reply, risk
-from munshi.llm import ProviderError, RateLimited
+from munshi.llm import NotConfigured, ProviderError, RateLimited
 from munshi.policy import risk_band
 from munshi.schema import (ArrivalRisk, ArrivalsQuery, Booking, Brief, BriefRequest, CompsInput,
                            CompsResult, DraftInput, DraftOutput, ParseInput, ParseOutput, RescoreInput,
@@ -44,6 +44,8 @@ def _guard(name: str, trace_headers: dict, fn):
         except parser.BadModelOutput as e:
             sentry_sdk.capture_exception(e)
             raise ApplicationError(str(e), type="BadModelOutput", non_retryable=True) from e
+        except NotConfigured as e:
+            raise ApplicationError(str(e), type="NotConfigured", non_retryable=True) from e
         except (ProviderError, comps_mod.CompsUnavailable) as e:
             sentry_sdk.capture_exception(e)
             raise  # plain exception = retryable under the activity's RetryPolicy
@@ -113,8 +115,8 @@ def rescore_arrivals(inp: RescoreInput) -> list[ArrivalRisk]:
     def run(attempt: int) -> list[ArrivalRisk]:
         out = []
         for b in inp.bookings:
-            with tool_span("tabpfn.predict_proba"):
-                p, _, _ = risk.score(b.inquiry, inp.today, risk.GuestContext(), prefer="tabpfn")
+            with tool_span(f"{inp.prefer}.predict_proba"):
+                p, _, _ = risk.score(b.inquiry, inp.today, risk.GuestContext(), prefer=inp.prefer)
             # TODO: once the deposit is paid, re-score with deposit_type="Non Refund"/"Refundable" if your
             # own register shows that matters; the public dataset's deposit effect is counter-intuitive.
             out.append(ArrivalRisk(booking=b, p_cancel=p, band=risk_band(p, inp.policy)))
