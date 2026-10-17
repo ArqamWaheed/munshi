@@ -32,10 +32,11 @@ class Mocks:
     """Fake activities registered under the real activity names; behaviour set per test."""
 
     def __init__(self, inquiry: Inquiry | list[Inquiry], p_cancel: float = 0.1, tinker_fails: bool = False,
-                 tabpfn_fails: bool = False):
+                 tabpfn_fails: bool = False, draft_rejected: bool = False):
         # a list = one parse result per round (clarification tests); the last one repeats
         self.inquiries = inquiry if isinstance(inquiry, list) else [inquiry]
         self.p, self.tinker_fails, self.tabpfn_fails = p_cancel, tinker_fails, tabpfn_fails
+        self.draft_rejected = draft_rejected
         self.calls: list[str] = []
         self.messages: list[str] = []
         self.bookings: list[Booking] = []
@@ -66,6 +67,8 @@ class Mocks:
         @activity.defn(name="draft_reply")
         async def draft_reply(inp: DraftInput) -> DraftOutput:
             self.calls.append(f"draft:{inp.kind}")
+            if self.draft_rejected:
+                raise ApplicationError("numbers not in the facts: 500", type="DraftRejected", non_retryable=True)
             return DraftOutput(text=f"mock {inp.kind}", model="mock-gemma", latency_s=0.01)
 
         @activity.defn(name="record_booking")
@@ -185,6 +188,13 @@ def test_tabpfn_failure_falls_back_to_logreg(env):
     m = Mocks(OK, p_cancel=0.6, tabpfn_fails=True)
     st = run(env, m, demo_speed=3600)
     assert st.risk.model == "mock-logreg" and st.outcome == "released"
+
+
+def test_rejected_draft_sends_the_template(env):
+    m = Mocks(OK, p_cancel=0.6, draft_rejected=True)
+    st = run(env, m, demo_speed=3600)
+    assert st.template_fallbacks == ["quote", "released"]
+    assert "Rs 17,100" in st.draft and "Rs 9,000" in st.draft  # template: exact quote numbers, nothing invented
 
 
 def test_brief_falls_back_to_logreg_when_tabpfn_fails(env):

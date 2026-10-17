@@ -87,8 +87,12 @@ def fetch_comps(inp: CompsInput) -> CompsResult:
 def draft_reply(inp: DraftInput) -> DraftOutput:
     def run(attempt: int) -> DraftOutput:
         with agent_span("Munshi writer"):
-            res = reply.draft(inp.inquiry, inp.quote, inp.kind, inp.hotel_name or cfg.HOTEL_NAME)
-        return DraftOutput(text=res.text.strip(), model=res.model, latency_s=res.latency_s, attempt=attempt)
+            res, history = reply.draft_checked(inp.inquiry, inp.quote, inp.kind, inp.hotel_name or cfg.HOTEL_NAME)
+        if history[-1]:  # Gemma failed the checker twice: the workflow sends the template instead
+            raise ApplicationError("draft rejected: " + "; ".join(history[-1]), type="DraftRejected",
+                                   non_retryable=True)
+        return DraftOutput(text=res.text.strip(), model=res.model, latency_s=res.latency_s, attempt=attempt,
+                           rewrites=len(history) - 1)
     return _guard("draft_reply", inp.trace_headers, run)
 
 

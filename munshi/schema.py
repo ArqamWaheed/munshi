@@ -126,6 +126,7 @@ class DraftOutput(Attempted):
     text: str
     model: str
     latency_s: float
+    rewrites: int = 0  # drafts the checker rejected before this one passed
 
 
 class DepositInfo(BaseModel):
@@ -164,6 +165,7 @@ class HoldStatus(BaseModel):
     deposit: DepositInfo | None = None  # running total of all deposit signals; confirms once >= advance
     followup: str | None = None
     attempts: dict[str, int] = Field(default_factory=dict)
+    template_fallbacks: list[str] = Field(default_factory=list)  # reply kinds sent as the template, not Gemma
 
 
 class Booking(BaseModel):

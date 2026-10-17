@@ -82,8 +82,11 @@ class RoomHoldWorkflow:
                                              hotel_name=inp.hotel_name, trace_headers=inp.trace_headers),
                 start_to_close_timeout=T_MODEL, retry_policy=GEMMA_RETRY, summary=f"draft {kind} (Gemma 4)")
             self.status.attempts[f"draft_{kind}"] = out.attempt
+            if out.rewrites:
+                self.status.attempts[f"draft_{kind}_rewrites"] = out.rewrites
             return out.text
-        except ActivityError:
+        except ActivityError:  # Gemma down, or its drafts failed the checker: the template never invents
+            self.status.template_fallbacks.append(kind)
             return policy.template_reply(self.status.parsed, self.status.quote, kind)
 
     @workflow.run

@@ -12,7 +12,8 @@ from munshi import config as cfg
 from munshi import policy, risk
 from munshi.llm import NotConfigured, call_gemma, call_tinker, extract_json
 from munshi.parser import messages_for, next_weekday, normalise, redact
-from munshi.schema import PARSED_FIELDS, DepositInfo, HoldPolicy, Inquiry
+from munshi.reply import check_draft, numbers_in
+from munshi.schema import PARSED_FIELDS, DepositInfo, HoldPolicy, Inquiry, Quote
 
 ROOT = Path(__file__).resolve().parent.parent
 EVAL = [json.loads(ln) for ln in (ROOT / "data" / "eval.jsonl").read_text(encoding="utf-8").splitlines() if ln]
@@ -127,3 +128,30 @@ def test_eval_label_is_a_fixed_point_of_normalise(row):
 def test_eval_not_in_seeds():
     s = {x.lower() for x in seeds()}
     assert not [r["id"] for r in EVAL if r["message"].lower() in s]
+
+
+DRAFT_INQ = Inquiry(check_in=date(2026, 10, 18), nights=2, guests=2, rooms=1)
+DRAFT_QUOTE = Quote(nightly_pkr=8000, nights=2, rooms=1, total_pkr=16000, advance_pkr=3500, hold_hours=12,
+                    risk_band="low")
+
+
+def test_numbers_in_reads_separators_suffixes_and_urdu_digits():
+    assert numbers_in("Rs 16,000 total, 3.5k advance, 8 hazar per raat") == {16000, 3500, 8000}
+    assert numbers_in("\u06f1\u06f6\u06f0\u06f0\u06f0 \u0631\u0648\u067e\u06d2") == {16000}
+
+
+@pytest.mark.parametrize("text,problem", [
+    ("18 Oct se 2 raat, 1 room: total Rs 16,000. Rs 3,500 advance bhej dein, 12 ghante hold.", None),
+    ("Total Rs 16,000, advance Rs 3,500, 12 ghante hold. Breakfast Rs 500 extra.", "numbers not in the facts: 500"),
+    ("Total Rs 16,000, advance Rs 3,500, 12 ghante hold. Check-in 19 Oct.", "numbers not in the facts: 19"),
+    ("Room available hai, total Rs 16,000. Advance bhej dein.", "missing advance, hold hours"),
+    ("Total Rs 16,000, advance Rs 3,500, 12 ghante hold. " + "bohat " * 90, "too long"),
+])
+def test_check_draft(text, problem):
+    problems = check_draft(text, DRAFT_INQ, DRAFT_QUOTE, "quote")
+    assert problems == [] if problem is None else any(p.startswith(problem) for p in problems)
+
+
+def test_confirmation_needs_no_prices_but_may_not_invent_any():
+    assert check_draft("Advance mil gaya, booking confirm hai. Shukriya!", DRAFT_INQ, DRAFT_QUOTE, "confirmed") == []
+    assert check_draft("Rs 2,000 mil gaye, booking confirm.", DRAFT_INQ, DRAFT_QUOTE, "confirmed") != []

@@ -23,7 +23,7 @@ from munshi import llm, tracing
 from munshi.schema import DraftInput, Inquiry, Quote
 from munshi.temporal.activities import draft_reply
 
-REPLY = "Kal se 2 raat, total Rs 16,000."
+REPLY = "Kal se 2 raat, total Rs 16,000. Rs 3,500 advance bhej dein, room 12 ghante hold rahega."
 
 
 class Capture(Transport):
@@ -82,4 +82,6 @@ def test_activity_trace_shape(captured):
     assert (d["gen_ai.usage.input_tokens"], d["gen_ai.usage.output_tokens"]) == (120, 30)
     assert d["gen_ai.cost.total_tokens"] == 0.0  # free tier: actual cost, not list price
     assert d["gen_ai.conversation.id"] == "test"  # ActivityEnvironment's workflow id
+    check = spans["gen_ai.execute_tool"]["attrs"]  # code checking the model's draft, nested in the agent span
+    assert check["gen_ai.tool.name"] == "reply_check" and check["munshi.reply_check.passed"] is True
     assert not any(REPLY.encode() in b for b in captured.raw)  # send_default_pii=False: no reply text sent
