@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "train_rows": 300,
+    "seeds": 5,
+    "test_rows": 2000,
+    "test_cancel_rate": 0.352,
+    "policy": {
+      "low": {
+        "from": 0.0,
+        "to": 0.25,
+        "advance": 0.2
+      },
+      "medium": {
+        "from": 0.25,
+        "to": 0.5,
+        "advance": 0.3
+      },
+      "high": {
+        "from": 0.5,
+        "to": 1.01,
+        "advance": 0.5
+      }
+    }
+  },
+  "models": {
+    "tabpfn": {
+      "brier": 0.14771969593914425,
+      "ece": 0.05129977429718711,
+      "bands": {
+        "low": {
+          "share": 0.3987,
+          "mean_pred": 0.13322033942236958,
+          "actual": 0.1235080648459645,
+          "share_of_cancels": 0.14204545454545453
+        },
+        "medium": {
+          "share": 0.3597,
+          "mean_pred": 0.36010961295632143,
+          "actual": 0.29541341389720055,
+          "share_of_cancels": 0.3068181818181818
+        },
+        "high": {
+          "share": 0.2416,
+          "mean_pred": 0.8180958931246927,
+          "actual": 0.8141227150270486,
+          "share_of_cancels": 0.5511363636363636
+        }
+      },
+      "policy_tiered": {
+        "kept_pct_of_cancelled_value": 0.37711541439373464,
+        "asked_pct_of_shown_value": 0.2692248160163086,
+        "share_asked_50pct": 0.2416
+      }
+    },
+    "logreg": {
+      "brier": 0.15691884725080052,
+      "ece": 0.050265290157889934,
+      "bands": {
+        "low": {
+          "share": 0.4034,
+          "mean_pred": 0.13858144225579555,
+          "actual": 0.15020598414152436,
+          "share_of_cancels": 0.17357954545454546
+        },
+        "medium": {
+          "share": 0.3513,
+          "mean_pred": 0.35894725019887935,
+          "actual": 0.28828826803443997,
+          "share_of_cancels": 0.29005681818181817
+        },
+        "high": {
+          "share": 0.2453,
+          "mean_pred": 0.8009159767801564,
+          "actual": 0.7799372364028483,
+          "share_of_cancels": 0.5363636363636364
+        }
+      },
+      "policy_tiered": {
+        "kept_pct_of_cancelled_value": 0.3775259057704152,
+        "asked_pct_of_shown_value": 0.2726305957461365,
+        "share_asked_50pct": 0.2453
+      }
+    }
+  },
+  "flat": {
+    "flat_20": {
+      "kept_pct_of_cancelled_value": 0.2,
+      "asked_pct_of_shown_value": 0.2,
+      "share_asked_50pct": 0.0
+    },
+    "flat_30": {
+      "kept_pct_of_cancelled_value": 0.29999999999999993,
+      "asked_pct_of_shown_value": 0.3,
+      "share_asked_50pct": 0.0
+    },
+    "flat_50": {
+      "kept_pct_of_cancelled_value": 0.5,
+      "asked_pct_of_shown_value": 0.5,
+      "share_asked_50pct": 1.0
+    }
+  }
+}
