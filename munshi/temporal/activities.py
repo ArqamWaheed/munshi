@@ -138,7 +138,8 @@ def write_brief(req: BriefRequest) -> Brief:
                          f"{a.p_cancel:.0%} | {flag} |")
     else:
         lines.append("No confirmed arrivals.")
-    lines += ["", f"## Nearby rates tonight ({req.comps.source})"]
+    if req.comps.comps:  # SerpApi is optional: no key -> no section
+        lines += ["", f"## Nearby rates tonight ({req.comps.source})"]
     for c in req.comps.comps:
         lines.append(f"- {c.name}: Rs {c.nightly_pkr:,}" + (f" ({c.rating}/5)" if c.rating else ""))
     if req.comps.median_nightly_pkr:

@@ -159,7 +159,7 @@ dl{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;margin:0} dt{color:v
   <div class="row" data-k="actions" style="margin-top:10px"></div></section>
  <section><h2>Parsed (fine-tuned model)</h2><pre data-k="parsed">-</pre></section>
  <section><h2>Risk (TabPFN) and quote</h2><div class="big" data-k="risk">-</div><dl data-k="quote" style="margin-top:8px"></dl></section>
- <section><h2>Nearby rates (SerpApi Google Hotels)</h2><pre data-k="comps">-</pre></section>
+ <section data-k="compsSec" style="display:none"><h2>Nearby rates (SerpApi Google Hotels)</h2><pre data-k="comps">-</pre></section>
  <section><h2>Hold</h2><div class="big" data-k="hold">-</div><dl data-k="paid" style="margin-top:8px"></dl>
   <div class="row" data-k="depRow" style="margin-top:10px">
    <label class="muted">Rs <input data-k="amt" type="number" min="1" style="width:110px"></label>
@@ -230,10 +230,12 @@ async function poll(){if(!id)return;const wf=id;let s;
  view.chat.replaceChildren(...chat(s));actions(s);
  view.parsed.textContent=s.parsed?JSON.stringify(s.parsed,null,1)+'\\nmodel: '+s.parser_model:s.stage;
  if(s.risk)view.risk.textContent=(s.risk.p_cancel*100).toFixed(0)+'% cancel risk';
- if(s.quote){const q=s.quote;dl(view.quote,[['Nightly',rs(q.nightly_pkr)],['Stay',q.nights+' night(s) × '+q.rooms+' room(s)'],['Total',rs(q.total_pkr)],
+ if(s.quote){const q=s.quote;const med=s.comps?.median_nightly_pkr;
+  dl(view.quote,[['Nightly',rs(q.nightly_pkr)+(med?' (nearby median '+rs(med)+')':' (base rate)')],['Stay',q.nights+' night(s) × '+q.rooms+' room(s)'],['Total',rs(q.total_pkr)],
   ['Advance',rs(q.advance_pkr)+' ('+q.risk_band+' risk)'],['Hold',q.hold_hours+' h'],['Risk model',s.risk.model],['Attempts',JSON.stringify(s.attempts)]]);
   if(!amtTouched)view.amt.value=Math.max(q.advance_pkr-(s.deposit?.amount_pkr||0),0)||q.advance_pkr}
- if(s.comps)view.comps.textContent=`source: ${s.comps.source}, median ${rs(s.comps.median_nightly_pkr)}\\n`+s.comps.comps.map(c=>`${c.name}: ${rs(c.nightly_pkr)}`).join('\\n');
+ const hasComps=!!s.comps?.comps.length;view.compsSec.style.display=hasComps?'':'none';  // SerpApi is optional
+ if(hasComps)view.comps.textContent=`source: ${s.comps.source}, median ${rs(s.comps.median_nightly_pkr)}\\n`+s.comps.comps.map(c=>`${c.name}: ${rs(c.nightly_pkr)}`).join('\\n');
  const paid=s.deposit?.amount_pkr||0;
  const paidRow=['Paid',rs(paid)+(s.deposit?.reference?' ('+s.deposit.reference+')':'')];
  dl(view.paid,!s.quote?[]:s.outcome==='pending'?[paidRow,['Still due',rs(Math.max(s.quote.advance_pkr-paid,0))]]:[paidRow]);

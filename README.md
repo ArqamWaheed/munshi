@@ -1,7 +1,7 @@
 # Munshi: a WhatsApp front desk for small hotels
 
 One inquiry: WhatsApp text → **fine-tuned Qwen3.5-4B on Tinker** parses it to strict JSON → **TabPFN-3.5** scores
-P(cancel/no-show) → **SerpApi Google Hotels** fetches nearby nightly rates (PKR, cached) → **Gemma 4** drafts the reply
+P(cancel/no-show) → (optional) **SerpApi Google Hotels** nearby nightly rates set the price, otherwise your base rate → **Gemma 4** drafts the reply
 from parsed fields only → a **Temporal** `RoomHoldWorkflow` holds the room for a time that depends on the risk score,
 waits for a `deposit_received` signal, then confirms or releases. A Temporal Schedule writes the owner's morning
 brief. **Sentry** traces every model and tool call.
