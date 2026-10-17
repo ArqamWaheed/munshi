@@ -58,7 +58,8 @@ def run_model(provider: str, rows: list[dict]) -> dict:
             try:
                 pred, res = parse_message(r["message"], today, provider)
                 rec = {"ok": True, "latency_s": res.latency_s, "in": res.input_tokens, "out": res.output_tokens,
-                       "cost": res.cost_usd, "list_cost": res.list_cost_usd, "model": res.model}
+                       "cost": res.cost_usd, "list_cost": res.list_cost_usd, "model": res.model,
+                       "raw": res.text, "pred": pred.model_dump(mode="json")}  # raw kept so rules can be re-scored
                 break
             except RateLimited as e:
                 time.sleep(e.retry_after_s)

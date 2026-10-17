@@ -20,6 +20,7 @@ import asyncio
 import json
 import os
 import shutil
+import socket
 import subprocess
 import sys
 import time
@@ -58,12 +59,16 @@ class Stack:
              str(DRILLS / "drills.db"), "--port", str(PORT), "--ui-port", str(UI_PORT)],
             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         self.mark(f"Temporal server process started (pid {self.server.pid})")
-        for _ in range(120):
+        # A plain TCP probe: this also runs inside the drills' event loop, where asyncio.run() would raise (and
+        # an earlier version swallowed that and waited out its whole retry budget, faking a slow restart).
+        for _ in range(240):
             try:
-                asyncio.run(asyncio.wait_for(connect(), 2))
+                socket.create_connection(("localhost", PORT), timeout=1).close()
                 break
-            except Exception:  # noqa: BLE001
-                time.sleep(1)
+            except OSError:
+                time.sleep(0.25)
+        else:
+            raise RuntimeError("Temporal server did not start")
         self.mark("Temporal server accepting client connections")
 
     def start_worker(self, env: dict | None = None) -> None:

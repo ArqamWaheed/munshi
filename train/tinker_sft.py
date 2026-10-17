@@ -24,7 +24,7 @@ from pathlib import Path
 import tinker
 
 from munshi import config as cfg
-from munshi.parser import SHORT_PROMPT, apply_text_rules, label_to_target, normalise, user_turn
+from munshi.parser import SHORT_PROMPT, apply_rules, label_to_target, normalise, user_turn
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -56,7 +56,7 @@ def select_rows(rows: list[dict], max_clar_frac: float, seed: int = 0) -> tuple[
 
 def to_messages(row: dict) -> tuple[list[dict], str]:
     today = date.fromisoformat(row["today"])
-    target = label_to_target(apply_text_rules(normalise(row["label"], today), row["message"]))
+    target = label_to_target(apply_rules(row["label"], row["message"], today))
     return ([{"role": "system", "content": SHORT_PROMPT},
              {"role": "user", "content": user_turn(row["message"], today)}], target)
 

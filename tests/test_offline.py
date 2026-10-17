@@ -11,7 +11,7 @@ from data.gen_synthetic import seeds
 from munshi import config as cfg
 from munshi import policy, risk
 from munshi.llm import NotConfigured, call_gemma, call_tinker, extract_json
-from munshi.parser import apply_text_rules, messages_for, next_weekday, normalise, redact
+from munshi.parser import apply_rules, apply_text_rules, messages_for, next_weekday, normalise, redact
 from munshi.reply import check_draft, numbers_in
 from munshi.schema import PARSED_FIELDS, DepositInfo, HoldPolicy, Inquiry, Quote
 
@@ -162,10 +162,10 @@ def test_confirmation_needs_no_prices_but_may_not_invent_any():
 
 
 @pytest.mark.parametrize("row", EVAL, ids=lambda r: r["id"])
-def test_eval_label_is_a_fixed_point_of_the_text_rules(row):
+def test_eval_label_is_a_fixed_point_of_the_rules(row):
+    """The hand labels already follow every rule code enforces (dates, rooms, language, family room)."""
     today = date.fromisoformat(row["today"])
-    inq = normalise(row["label"], today)
-    assert apply_text_rules(inq.model_copy(), row["message"]) == inq
+    assert apply_rules(row["label"], row["message"], today) == normalise(row["label"], today)
 
 
 @pytest.mark.parametrize("msg,guests,rooms,room_type,want", [
@@ -178,3 +178,30 @@ def test_eval_label_is_a_fixed_point_of_the_text_rules(row):
 def test_text_rules(msg, guests, rooms, room_type, want):
     inq = apply_text_rules(Inquiry(guests=guests, rooms=rooms, room_type=room_type), msg)
     assert (inq.rooms, inq.room_type, inq.language) == want
+
+
+from munshi.dates import resolve  # noqa: E402
+
+WED = date(2026, 11, 11)  # a Wednesday
+
+
+@pytest.mark.parametrize("text,want", [
+    ("kal 2 log 1 room", (date(2026, 11, 12), None)),
+    ("day after tomorrow, 3 nights", (date(2026, 11, 13), None)),         # not read as "tomorrow"
+    ("hafte ko aana hai couple", (date(2026, 11, 14), None)),              # Saturday
+    ("itwaar se peer tak room chahiye", (date(2026, 11, 15), 1)),          # Monday counted from the Sunday
+    ("peer se budh tak 2 kamray", (date(2026, 11, 16), 2)),
+    ("15 Nov to 18 Nov, 4 people", (date(2026, 11, 15), 3)),
+    ("Corporate booking: 20-22 November", (date(2026, 11, 20), 2)),
+    ("dec 24 se 27 tak suite", (date(2026, 12, 24), 3)),
+    ("booking karwani hai 20 tareekh ki", (date(2026, 11, 20), None)),
+    ("5 tareekh ko", (date(2026, 12, 5), None)),                           # bare day already past: next month
+    ("agle hafte aayenge char log", (date(2026, 11, 16), None)),           # next Monday
+    ("room ka kiraya kitna hai aaj kal?", (None, None)),                   # "these days", not a date
+    ("next friday se 3 din", (None, None)),                                # this Friday or the next? model decides
+    ("budh ko aana hai", (None, None)),                                    # Wednesday said on a Wednesday
+    ("agle hafte jumma ko", (None, None)),
+    ("28 Oct se 30 Nov tak", (None, None)),                                # one end already past
+])
+def test_resolve(text, want):
+    assert resolve(text, WED) == want

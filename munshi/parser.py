@@ -8,6 +8,7 @@ from datetime import date, timedelta
 
 from pydantic import ValidationError
 
+from munshi.dates import resolve
 from munshi.llm import LLMResult, call_gemma, call_tinker, call_tinker_base, extract_json
 from munshi.schema import PARSED_FIELDS, Inquiry
 
@@ -87,11 +88,23 @@ def apply_text_rules(inq: Inquiry, message: str) -> Inquiry:
     text = redact(message)
     if _URDU_SCRIPT.search(text):
         inq.language = "urdu_script"
-    if inq.guests and not _ROOMS_STATED.search(text):
-        inq.rooms = 1 if inq.guests <= 4 else math.ceil(inq.guests / 3)
+    if not _ROOMS_STATED.search(text):  # no room count written: rooms follow the head count, unknown if it is
+        inq.rooms = (1 if inq.guests <= 4 else math.ceil(inq.guests / 3)) if inq.guests else None
     if inq.room_type == "family" and not _FAMILY_ROOM.search(text):
         inq.room_type = "suite" if re.search(r"suite", text, re.I) else "any"
     return inq
+
+
+def apply_rules(raw: dict, message: str, today: date) -> Inquiry:
+    """Everything code decides after the model reads: dates and ranges from the calendar (munshi.dates), the
+    normalise() rules, then the text rules. Used in production and for the training targets alike."""
+    raw = dict(raw)
+    check_in, nights = resolve(redact(message), today)
+    if check_in:
+        raw["check_in"] = check_in.isoformat()
+    if nights:
+        raw["nights"] = nights
+    return apply_text_rules(normalise(raw, today), message)
 
 
 class BadModelOutput(Exception):
@@ -110,7 +123,7 @@ def parse_message(message: str, today: date, provider: str = "tinker") -> tuple[
         raw = extract_json(res.text)
         if missing := [f for f in PARSED_FIELDS if f not in raw]:  # its own schema, not ours: not "valid"
             raise ValueError(f"missing keys {missing}")
-        return apply_text_rules(normalise(raw, today), message), res
+        return apply_rules(raw, message, today), res
     except (ValueError, ValidationError, json.JSONDecodeError) as e:
         raise BadModelOutput(f"{provider}: {e}") from e
 
