@@ -17,7 +17,7 @@ import time
 from datetime import date, timedelta
 from pathlib import Path
 
-from munshi.llm import RateLimited, call_gemma, extract_json
+from munshi.llm import ProviderError, RateLimited, call_gemma, extract_json
 from munshi.parser import SPEC_PROMPT, normalise, user_turn
 from munshi.tracing import init_sentry
 
@@ -64,13 +64,22 @@ def main() -> None:
             continue
         for m in msgs:
             today = date(2026, 10, 1) + timedelta(days=rng.randrange(0, 60))  # vary TODAY so dates generalise
-            try:
-                lab = call_gemma([{"role": "system", "content": SPEC_PROMPT},
-                                  {"role": "user", "content": user_turn(m, today)}],
-                                 json_mode=True, max_tokens=300, temperature=0.0)
-                inq = normalise(extract_json(lab.text), today)
-            except Exception as e:  # noqa: BLE001  (bad label -> drop the row)
-                print("label dropped:", str(e)[:80])
+            inq = None
+            for _ in range(3):  # Gemini 500s/429s are transient: retry; anything else -> drop the row
+                try:
+                    lab = call_gemma([{"role": "system", "content": SPEC_PROMPT},
+                                      {"role": "user", "content": user_turn(m, today)}],
+                                     json_mode=True, max_tokens=300, temperature=0.0)
+                    inq = normalise(extract_json(lab.text), today)
+                    break
+                except RateLimited as e:
+                    time.sleep(e.retry_after_s)
+                except ProviderError:
+                    time.sleep(5)
+                except Exception as e:  # noqa: BLE001  (bad label -> drop the row)
+                    print("label dropped:", str(e)[:80])
+                    break
+            if inq is None:
                 continue
             row = {"today": today.isoformat(), "message": m, "label": inq.model_dump(mode="json"),
                    "source": "gemma-teacher"}
