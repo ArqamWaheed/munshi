@@ -4,7 +4,7 @@ from __future__ import annotations
 import math
 from datetime import timedelta
 
-from munshi.schema import HoldPolicy, Inquiry, Quote
+from munshi.schema import DepositInfo, HoldPolicy, Inquiry, Quote
 
 
 def risk_band(p: float, pol: HoldPolicy) -> str:
@@ -20,6 +20,18 @@ def hold_hours(p: float, pol: HoldPolicy) -> float:
 def hold_duration(p: float, pol: HoldPolicy) -> timedelta:
     """Real hold length divided by demo_speed (demo_speed=60 turns a 2 h hold into 2 min)."""
     return timedelta(hours=hold_hours(p, pol) / max(pol.demo_speed, 1e-6))
+
+
+def clarify_duration(pol: HoldPolicy) -> timedelta:
+    return timedelta(hours=pol.hours_clarify / max(pol.demo_speed, 1e-6))
+
+
+def add_deposit(total: DepositInfo | None, new: DepositInfo) -> DepositInfo:
+    """Guests often pay the advance in parts (JazzCash limits); keep a running total and every reference."""
+    if total is None:
+        return new.model_copy()
+    refs = [r for r in (total.reference, new.reference) if r]
+    return DepositInfo(amount_pkr=total.amount_pkr + new.amount_pkr, reference=", ".join(refs) or None)
 
 
 def advance_fraction(p: float, pol: HoldPolicy) -> float:
