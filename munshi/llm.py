@@ -76,11 +76,21 @@ def tinker_client() -> OpenAI:
     return OpenAI(api_key=cfg.TINKER_API_KEY, base_url=cfg.TINKER_OAI_BASE_URL, max_retries=0, timeout=60)
 
 
+_TOKENIZER_LOCK = threading.Lock()
+
+
 @lru_cache(maxsize=1)
-def qwen_tokenizer():
+def _load_qwen_tokenizer():
     from transformers import AutoTokenizer  # tokenizer files only (~30 MB); no torch needed
 
     return AutoTokenizer.from_pretrained(cfg.TINKER_BASE_MODEL)
+
+
+def qwen_tokenizer():
+    # transformers' lazy import is not thread-safe: three parse_inquiry activities starting at once on the
+    # worker's thread pool raised "cannot import name 'AutoTokenizer'" on attempt 1 (seen while wiring Sentry).
+    with _TOKENIZER_LOCK:
+        return _load_qwen_tokenizer()
 
 
 def render_prompt(messages: list[dict]) -> str:

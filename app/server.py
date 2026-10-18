@@ -65,7 +65,10 @@ async def holds() -> list[dict]:
 
 @app.get("/api/inquiries/{wf_id}")
 async def status(wf_id: str) -> dict:
-    return (await get_status(await client(), wf_id)).model_dump(mode="json")
+    try:
+        return (await get_status(await client(), wf_id)).model_dump(mode="json")
+    except RPCError as e:
+        raise HTTPException(404, f"no such hold: {e.message}") from e
 
 
 @app.post("/api/inquiries/{wf_id}/deposit")

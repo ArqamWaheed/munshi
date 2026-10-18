@@ -49,6 +49,11 @@ def _guard(name: str, trace_headers: dict, fn):
         except (ProviderError, comps_mod.CompsUnavailable) as e:
             sentry_sdk.capture_exception(e)
             raise  # plain exception = retryable under the activity's RetryPolicy
+        except ApplicationError:
+            raise  # already typed by the activity; Temporal records it
+        except Exception as e:  # noqa: BLE001 (a bug, not a provider hiccup: report it, let Temporal retry)
+            sentry_sdk.capture_exception(e)
+            raise
 
 
 @activity.defn
